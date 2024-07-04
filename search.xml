@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/hexo2/hello-world/</url>
+    <content><![CDATA[<h2 id="hexo-主题测试"><a href="#hexo-主题测试" class="headerlink" title="hexo 主题测试"></a>hexo 主题测试</h2><p>分割线测试</p>
+<hr>
+<pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+
+<blockquote>
+<p>注解</p>
+<p>注解内容</p>
+</blockquote>
+<p>This is my website, click the button <a class="btn-beautify " href="https://butterfly.js.org/" 
+  title="Butterfly"><span>Butterfly</span></a></p>
+<p><img src="/hexo2/images/hello-world/back-title-1720063349755.jpg" alt="back-title"></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">价格</th>
+<th align="center">数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>计算机</td>
+<td align="right">$1600</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td>手机</td>
+<td align="right">$12</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td>管线</td>
+<td align="right">$1</td>
+<td align="center">234</td>
+</tr>
+</tbody></table>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo server</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo generate</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo deploy</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>hellocategory</category>
+      </categories>
+      <tags>
+        <tag>hello</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2024-07-03hexo博客图片访问问题</title>
+    <url>/hexo2/hexo/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="图片访问问题解决"><a href="#图片访问问题解决" class="headerlink" title="图片访问问题解决"></a>图片访问问题解决</h2><p>博客图片的存储可是采用图床或则直接发布到github 仓库,下面介绍几种发布到github仓库的方式。</p>
+<blockquote>
+<p>仓库存储图片面临发布之后图片访问失败的问题， 下面主要解决博客发布后图片访问路径</p>
+</blockquote>
+<p>一般hexo博客部署发布后根据配置文件&#x3D;&#x3D;_config.xml&#x3D;&#x3D;属性 &#x3D;&#x3D;permalink: :title&#x2F;  #default :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;&#x3D;&#x3D;</p>
+<p>访问路径应该类似 &#x3D;&#x3D;<a href="http://localhost:4000/hexo2/2024/07/04/test/==%E5%8C%85%E5%90%AB%E6%97%A5%E6%9C%9F%E4%BF%A1%E6%81%AF%E3%80%82%E8%80%8C%E5%9B%BE%E7%89%87%E7%9A%84%E8%AE%BF%E9%97%AE%E5%A4%B1%E8%B4%A5%E5%B0%B1%E5%92%8C%E8%BF%99%E4%B8%AA%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84%E6%97%A5%E6%9C%9F%E8%B7%AF%E5%BE%84%E6%9C%89%E5%85%B3%E7%B3%BB%E3%80%82">http://localhost:4000/hexo2/2024/07/04/test/==包含日期信息。而图片的访问失败就和这个自动生成的日期路径有关系。</a></p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><blockquote>
+<p>安装插件 hexo-asset-image</p>
+</blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/405551874">[Hexo博客搭建]第4章 Hexo图片显示问题</a></p>
+<p><a href="https://blog.csdn.net/cnds123321/article/details/109085776">解决Hexo关于图片的问题</a></p>
+<p><a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法</a></p>
+<h5 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h5><p>安装插件</p>
+<pre class="language-none"><code class="language-none">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save</code></pre>
+
+<p>配置文件</p>
+<pre class="language-none"><code class="language-none">_config.yml&#96; 文件中的&#96;post_asset_folder&#96; 选项设为 &#96;true
+目的 可以生成 md文件的同名文件夹</code></pre>
+
+<p>修改 typora 偏好设置 在统同级博客文件下 生成博客同名文件夹存储照片</p>
+<p><img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703180647089.png" alt="image-20240703180647089"></p>
+<p>插件作用 在生成静态文件时，可已经缺失的 日期路径进行补充</p>
+<p><img src="/hexo2/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/image-20240703180835748.png" alt="image-20240703180835748"></p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><blockquote>
+<p>一个是利用hexo 自带插件  hexo-renderer-marked   <a href="https://hexo.io/zh-cn/docs/asset-folders">https://hexo.io/zh-cn/docs/asset-folders</a></p>
+</blockquote>
+<p>修改配置文件</p>
+<pre class="language-none"><code class="language-none">
+_config.yml
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true</code></pre>
+
+<p>启用后，资源图片将会被自动解析为其对应文章的路径。<br>例如： <code>image.jpg</code> 位置为 <code>/2020/01/02/foo/image.jpg</code> ，这表示它是 <code>/2020/01/02/foo/</code> 文章的一张资源图片， <code>![](image.jpg)</code> 将会被解析为 <code>&lt;img src=&quot;/2020/01/02/foo/image.jpg&quot;&gt;</code> 。</p>
+<blockquote>
+<p>方法2原理和方法1类似 都是在生成静态文件时自动补全缺失的日期路径</p>
+<p>但是 这种方式需要图片路径 &#x3D;&#x3D;image.jpg&#x3D;&#x3D; 不能是这种形式 &#x3D;&#x3D;&#x2F;image.jpg&#x3D;&#x3D;  typore 自动插入图片对路径格式支持不好。</p>
+<p>所以没有使用该种方式</p>
+</blockquote>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><p><a href="https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a></p>
+<p><a href="https://rainylog.com/post/hexo-post-image-manage/">Hexo 文章图片管理</a></p>
+<p><img src="/hexo2/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/1567505538899-1720084585925.png" alt="1567505538899"></p>
+<p>在typora菜单栏点击 <code>格式-&gt;图像-&gt;设置图片根目录</code>，将<code>hexo/source</code>作为其根目录即可。</p>
+<blockquote>
+<p>这一步就是在文件 Front-matter 中添加属性 &#x3D;&#x3D;typora-root-url: ..&#x3D;&#x3D;</p>
+</blockquote>
+<p><strong>一定要先设置了图片根目录后再插入图片，否则图片路径会不正确喔！</strong></p>
+<blockquote>
+<p>将静态文件放入 hexo  source 文件夹下,免去了日期路径的困扰,</p>
+<p>而且在此路径下也避免了 _post博客文件中静态资源部署需要 先clean  在 generate的繁琐。</p>
+</blockquote>
+<h3 id="方式四"><a href="#方式四" class="headerlink" title="方式四"></a>方式四</h3><p><a href="https://www.cnblogs.com/immaxfang/p/17068846.html">Hexo 修改默认文章路径</a></p>
+<p>既然问题是因为日期路径引起的那么不使用日志路径不就可以了吗.</p>
+<pre class="language-none"><code class="language-none">_config.xml
+permalink: :title&#x2F;  #default :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</code></pre>
+
+<p>修改  typora <code>图片偏好设置</code> 为 复制到指定路径   <code>./$&#123;filename&#125;</code></p>
+<blockquote>
+<p>方法四的有点事简单,确定是静态文件发布后 所有的文件夹都集中在一起, 如果文件名区分的不好,可能会造成post 和 page重名,</p>
+<p>建议文件取名的时候添加日期属性<code>2024-07-04test.md</code>  或则采用方法三。</p>
+</blockquote>
+<p><img src="/hexo2/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/image-20240704172502202.png" alt="image-20240704172502202"></p>
+<h3 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h3>]]></content>
+      <categories>
+        <category>hexo博客</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客搭建</title>
+    <url>/hexo2/hexo/2024-07-03hexo%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h2 id="1-hexo-安装"><a href="#1-hexo-安装" class="headerlink" title="1.hexo 安装"></a>1.hexo 安装</h2><p>安装前需要准备好npm环境</p>
+<pre class="language-java" data-language="java"><code class="language-java">安装hexo客户端
+npm i hexo<span class="token operator">-</span>cli <span class="token operator">-</span>g  #
+在空白文件夹下穿件hexo项目
+hexo init
+项目运行
+hexo s <span class="token punctuation">[</span><span class="token operator">-</span>p <span class="token number">5000</span><span class="token punctuation">]</span></code></pre>
+
+
+
+<h2 id="2-主题安装"><a href="#2-主题安装" class="headerlink" title="2.主题安装"></a>2.主题安装</h2><p>​		选择主题时浪费了很多时间,   主要研究了<a href="https://butterfly.js.org/">butterfly</a>主题,我需要的是一个简单配置就能使用的博客,不需要在页面配置上浪费大量精力. 或许以后熟练使用hexo了 可以考虑研究下.</p>
+<p>​     最后选定了 <a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/">matery</a> 主题, 安装时会有些小问题</p>
+<blockquote>
+<p>主题安装</p>
+<pre class="language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;blinkfox&#x2F;hexo-theme-matery themes&#x2F;matery</code></pre>
+
+<p>我安装上述方式安装,最后部署githubpage时 部署失败.</p>
+<pre class="language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;blinkfox&#x2F;hexo-theme-matery.git</code></pre>
+
+<p>最后采用了在github 下载压缩包 然后 复制解压到 themes 文件夹下的方式安装主题</p>
+<p><img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703180115686.png" alt="image-20240703180115686"></p>
+</blockquote>
+<blockquote>
+<p>主题设置按照<a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/">matery</a> 教程中设置, 实现了文章全文搜索,和文章字数统计.</p>
+<p>评论设置一直有问题,未能解决,</p>
+</blockquote>
+<h2 id="3-github-部署"><a href="#3-github-部署" class="headerlink" title="3.github 部署"></a>3.github 部署</h2><h3 id="githuppage准备"><a href="#githuppage准备" class="headerlink" title="githuppage准备"></a>githuppage准备</h3><pre class="language-none"><code class="language-none">注册githup 账号  创建github仓库 仓库名称必须设置为  你的名字.github.io (liudongsir.github.io)
+如果是单纯设置博客,仓库名可以随便设置; 例如我一开始使用的hexo仓库部署
+但是这么做会影响下面的图片部署.</code></pre>
+
+<p><img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703181034779.png" alt="image-20240703181034779"></p>
+<p> <img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703181203043.png" alt="image-20240703181203043"></p>
+<h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><blockquote>
+<p>首先需要安装发布的插件， 插件发布项目需要用到 github  ssh连接方式, 提前配置好ssh key</p>
+</blockquote>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml">npm install hexo<span class="token punctuation">-</span>deployer<span class="token punctuation">-</span>git <span class="token punctuation">-</span><span class="token punctuation">-</span>save</code></pre>
+
+<h3 id="项目配置"><a href="#项目配置" class="headerlink" title="项目配置"></a>项目配置</h3><blockquote>
+<p>hexo 配置文件 _config.yml 设置如下图</p>
+</blockquote>
+<p> <img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703181034779.png" alt="image-20240703181034779"></p>
+<h3 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h3><pre class="language-java" data-language="java"><code class="language-java"># <span class="token class-name">Hexo</span>会根据配置文件渲染出一套静态页面
+hexo g
+# 将上一步渲染出的一系列文件上传至至<span class="token class-name">Github</span> <span class="token class-name">Pages</span>
+hexo d
+# 也可以直接输入此命令，直接完成渲染和上传
+hexo g <span class="token operator">-</span>d
+</code></pre>
+
+
+
+<h2 id="4-图片部署"><a href="#4-图片部署" class="headerlink" title="4.图片部署"></a>4.图片部署</h2><blockquote>
+<p>图片部署参看文章  <a href="hexo2/hexo/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/">cesh</a>    <a href="/hexo2/hexo/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/" title="2024-07-03hexo博客图片访问问题">博客图片访问问题</a> </p>
+</blockquote>
+<p>图片部署有多种方式, 1 通过图床上传图片到oss服务器(常用),2同步图片到仓库直接访问.</p>
+<p><del>我采用的方式2</del>最终采用<a href="https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">该方式</a>主要因为文件名变动,该方式不需要再次调整图片路径.</p>
+<p>方式2的参考链接</p>
+<p><a href="https://zhuanlan.zhihu.com/p/405551874">[Hexo博客搭建]第4章 Hexo图片显示问题</a></p>
+<p><a href="https://blog.csdn.net/cnds123321/article/details/109085776">解决Hexo关于图片的问题</a></p>
+<p><a href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法</a></p>
+<p>一些其他解决思路</p>
+<p><a href="https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a></p>
+<p><a href="https://rainylog.com/post/hexo-post-image-manage/">Hexo 文章图片管理</a></p>
+<blockquote>
+<p>修改配置文件</p>
+</blockquote>
+<pre class="language-none"><code class="language-none">_config.yml&#96; 文件中的&#96;post_asset_folder&#96; 选项设为 &#96;true
+目的 可以生成 md文件的同名文件夹</code></pre>
+
+<pre class="language-none"><code class="language-none">编写博客(md)使用 typora 在偏好设置中如图设置:</code></pre>
+
+<p><img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703180647089.png" alt="image-20240703180647089"></p>
+<blockquote>
+<p>安装图片处理插件</p>
+</blockquote>
+<pre class="language-none"><code class="language-none">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save
+在hexo g  时可以复制图片到生成的静态文件(html) 同级目录中,并且图片路径也对应处理.</code></pre>
+
+<p><img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703180835748.png" alt="image-20240703180835748"></p>
+<h2 id="5-参考链接"><a href="#5-参考链接" class="headerlink" title="5.参考链接"></a>5.参考链接</h2><p><a href="https://blog.csdn.net/victoryxa/article/details/103733655">hexo+github搭建博客(超级详细版，精细入微)</a></p>
+<p><a href="https://blog.csdn.net/qq_58608526/article/details/124652412">Hexo+Github博客搭建教程</a></p>
+<h2 id="6-后记"><a href="#6-后记" class="headerlink" title="6.后记"></a>6.后记</h2><p>​	博客还有很多内容可以设置</p>
+<p>本地搜索</p>
+<p>代码格式化</p>
+<p>github  action 自动化部署</p>
+<blockquote>
+<p>安装matery 主题用到的其他插件</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml">npm i  hexo<span class="token punctuation">-</span>prism<span class="token punctuation">-</span>plugin <span class="token punctuation">-</span>S
+npm i hexo<span class="token punctuation">-</span>generator<span class="token punctuation">-</span>search <span class="token punctuation">-</span><span class="token punctuation">-</span>save
+npm i hexo<span class="token punctuation">-</span>permalink<span class="token punctuation">-</span>pinyin <span class="token punctuation">-</span><span class="token punctuation">-</span>save
+npm i <span class="token punctuation">-</span><span class="token punctuation">-</span>save hexo<span class="token punctuation">-</span>wordcount</code></pre>
+
+
+</blockquote>
+<p><img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/back-title.jpg" alt="back-title"></p>
+]]></content>
+      <categories>
+        <category>hexo博客</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见的博客框架</title>
+    <url>/hexo2/hexo/2024-07-04%E5%B8%B8%E8%A7%81%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>简言之，Blog 就是以网络作为载体，简易迅速便捷地发布自己的心得，及时有效轻松地与他人进行交流，再集丰富多彩的个性化展示于一体的综合性平台。</p>
+<h2 id="博客搭建的方式"><a href="#博客搭建的方式" class="headerlink" title="博客搭建的方式"></a>博客搭建的方式</h2><p>总体来说，Blog 搭建的方式可以分为静态博客和动态博客。顾名思义，静态博客：博文内容是通过文档（如：.md 文件等）记录的（一个独立的文件），通过生成工具编译成最终的 hml、css、js 等静态文件，然后部署在静态 Server 服务器上或 Web 托管至数据仓库（如：Github），即可在互联网中被访问，不需要数据库的支撑。动态博客：是以数据库技术为基础，其博文内容是通过数据库记录存储的，主要特点体现在交互性；动不是指网页中的页面元素或特效在动，而是与后台数据库进行交互和数据传递（如：注册登录、评论、用户管理等）。</p>
+<p>常见的博客框架：</p>
+<h2 id="静态框架"><a href="#静态框架" class="headerlink" title="静态框架"></a>静态框架</h2><p>Hexo (<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a>)</p>
+<p>Hugo (<a href="https://www.gohugo.cn/">https://www.gohugo.cn/</a>)</p>
+<p>VuePress (<a href="https://www.vuepress.cn/">https://www.vuepress.cn/</a>)</p>
+<p>Jekyll (<a href="https://www.jekyll.com.cn/">https://www.jekyll.com.cn/</a>)</p>
+<h2 id="动态框架"><a href="#动态框架" class="headerlink" title="动态框架"></a>动态框架</h2><p>WordPress (<a href="https://wordpress.org/">https://wordpress.org/</a>)</p>
+<p>Typecho (<a href="https://typecho.org/">https://typecho.org/</a>)</p>
+<p>Halo (<a href="https://halo.run/">https://halo.run/</a>)</p>
+<p>Solo (<a href="https://b3log.org/solo/">https://b3log.org/solo/</a>)</p>
+<h2 id="框架简介"><a href="#框架简介" class="headerlink" title="框架简介"></a>框架简介</h2><h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p>Hexo 是一个基于 Node.js 的快速、简洁且高效的静态博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。Hexo 具有丰富的主题、插件系统。</p>
+<p>优点：</p>
+<p>纯静态博客，部署简单、成本低廉、运行优化非常高效。<br>Hexo 静态博客框架可以在云端，也可以在本地电脑上甚至手机上。<br>Hexo 框架的博客网站没有网站后台，不存在后台安全漏洞的问题。<br>因为是纯静态的，几乎所有的 CDN 服务都可以完美的加速提升浏览速度。<br>搜索引擎对纯静态网站有天然的青睐度，收录、权重优先权明显。<br>纯静态网站会让网络攻击成本大大的增加也就是说纯静态网站被攻击的可能性更低了。</p>
+<h3 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h3><p>Hugo 被称为是世界上最快的构建网站的框架。Hugo 是一个快速且现代的静态网站生成器，采用 Go 编程语言开发，Hugo 的设计目标是让创建网站重新变得有趣。Hugo 是一个通用的网站框架。从技术上讲，Hugo 是一个静态站点生成器。与动态构建页面的系统不同，Hugo 在创建或更新内容时构建页面。由于网站的浏览频率远高于编辑频率，因此 Hugo 旨在为您的网站最终用户提供最佳的浏览体验，并为网站作者提供理想的写作体验。使用 Hugo 构建的网站非常快速和安全。Hugo 构建的网站可以托管在任何地方，包括 Netlify、Heroku、GoDaddy、DreamHost、GitHub Pages、GitLab Pages、Surge、Aerobatic、Firebase、Google Cloud Storage、Amazon S3、Rackspace、Azure, 和 CloudFront，并且与 CDN 更配。Hugo 网站在运行时不需要数据库或依赖于诸如 Ruby、Python 或 PHP 等昂贵的运行时环境。我们认为 Hugo 是一个理想的网站创建工具，具有几乎即时的构建时间，能够在网站修改时即刻重建。</p>
+<p>优点：</p>
+<p>飞快的构建速度。在等待网站构建时有多无聊？Hugo 是同类中最快的工具。每个页面的构建时间小于一毫秒时，网站的平均构建时间不到一秒钟。<br>健壮的内容管理。灵活性为王。Hugo 是内容战略家的梦想。Hugo 支持无限的内容类型、分类、菜单、动态 API 驱动的内容等，所有这些都无需插件。<br>短代码 (shortcodes)。Hugo 短代增强了 Markdown 的能力。我们喜欢 Markdown 语法的漂亮、简洁，但有时我们需要更多的灵活性。Hugo 短代码满足了美观和灵活的需求。<br>内置模板。Hugo 提供的通用模式让您的工作迅速完成。Hugo 提供了预制的模板，可以快速完成 SEO、评论、统计和其他功能。一行代码，完成所有工作。<br>支持多语言和 i18n。原生支持多语言。Hugo 为多语言站点提供了完整的 i18n 支持，并且与 Hugo 用户喜欢的单语言站点的开发体验完全相同。<br>定制输出。HTML 够吗？Hugo 允许以多种格式输出您的内容，包括 JSON 或 AMP，并使您可以轻松创建自己的内容。</p>
+<h3 id="VuePress"><a href="#VuePress" class="headerlink" title="VuePress"></a>VuePress</h3><p>VuePress 由两部分组成：第一部分是一个极简静态网站生成器 (opens new window)，它包含由 Vue 驱动的主题系统和插件 API，另一个部分是为书写技术文档而优化的默认主题，它的诞生初衷是为了支持 Vue 及其子项目的文档需求。每一个由 VuePress 生成的页面都带有预渲染好的 HTML，也因此具有非常好的加载性能和搜索引擎优化（SEO）。同时，一旦页面被加载，Vue 将接管这些静态内容，并将其转换成一个完整的单页应用（SPA），其他的页面则会只在用户浏览到的时候才按需加载。</p>
+<p>事实上，一个 VuePress 网站是一个由 Vue (opens new window)、Vue Router (opens new window) 和 webpack (opens new window) 驱动的单页应用。如果你以前使用过 Vue 的话，当你在开发一个自定义主题的时候，你会感受到非常熟悉的开发体验，你甚至可以使用 Vue DevTools 去调试你的自定义主题。在构建时，我们会为应用创建一个服务端渲染（SSR）的版本，然后通过虚拟访问每一条路径来渲染对应的 HTML。这种做法的灵感来源于 Nuxt (opens new window) 的 nuxt generate 命令，以及其他的一些项目，比如 Gatsby (opens new window)。</p>
+<p>优点：</p>
+<p>简洁至上。以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。<br>Vue 驱动。享受 Vue + webpack 的开发体验，可以在 Markdown 中使用 Vue 组件，又可以使用 Vue 来开发自定义主题。<br>高性能。VuePress 会为每个页面预渲染生成静态的 HTML，同时，每个页面被加载的时候，将作为 SPA 运行。</p>
+<p>Jekyll<br>Jekyll 是一个静态网站生成器。用你喜欢的标记语言书写内容并交给 Jekyll 处理，它将利用模板为你创建一个静态网站。你可以调整你想要的网址样式、在网站上显示哪些数据等等。jekyll 是一个简单的免费的 Blog 生成工具，类似 WordPress。但是和 WordPress 又有很大的不同，原因是 jekyll 只是一个生成静态网页的工具，不需要数据库支持。但是可以配合第三方服务，例如 Disqus。最关键的是 jekyll 可以免费部署在 Github 上，而且可以绑定自己的域名。</p>
+<p>优点：</p>
+<p>简单。无需数据库、评论功能或频繁的版本更新 — 只需关注你的内容。<br>静态。只用 Markdown、Liquid、HTML &amp; CSS g 就可以构建可部署的静态网站。<br>博客。原生支持自定义链接、分类、静态页、文章以及自定义布局。</p>
+<h3 id="WordPress"><a href="#WordPress" class="headerlink" title="WordPress"></a>WordPress</h3><p>WordPress 是一款能让您建立出色网站、博客或应用程序的开源软件。WordPress 是使用 PHP 语言开发的博客平台，用户可以在支持 PHP 和 MySQL 数据库的服务器上架设属于自己的网站。也可以把 WordPress 当作一个内容管理系统（CMS）来使用。WordPress 是一款个人博客系统，并逐步演化成一款内容管理系统软件，它是使用 PHP 语言和 MySQL 数据库开发的，用户可以在支持 PHP 和 MySQL 数据库的服务器上使用自己的博客。WordPress 有许多第三方开发的免费模板，安装方式简单易用。不过要做一个自己的模板，则需要你有一定的专业知识。比如你至少要懂的标准通用标记语言下的一个应用 HTML、CSS、PHP 等相关知识。</p>
+<p>优点：</p>
+<p>WordPress 功能强大、扩展性强、生态丰富，这主要得益于其插件众多，易于扩充功能，基本上一个完整网站该有的功能，通过其第三方插件都能实现所有功能。<br>wordpress 搭建的博客对 seo 搜索引擎友好，收录也快，排名靠前。<br>适合 DIY，如果你是喜欢丰富内容的网站，那么 wordpress 可以很好地符合你的胃口。<br>主题很多，网站上一大片都是 wordpress 的主题，各色各样，应有尽有！<br>wordpress 备份和网站转移比较方便，原站点使用站内工具导出后，使用 WordPress Importer 插件就能方便地将内容导入新网站。<br>wordpress 有强大的社区支持，有上千万的开发者贡献和审查 wordpress，所以 wordpress 是安全并且活跃的。</p>
+<h3 id="Typecho"><a href="#Typecho" class="headerlink" title="Typecho"></a>Typecho</h3><p>Typecho 是由 type 和 echo 两个词合成的，来自于开发团队的头脑风暴。Typecho 基于 PHP5 开发，支持多种数据库，是一款内核强健﹑扩展方便﹑体验友好﹑运行流畅的轻量级开源博客程序。选用 Typecho，搭建独一无二个人网络日志发布平台，享受创作的快乐。</p>
+<p>优点：</p>
+<p>轻量高效。仅仅 7 张数据表，加上不足 400KB 的代码，就实现了完整的插件与模板机制。超低的 CPU 和内存使用率，足以发挥主机的最高性能。<br>先进稳定。原生支持 Markdown 排版语法，易读更易写。支持 BAE&#x2F;GAE&#x2F;SAE 等各类云主机，即使面对突如其来的高访问量，也能轻松应对。<br>简洁友好。精心打磨过的操作界面，依然是你熟悉的面孔，更多了一份成熟与贴心。每一个像素的剪裁，都只为离完美更进一步。</p>
+<p>Halo<br>Halo 是一款基于 Java 语言，使用 Spring Boot 框架开发的博客系统，致力于打造最好的 Java 博客系统，且只想安安静静的做一个博客系统。</p>
+<p>优点：</p>
+<p>代码开源。我们的所有代码开源在 GitHub 上且处于积极维护状态，截止目前已经发布了 81 个版本。您也可以在上面提交您的问题或者参与代码贡献。<br>易于部署。采用了程序与用户配置分离的方式，迁移和备份成本大大降低。您只需要一条命令即可运行成功，同时也支持 Docker 部署。<br>REST API。提供了完善的 Content API 和 Admin API，你可以用于开发单页面模板，微信小程序，各种系统的插件等。<br>模板系统完善的模板系统，支持自定义配置，支持在线安装和更新。开发主题也十分方便，欢迎大家参与主题的开发。<br>附件系统。支持本地上传，阿里云 OSS &#x2F; 又拍云 OSS &#x2F; 七牛云 OSS&#x2F;SM.MS 等云存储，你可以更方便的管理你文章中的附件。<br>评论系统拥有独立的评论插件，使用 Vue 开发，只需在页面引入构建好的 JS 文件即可，完美地和主题相结合。目前已有多款评论组件，你可以非常方便的切换。</p>
+<h3 id="Solo"><a href="#Solo" class="headerlink" title="Solo"></a>Solo</h3><p>Solo 是一款基于 Java 语言有后台管理的，小而美的博客系统，专为程序员设计</p>
+<p>优点：</p>
+<p>Markdown 编辑器支持三种编辑模式：所见即所得 &#x2F; 即时渲染 &#x2F; 分屏预览。<br>Hexo &#x2F; Jekyll &#x2F; Markdown 导入。<br>SQL &#x2F; JSON &#x2F; Markdown 导出。<br>拉取 GitHub 仓库和自动备份。<br>内置 HTTPS+CDN 文件存储。<br>支持生成导出静态站点，用于发布 GitHub Pages。</p>
+]]></content>
+      <categories>
+        <category>hexo博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo博客搭建(转载)</title>
+    <url>/hexo2/hexo/2024-07-04hexo%E6%90%AD%E5%BB%BA%E8%BD%AC%E8%BD%BD/</url>
+    <content><![CDATA[<h1 id="HEXO-博客搭建"><a href="#HEXO-博客搭建" class="headerlink" title="HEXO 博客搭建"></a>HEXO 博客搭建</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>本文章是在 使用hexo+butterfly 期间 转自  <a href="https://winward-king.github.io/tags/hexo/">Winward King</a></p>
+</blockquote>
+<h2 id="软件与平台"><a href="#软件与平台" class="headerlink" title="软件与平台"></a>软件与平台</h2><h3 id="必须的软件："><a href="#必须的软件：" class="headerlink" title="必须的软件："></a>必须的软件：</h3><ul>
+<li>NODE.JS</li>
+<li>GIT</li>
+</ul>
+<h3 id="博客编写的软件"><a href="#博客编写的软件" class="headerlink" title="博客编写的软件"></a>博客编写的软件</h3><ul>
+<li>Visual Studio Code（推荐）</li>
+<li>TYPORA</li>
+</ul>
+<h2 id="安装说明"><a href="#安装说明" class="headerlink" title="安装说明"></a>安装说明</h2><ul>
+<li>node.js 和 Typoro、Git，一路<code>下一步</code>就行了。</li>
+<li>VSCode 安装好之后默认是英文界面，可以在插件市场里搜索 chinese，安装之后重启软件，变成中文版。</li>
+</ul>
+<h2 id="检查是否安装成功"><a href="#检查是否安装成功" class="headerlink" title="检查是否安装成功"></a>检查是否安装成功</h2><ul>
+<li><p>Windows 下用 Win + R 打开运行，输入 cmd 并进入 cmd 窗口查询</p>
+</li>
+<li><p>Mac 下打开终端，进行查询</p>
+</li>
+<li><p>右键打开 Git bash，输入命令查询</p>
+</li>
+<li><p>node.js 版本的检查</p>
+<figure class="highlight cmd"><div class="highlight-tools "><div class="code-lang"> cmd</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">node -v</span>
+</pre></td></tr></tbody></table></figure>
+</li>
+<li><p>npm 版本的检查 (NPM 是随同 NodeJS 一起安装的包管理工具，能解决 NodeJS 代码部署上的很多问题)。</p>
+<figure class="highlight cmd"><div class="highlight-tools "><div class="code-lang">cmd</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">npm -v</span>
+</pre></td></tr></tbody></table></figure>
+</li>
+<li><p>Git 版本的检查</p>
+<figure class="highlight cmd"><div class="highlight-tools "><div class="code-lang"> cmd</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">git --version</span>
+</pre></td></tr></tbody></table></figure></li>
+</ul>
+<h2 id="HEXO-的安装"><a href="#HEXO-的安装" class="headerlink" title="HEXO 的安装"></a>HEXO 的安装</h2><p>在 Git bash 或者 CMD 界面执行命令</p>
+<ul>
+<li><p>安装之前可以先设置一下淘宝镜像加速器 (国内访问镜像站快一点)</p>
+<figure class="highlight cmd"><div class="highlight-tools "><div class="code-lang">cmd</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span>
+</pre></td></tr></tbody></table></figure>
+</li>
+<li><p>全局安装框架</p>
+<figure class="highlight cmd"><div class="highlight-tools "><div class="code-lang"> cmd</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span>
+</pre></td></tr></tbody></table></figure>
+</li>
+<li><p>创建自己的博客目录并安装博客</p>
+<figure class="highlight cmd"><div class="highlight-tools "><div class="code-lang"> cmd</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">hexo init 博客的根目录名字</span>
+</pre></td></tr></tbody></table></figure>
+</li>
+<li><p>进入博客的目录</p>
+<figure class="highlight cmd"><div class="highlight-tools "><div class="code-lang"> cmd</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 博客的根目录名字</span>
+</pre></td></tr></tbody></table></figure>
+</li>
+<li><p>安装 npm 依赖环境</p>
+<figure class="highlight cmd"><div class="highlight-tools "><div class="code-lang"> cmd</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">npm install</span>
+</pre></td></tr></tbody></table></figure>
+</li>
+<li><p>安装 Hexo (Git) 部署插件</p>
+</li>
+</ul>
+<p>请在博客的目录下启动 Git bash，再执行以下代码</p>
+<figure class="highlight bash"><div class="highlight-tools "><div class="code-lang">bash</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span>
+</pre></td></tr></tbody></table></figure>
+
+<h2 id="HEXO-常用代码"><a href="#HEXO-常用代码" class="headerlink" title="HEXO 常用代码"></a>HEXO 常用代码</h2><p>清理缓存，会自动删除博客目录下得 public 文件。(hexo cl 是 hexo clean 的简写)</p>
+<figure class="highlight bash"><div class="highlight-tools "><div class="code-lang">bash</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">hexo cl </span>
+</pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><div class="highlight-tools "><div class="code-lang">bash</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">hexo clean</span>
+</pre></td></tr></tbody></table></figure>
+
+<p>生成静态页面，重新生成 public 文件。（hexo g 是 hexo generate 的简写)</p>
+<figure class="highlight bash"><div class="highlight-tools "><div class="code-lang">bash</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">hexo g </span>
+</pre></td></tr></tbody></table></figure>
+
+<p>启动本地服务，在 <a href="http://localhost:4000/">http://localhost:4000/</a> 预览效果。（hexo s 是 hexo server 的简写）<br>如果是挂载在群晖等内网系统用 <a href="http://192.168.xxx.xxx:4000，注意端口号是否被占用">http://192.168.xxx.xxx:4000，注意端口号是否被占用</a></p>
+<figure class="highlight bash"><div class="highlight-tools "><div class="code-lang"> bash</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">hexo s <span class="comment">#或者hexo server</span></span>
+</pre></td></tr></tbody></table></figure>
+
+<p>部署推送，部署到 github。（hexo d 是 hexo deploy 的简写）</p>
+<figure class="highlight bash"><div class="highlight-tools "><div class="code-lang">bash</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">hexo d</span>
+</pre></td></tr></tbody></table></figure>
+
+<p>以上连写示例一（清理缓存 + 生成静态页面 + 在本地预览）</p>
+<figure class="highlight bash"><div class="highlight-tools "><div class="code-lang">bash</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</span>
+</pre></td></tr></tbody></table></figure>
+
+<p>以上连写示例二（清理缓存 + 生成静态页面 + 部署推送）</p>
+<figure class="highlight bash"><div class="highlight-tools "><div class="code-lang">bash</div><div class="copy-notice"></div></div><table><tbody><tr><td class="gutter"><pre><span class="line">1</span>
+</pre></td><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span>
+</pre></td></tr></tbody></table></figure>
+
+<h2 id="HEXO-博客的基础环境搭建完成"><a href="#HEXO-博客的基础环境搭建完成" class="headerlink" title="HEXO 博客的基础环境搭建完成"></a>HEXO 博客的基础环境搭建完成</h2><p>HEXO 博客主题配置</p>
+<h1 id="博客配置-GIT-及备份"><a href="#博客配置-GIT-及备份" class="headerlink" title="博客配置 GIT 及备份"></a>博客配置 GIT 及备份</h1><article class="post-content" id="article-container">
+
+<h2 id="博客的-Git-配置"><a href="#博客的-Git-配置" class="headerlink" title="博客的 Git 配置"></a>博客的 Git 配置</h2><ul>
+<li>Git 的配置与使用，可以参考我另一篇文章，在此不在赘述。</li>
+<li>Git 配置与使用</li>
+</ul>
+<h2 id="Hexo-Github-配置"><a href="#Hexo-Github-配置" class="headerlink" title="Hexo Github 配置"></a>Hexo Github 配置</h2><ul>
+<li>创建一个仓库，名为：自己用户名 + .github.io<pre class="language-none"><code class="language-none">#例如我的就是
+winward-king.github.io</code></pre></li>
+</ul>
+<h2 id="修改博客-config-yml-文件的配置"><a href="#修改博客-config-yml-文件的配置" class="headerlink" title="修改博客 _config.yml 文件的配置"></a>修改博客 _config.yml 文件的配置</h2><ol>
+<li>打开博客根目录的 _config.yml 文件，找到下面这个位置</li>
+</ol>
+<pre class="language-none"><code class="language-none"># Deployment
+## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;one-command-deployment
+deploy:
+  type: git
+  repo:
+    github: https:&#x2F;&#x2F;github.com&#x2F;自己用户名&#x2F;自己用户名.github.io.git
+  branch: master #</code></pre>
+
+
+<ul>
+<li>将以下信息添加到 <code>repo:</code> 里面去，main or master 选择对应的分支<pre class="language-none"><code class="language-none">https:&#x2F;&#x2F;自己用户名.github.io</code></pre></li>
+</ul>
+<ol>
+<li>修改主题链接的 URL<pre class="language-markup" data-language="markup"><code class="language-markup"># URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://winward-king.github.io/ #替换成你自己的链接
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks</code></pre></li>
+</ol>
+<h2 id="博客的备份"><a href="#博客的备份" class="headerlink" title="博客的备份"></a>博客的备份</h2><ol>
+<li>在 Github 上创建一个仓库，名字随便</li>
+<li>通过 Git 命令推送，并保持更新</li>
+<li>配置<code>.gitignore</code><pre class="language-none"><code class="language-none">.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules&#x2F;
+public&#x2F;
+.deploy*&#x2F;
+_multiconfig.yml</code></pre></li>
+</ol>
+<h1 id="运维博客常用网站汇总"><a href="#运维博客常用网站汇总" class="headerlink" title="运维博客常用网站汇总"></a>运维博客常用网站汇总</h1><h2 id="博客框架文档"><a href="#博客框架文档" class="headerlink" title="博客框架文档"></a>博客框架文档</h2><ul>
+<li>hexo - 中文文档<br><a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></li>
+</ul>
+<h2 id="butterfly-主题文档"><a href="#butterfly-主题文档" class="headerlink" title="butterfly 主题文档"></a>butterfly 主题文档</h2><ul>
+<li>butterfly 主题中文文档<br><a href="https://butterfly.js.org/">https://butterfly.js.org/</a></li>
+<li>butterfly 主题 Github 项目地址<br><a href="https://github.com/jerryc127/butterfly.js.org">https://github.com/jerryc127/butterfly.js.org</a></li>
+</ul>
+<h2 id="图标网站"><a href="#图标网站" class="headerlink" title="图标网站"></a>图标网站</h2><ul>
+<li><p>fontawesome - 图标库<br><a href="https://fontawesome.com/icons?from=io">https://fontawesome.com/icons?from=io</a></p>
+</li>
+<li><p>iconfont - 阿里巴巴矢量图标库<br><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></p>
+</li>
+</ul>
+<h2 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h2><ul>
+<li>tiny - 图片无损压缩<br><a href="https://tinypng.com/">https://tinypng.com/</a></li>
+</ul>
+<h2 id="文档处理"><a href="#文档处理" class="headerlink" title="文档处理"></a>文档处理</h2><ul>
+<li><p>HTML 与 Markdown 转换<br><a href="https://www.bejson.com/convert/html2markdown/">https://www.bejson.com/convert/html2markdown/</a></p>
+</li>
+<li><p>HTML 转为 JADE&#x2F;PUG<br><a href="http://html2jade.org/">http://html2jade.org/</a></p>
+</li>
+</ul>
+<h2 id="评论区管理"><a href="#评论区管理" class="headerlink" title="评论区管理"></a>评论区管理</h2><ul>
+<li>twikoo<br><a href="https://twikoo.js.org/">https://twikoo.js.org/</a></li>
+<li>mongodb<br><a href="https://cloud.mongodb.com/">https://cloud.mongodb.com/</a></li>
+<li>vercel<br><a href="https://vercel.com/login">https://vercel.com/login</a></li>
+</ul>
+<h2 id="云服务"><a href="#云服务" class="headerlink" title="云服务"></a>云服务</h2><ul>
+<li><p>腾讯云<br><a href="https://cloud.tencent.com/">https://cloud.tencent.com/</a></p>
+</li>
+<li><p>阿里云<br><a href="https://www.aliyun.com/">https://www.aliyun.com/</a></p>
+</li>
+<li><p>又拍云<br><a href="https://console.upyun.com/">https://console.upyun.com/</a></p>
+</li>
+<li><p>jsDelivr<br><a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a></p>
+</li>
+</ul>
+<h1 id="拓展使用"><a href="#拓展使用" class="headerlink" title="拓展使用"></a>拓展使用</h1><h2 id="引用站内文章"><a href="#引用站内文章" class="headerlink" title="引用站内文章"></a>引用站内文章</h2><h3 id="post-link"><a href="#post-link" class="headerlink" title="post_link"></a>post_link</h3><p>在写文章的过程中，有时候需要引用站内的其他文章。可以通过内置的标签插件的语法 post_link 来实现引用。<br>这里默认的路径是在 _post 路径下，如果不是默认路径，需要写上相对路径。</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class="language-none"><code class="language-none">&#123;% post_link &#39;文章文件名(不要后缀)&#39; &#39;文章标题(可选)&#39; %&#125;</code></pre>
+
+<h4 id="实例-链接使用文章的标题"><a href="#实例-链接使用文章的标题" class="headerlink" title="实例 - 链接使用文章的标题"></a>实例 - 链接使用文章的标题</h4><pre class="language-none"><code class="language-none">&#123;% post_link &#39;Hexo&#x2F;01hello-world&#39; %&#125;</code></pre>
+
+<h4 id="实例-链接使用自定义文字"><a href="#实例-链接使用自定义文字" class="headerlink" title="实例 - 链接使用自定义文字"></a>实例 - 链接使用自定义文字</h4><pre class="language-none"><code class="language-none">&#123;% post_link &#39;Hexo&#x2F;01hello-world&#39; &#39;你好，世界&#39; %&#125;</code></pre>
+
+<h3 id="post-path"><a href="#post-path" class="headerlink" title="post_path"></a>post_path</h3><p>用来获取文章的链接地址，但是不是链接<br>可以用 markdown 语法直接插入文件链接，也很方便。</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><pre class="language-none"><code class="language-none">&#123;% post_path filename %&#125;</code></pre>
+
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><pre class="language-none"><code class="language-none">&#123;% post_path Hexo&#x2F;01hello-world %&#125;
+[你好，世界](&#x2F;2022&#x2F;02&#x2F;15&#x2F;Hexo&#x2F;01hello-world&#x2F;)</code></pre>
+
+<h3 id="hexo-链接到站内文章指定锚点"><a href="#hexo-链接到站内文章指定锚点" class="headerlink" title="hexo 链接到站内文章指定锚点"></a>hexo 链接到站内文章指定锚点</h3><h4 id="当前文章锚点跳转"><a href="#当前文章锚点跳转" class="headerlink" title="当前文章锚点跳转"></a>当前文章锚点跳转</h4><pre class="language-none"><code class="language-none">[跳转到本文锚点](#hexo-标题与-id-关系)</code></pre>
+
+<h4 id="站内文章跳转"><a href="#站内文章跳转" class="headerlink" title="站内文章跳转"></a>站内文章跳转</h4><pre class="language-none"><code class="language-none">&lt;a href&#x3D;&quot;&#123;% post_path &#39;hexo blog&#39; %&#125;#安装&quot;&gt;hexo 安装&lt;&#x2F;a&gt;</code></pre>
+
+<h4 id="站外文章锚点"><a href="#站外文章锚点" class="headerlink" title="站外文章锚点"></a>站外文章锚点</h4><pre class="language-none"><code class="language-none">[标题](网址)</code></pre>
+
+<h4 id="其他更多标签用法"><a href="#其他更多标签用法" class="headerlink" title="其他更多标签用法"></a>其他更多标签用法</h4><p><a href="https://hexo.io/zh-cn/docs/tag-plugins">标签插件（Tag Plugins）</a></p>
+<h4 id="隐藏文字"><a href="#隐藏文字" class="headerlink" title="隐藏文字"></a>隐藏文字</h4><pre class="language-none"><code class="language-none">&lt;div style&#x3D;&quot;display:none&quot;&gt;
+
+&lt;&#x2F;div&gt;</code></pre>
+
+
+
+<div style="display:none">
+
+
+
+
+]]></content>
+      <categories>
+        <category>hellocategory</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>butterfly主题设置</title>
+    <url>/hexo2/hexo/2024-07-04butterfly%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="butterfly-主题设置"><a href="#butterfly-主题设置" class="headerlink" title="butterfly 主题设置"></a>butterfly 主题设置</h2><blockquote>
+<p>先前准备使用matery主题, 设置评论的过程中总是开启失败,所以开始设置butterfly主题</p>
+</blockquote>
+<h3 id="资料准备"><a href="#资料准备" class="headerlink" title="资料准备"></a>资料准备</h3><ul>
+<li><p>Hexo 官方中文文档<br><a href="https://hexo.io/zh-cn/docs/configuration">https://hexo.io/zh-cn/docs/configuration</a></p>
+</li>
+<li><p>butterfly官方文档<br><a href="https://butterfly.js.org/">https://butterfly.js.org/</a></p>
+</li>
+<li><p>Github 项目地址<br><a href="https://github.com/jerryc127/butterfly.js.org">https://github.com/jerryc127/butterfly.js.org</a></p>
+</li>
+<li><p>主题开发者适配的插件<br><a href="https://github.com/jerryc127/butterfly-plugins">https://github.com/jerryc127/butterfly-plugins</a></p>
+</li>
+</ul>
+<h3 id="个人常用配置"><a href="#个人常用配置" class="headerlink" title="个人常用配置"></a>个人常用配置</h3><ul>
+<li><h5 id="个人Front-matter配置"><a href="#个人Front-matter配置" class="headerlink" title="个人Front-matter配置"></a>个人Front-matter配置</h5></li>
+</ul>
+<pre class="language-none"><code class="language-none">例如本文的配置
+title: butterfly主题设置
+description: hexo+butterfly搭建教程 转自https:&#x2F;&#x2F;winward-king.github.io&#x2F;tags&#x2F;hexo&#x2F;
+date: 2024-07-04 18:05:58
+tags: hexo博客
+categories: hexo博客
+series: hexo博客   #系列文章设置</code></pre>
+
+<ul>
+<li><h5 id="设置代码格式"><a href="#设置代码格式" class="headerlink" title="设置代码格式"></a>设置代码格式</h5></li>
+</ul>
+<pre class="language-none"><code class="language-none">highlight_height_limit: 400 # unit: px  default :highlight_height_limit: false
+code_word_wrap: true</code></pre>
+
+<ul>
+<li><h5 id="添加默认大图"><a href="#添加默认大图" class="headerlink" title="添加默认大图"></a>添加默认大图</h5></li>
+</ul>
+<pre class="language-none"><code class="language-none">default_top_img: &#x2F;images&#x2F;back-title.jpg   后期考虑轮播大图加一下</code></pre>
+
+<ul>
+<li><h5 id="调整侧边栏"><a href="#调整侧边栏" class="headerlink" title="调整侧边栏"></a>调整侧边栏</h5></li>
+</ul>
+<h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><ul>
+<li><p>增加评论gitalk</p>
+</li>
+<li><p>增加本地搜索 </p>
+<pre class="language-none"><code class="language-none">npm install hexo-generator-searchdb --save</code></pre>
+</li>
+<li><p>增加字数统计插件</p>
+<pre class="language-none"><code class="language-none">npm i --save hexo-wordcount</code></pre></li>
+</ul>
+<h3 id="待做"><a href="#待做" class="headerlink" title="待做"></a>待做</h3><ul>
+<li>根据matery主题设置随机文章配图</li>
+<li>添加个人导航链接</li>
+<li>增加内链弹出新标签打开</li>
+<li>增加hexo plus plus 支持<a href="https://hexoplusplus.js.org/">https://hexoplusplus.js.org/</a></li>
+</ul>
+<p>这一条和属性 一起研究下</p>
+<pre class="language-none"><code class="language-none">post_edit:
+  enable: true</code></pre>
+
+
+
+<ul>
+<li>增加在线留言.</li>
+</ul>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>本博客将会同步到 hexo2source 仓库</p>
+]]></content>
+      <categories>
+        <category>hexo博客</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+</search>
