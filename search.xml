@@ -35,9 +35,9 @@
 目的 可以生成 md文件的同名文件夹</code></pre>
 
 <p>修改 typora 偏好设置 在统同级博客文件下 生成博客同名文件夹存储照片</p>
-<p><img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703180647089.png" alt="image-20240703180647089"></p>
+<p><img src="/hexo2/hexo/2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703180647089.png" alt="image-20240703180647089"></p>
 <p>插件作用 在生成静态文件时，可已经缺失的 日期路径进行补充</p>
-<p><img src="/hexo2/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/image-20240703180835748.png" alt="image-20240703180835748"></p>
+<p><img src="/hexo2/hexo/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/image-20240703180835748.png" alt="image-20240703180835748"></p>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><blockquote>
 <p>利用hexo 自带插件  hexo-renderer-marked   <a href="https://hexo.io/zh-cn/docs/asset-folders">https://hexo.io/zh-cn/docs/asset-folders</a></p>
 </blockquote>
@@ -63,7 +63,7 @@ typora-root-url: test   (md文件名同级目录)</code></pre>
 </blockquote>
 <h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><p><a href="https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a></p>
 <p><a href="https://rainylog.com/post/hexo-post-image-manage/">Hexo 文章图片管理</a></p>
-<p><img src="/hexo2/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/1567505538899-1720084585925.png" alt="1567505538899"></p>
+<p><img src="/hexo2/hexo/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/1567505538899-1720084585925.png" alt="1567505538899"></p>
 <p>在typora菜单栏点击 <code>格式-&gt;图像-&gt;设置图片根目录</code>，将<code>hexo/source</code>作为其根目录即可。</p>
 <blockquote>
 <p>这一步就是在文件 Front-matter 中添加属性 &#x3D;&#x3D;typora-root-url: ..&#x3D;&#x3D;</p>
@@ -83,7 +83,7 @@ permalink: :title&#x2F;  #default :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;<
 <p>方法四的有点事简单,确定是静态文件发布后 所有的文件夹都集中在一起, 如果文件名区分的不好,可能会造成post 和 page重名,</p>
 <p>建议文件取名的时候添加日期属性<code>2024-07-04test.md</code>  或则采用方法三。</p>
 </blockquote>
-<p><img src="/hexo2/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/image-20240704172502202.png" alt="image-20240704172502202"></p>
+<p><img src="/hexo2/hexo/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/image-20240704172502202.png" alt="image-20240704172502202"></p>
 <blockquote>
 <p>补充</p>
 </blockquote>
@@ -658,7 +658,8 @@ inject:
     <title>导航页搭建</title>
     <url>/hexo2/2024/07/04/hexo/2024-07-04%E5%AF%BC%E8%88%AA%E9%A1%B5/</url>
     <content><![CDATA[<h2 id="我的导航页搭建"><a href="#我的导航页搭建" class="headerlink" title="我的导航页搭建"></a>我的导航页搭建</h2><p>图片测试</p>
-<p><img src="/hexo2/2024-07-04%E5%AF%BC%E8%88%AA%E9%A1%B5/back-title-1720096457174.jpg" alt="back-title"></p>
+<p><img src="/hexo2/2024-07-04%E5%AF%BC%E8%88%AA%E9%A1%B5/back-title-1720100750053.jpg" alt="back-title"></p>
+<p><img src="/hexo2/hexo/back-title.jpg" alt="back-title"></p>
 ]]></content>
       <categories>
         <category>hexo博客</category>
