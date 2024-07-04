@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/hexo2/2024/07/04/hello-world/</url>
+    <content><![CDATA[<h2 id="hexo-主题测试"><a href="#hexo-主题测试" class="headerlink" title="hexo 主题测试"></a>hexo 主题测试</h2><p>分割线测试</p>
+<hr>
+<pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+
+<blockquote>
+<p>注解</p>
+<p>注解内容</p>
+</blockquote>
+<p>This is my website, click the button <a class="btn-beautify " href="https://butterfly.js.org/" 
+  title="Butterfly"><span>Butterfly</span></a></p>
+<p><img src="/hexo2/images/hello-world/back-title-1720063349755.jpg" alt="back-title"></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">价格</th>
+<th align="center">数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>计算机</td>
+<td align="right">$1600</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td>手机</td>
+<td align="right">$12</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td>管线</td>
+<td align="right">$1</td>
+<td align="center">234</td>
+</tr>
+</tbody></table>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo server</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo generate</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo deploy</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>hellocategory</category>
+      </categories>
+      <tags>
+        <tag>hello</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图片测试</title>
     <url>/hexo2/2024/07/04/iamgetet/</url>
     <content><![CDATA[<p><img src="/hexo2/2024/07/04/iamgetet/banner.jpg" alt="banner"></p>
@@ -104,89 +187,6 @@ typora-root-url: ..   图像根路径设置为&#96;_post&#96;即可</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/hexo2/2024/07/04/hello-world/</url>
-    <content><![CDATA[<h2 id="hexo-主题测试"><a href="#hexo-主题测试" class="headerlink" title="hexo 主题测试"></a>hexo 主题测试</h2><p>分割线测试</p>
-<hr>
-<pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.blinkfox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>fenix-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-
-<blockquote>
-<p>注解</p>
-<p>注解内容</p>
-</blockquote>
-<p>This is my website, click the button <a class="btn-beautify " href="https://butterfly.js.org/" 
-  title="Butterfly"><span>Butterfly</span></a></p>
-<p><img src="/hexo2/images/hello-world/back-title-1720063349755.jpg" alt="back-title"></p>
-<table>
-<thead>
-<tr>
-<th>项目</th>
-<th align="right">价格</th>
-<th align="center">数量</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>计算机</td>
-<td align="right">$1600</td>
-<td align="center">5</td>
-</tr>
-<tr>
-<td>手机</td>
-<td align="right">$12</td>
-<td align="center">12</td>
-</tr>
-<tr>
-<td>管线</td>
-<td align="right">$1</td>
-<td align="center">234</td>
-</tr>
-</tbody></table>
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo server</code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo generate</code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo deploy</code></pre>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>hellocategory</category>
-      </categories>
-      <tags>
-        <tag>hello</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo博客搭建</title>
     <url>/hexo2/2024/07/03/hexo/2024-07-03hexo%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h2 id="1-hexo-安装"><a href="#1-hexo-安装" class="headerlink" title="1.hexo 安装"></a>1.hexo 安装</h2><p>安装前需要准备好npm环境</p>
@@ -285,6 +285,88 @@ npm i <span class="token punctuation">-</span><span class="token punctuation">-<
 </blockquote>
 <p><strong>本项目部署到hexosource 仓库, 博客发布到hexo仓库</strong></p>
 <p><img src="/hexo2/./2024-07-03hexo%E5%8D%9A%E5%AE%A2/back-title.jpg" alt="back-title"></p>
+]]></content>
+      <categories>
+        <category>hexo博客</category>
+      </categories>
+      <tags>
+        <tag>hexo博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>butterfly主题设置</title>
+    <url>/hexo2/2024/07/04/hexo/2024-07-04butterfly%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="butterfly-主题设置"><a href="#butterfly-主题设置" class="headerlink" title="butterfly 主题设置"></a>butterfly 主题设置</h2><blockquote>
+<p>先前准备使用matery主题, 设置评论的过程中总是开启失败,所以开始设置butterfly主题</p>
+</blockquote>
+<h3 id="资料准备"><a href="#资料准备" class="headerlink" title="资料准备"></a>资料准备</h3><ul>
+<li><p>Hexo 官方中文文档<br><a href="https://hexo.io/zh-cn/docs/configuration">https://hexo.io/zh-cn/docs/configuration</a></p>
+</li>
+<li><p>butterfly官方文档<br><a href="https://butterfly.js.org/">https://butterfly.js.org/</a></p>
+</li>
+<li><p>Github 项目地址<br><a href="https://github.com/jerryc127/butterfly.js.org">https://github.com/jerryc127/butterfly.js.org</a></p>
+</li>
+<li><p>主题开发者适配的插件<br><a href="https://github.com/jerryc127/butterfly-plugins">https://github.com/jerryc127/butterfly-plugins</a></p>
+</li>
+</ul>
+<h3 id="个人常用配置"><a href="#个人常用配置" class="headerlink" title="个人常用配置"></a>个人常用配置</h3><ul>
+<li><h5 id="个人Front-matter配置"><a href="#个人Front-matter配置" class="headerlink" title="个人Front-matter配置"></a>个人Front-matter配置</h5></li>
+</ul>
+<pre class="language-none"><code class="language-none">例如本文的配置
+title: butterfly主题设置
+description: hexo+butterfly搭建教程 转自https:&#x2F;&#x2F;winward-king.github.io&#x2F;tags&#x2F;hexo&#x2F;
+date: 2024-07-04 18:05:58
+tags: hexo博客
+categories: hexo博客
+series: hexo博客   #系列文章设置</code></pre>
+
+<ul>
+<li><h5 id="设置代码格式"><a href="#设置代码格式" class="headerlink" title="设置代码格式"></a>设置代码格式</h5></li>
+</ul>
+<pre class="language-none"><code class="language-none">highlight_height_limit: 400 # unit: px  default :highlight_height_limit: false
+code_word_wrap: true</code></pre>
+
+<ul>
+<li><h5 id="添加默认大图"><a href="#添加默认大图" class="headerlink" title="添加默认大图"></a>添加默认大图</h5></li>
+</ul>
+<pre class="language-none"><code class="language-none">default_top_img: &#x2F;images&#x2F;back-title.jpg   后期考虑轮播大图加一下</code></pre>
+
+<ul>
+<li><h5 id="调整侧边栏"><a href="#调整侧边栏" class="headerlink" title="调整侧边栏"></a>调整侧边栏</h5></li>
+</ul>
+<h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><ul>
+<li><p>增加评论gitalk</p>
+</li>
+<li><p>增加本地搜索 </p>
+<pre class="language-none"><code class="language-none">npm install hexo-generator-searchdb --save</code></pre>
+</li>
+<li><p>增加字数统计插件</p>
+<pre class="language-none"><code class="language-none">npm i --save hexo-wordcount</code></pre></li>
+</ul>
+<h3 id="待做"><a href="#待做" class="headerlink" title="待做"></a>待做</h3><ul>
+<li>根据matery主题设置随机文章配图</li>
+<li><del>添加个人导航链接</del></li>
+<li><del>增加内链弹出新标签打开</del> 通过inject属性添加到header标签中去</li>
+</ul>
+<pre class="language-none"><code class="language-none">_config.butterfly.conf
+inject:
+  head:
+    - &lt;base target&#x3D;&quot;_blank&quot;&gt;</code></pre>
+
+<ul>
+<li>研究下自动部署</li>
+<li>增加hexo plus plus 支持<a href="https://hexoplusplus.js.org/">https://hexoplusplus.js.org/</a></li>
+</ul>
+<p>这一条和属性 一起研究下</p>
+<pre class="language-none"><code class="language-none">post_edit:
+  enable: true</code></pre>
+
+
+
+<ul>
+<li>增加在线留言.</li>
+</ul>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>本博客将会同步到 hexo2source 仓库</p>
 ]]></content>
       <categories>
         <category>hexo博客</category>
@@ -526,79 +608,11 @@ _multiconfig.yml</code></pre></li>
       </tags>
   </entry>
   <entry>
-    <title>butterfly主题设置</title>
-    <url>/hexo2/2024/07/04/hexo/2024-07-04butterfly%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="butterfly-主题设置"><a href="#butterfly-主题设置" class="headerlink" title="butterfly 主题设置"></a>butterfly 主题设置</h2><blockquote>
-<p>先前准备使用matery主题, 设置评论的过程中总是开启失败,所以开始设置butterfly主题</p>
-</blockquote>
-<h3 id="资料准备"><a href="#资料准备" class="headerlink" title="资料准备"></a>资料准备</h3><ul>
-<li><p>Hexo 官方中文文档<br><a href="https://hexo.io/zh-cn/docs/configuration">https://hexo.io/zh-cn/docs/configuration</a></p>
-</li>
-<li><p>butterfly官方文档<br><a href="https://butterfly.js.org/">https://butterfly.js.org/</a></p>
-</li>
-<li><p>Github 项目地址<br><a href="https://github.com/jerryc127/butterfly.js.org">https://github.com/jerryc127/butterfly.js.org</a></p>
-</li>
-<li><p>主题开发者适配的插件<br><a href="https://github.com/jerryc127/butterfly-plugins">https://github.com/jerryc127/butterfly-plugins</a></p>
-</li>
-</ul>
-<h3 id="个人常用配置"><a href="#个人常用配置" class="headerlink" title="个人常用配置"></a>个人常用配置</h3><ul>
-<li><h5 id="个人Front-matter配置"><a href="#个人Front-matter配置" class="headerlink" title="个人Front-matter配置"></a>个人Front-matter配置</h5></li>
-</ul>
-<pre class="language-none"><code class="language-none">例如本文的配置
-title: butterfly主题设置
-description: hexo+butterfly搭建教程 转自https:&#x2F;&#x2F;winward-king.github.io&#x2F;tags&#x2F;hexo&#x2F;
-date: 2024-07-04 18:05:58
-tags: hexo博客
-categories: hexo博客
-series: hexo博客   #系列文章设置</code></pre>
-
-<ul>
-<li><h5 id="设置代码格式"><a href="#设置代码格式" class="headerlink" title="设置代码格式"></a>设置代码格式</h5></li>
-</ul>
-<pre class="language-none"><code class="language-none">highlight_height_limit: 400 # unit: px  default :highlight_height_limit: false
-code_word_wrap: true</code></pre>
-
-<ul>
-<li><h5 id="添加默认大图"><a href="#添加默认大图" class="headerlink" title="添加默认大图"></a>添加默认大图</h5></li>
-</ul>
-<pre class="language-none"><code class="language-none">default_top_img: &#x2F;images&#x2F;back-title.jpg   后期考虑轮播大图加一下</code></pre>
-
-<ul>
-<li><h5 id="调整侧边栏"><a href="#调整侧边栏" class="headerlink" title="调整侧边栏"></a>调整侧边栏</h5></li>
-</ul>
-<h3 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h3><ul>
-<li><p>增加评论gitalk</p>
-</li>
-<li><p>增加本地搜索 </p>
-<pre class="language-none"><code class="language-none">npm install hexo-generator-searchdb --save</code></pre>
-</li>
-<li><p>增加字数统计插件</p>
-<pre class="language-none"><code class="language-none">npm i --save hexo-wordcount</code></pre></li>
-</ul>
-<h3 id="待做"><a href="#待做" class="headerlink" title="待做"></a>待做</h3><ul>
-<li>根据matery主题设置随机文章配图</li>
-<li><del>添加个人导航链接</del></li>
-<li><del>增加内链弹出新标签打开</del> 通过inject属性添加到header标签中去</li>
-</ul>
-<pre class="language-none"><code class="language-none">_config.butterfly.conf
-inject:
-  head:
-    - &lt;base target&#x3D;&quot;_blank&quot;&gt;</code></pre>
-
-<ul>
-<li>研究下自动部署</li>
-<li>增加hexo plus plus 支持<a href="https://hexoplusplus.js.org/">https://hexoplusplus.js.org/</a></li>
-</ul>
-<p>这一条和属性 一起研究下</p>
-<pre class="language-none"><code class="language-none">post_edit:
-  enable: true</code></pre>
-
-
-
-<ul>
-<li>增加在线留言.</li>
-</ul>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>本博客将会同步到 hexo2source 仓库</p>
+    <title>导航页搭建</title>
+    <url>/hexo2/2024/07/04/hexo/2024-07-04%E5%AF%BC%E8%88%AA%E9%A1%B5/</url>
+    <content><![CDATA[<h2 id="我的导航页搭建"><a href="#我的导航页搭建" class="headerlink" title="我的导航页搭建"></a>我的导航页搭建</h2><p>图片测试</p>
+<p><img src="/hexo2/hexo/2024-07-04%E5%AF%BC%E8%88%AA%E9%A1%B5/back-title-1720100771620.jpg" alt="back-title"></p>
+<p><img src="/hexo2/hexo/back-title.jpg" alt="back-title"></p>
 ]]></content>
       <categories>
         <category>hexo博客</category>
@@ -646,20 +660,6 @@ inject:
 <h3 id="Solo"><a href="#Solo" class="headerlink" title="Solo"></a>Solo</h3><p>Solo 是一款基于 Java 语言有后台管理的，小而美的博客系统，专为程序员设计</p>
 <p>优点：</p>
 <p>Markdown 编辑器支持三种编辑模式：所见即所得 &#x2F; 即时渲染 &#x2F; 分屏预览。<br>Hexo &#x2F; Jekyll &#x2F; Markdown 导入。<br>SQL &#x2F; JSON &#x2F; Markdown 导出。<br>拉取 GitHub 仓库和自动备份。<br>内置 HTTPS+CDN 文件存储。<br>支持生成导出静态站点，用于发布 GitHub Pages。</p>
-]]></content>
-      <categories>
-        <category>hexo博客</category>
-      </categories>
-      <tags>
-        <tag>hexo博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>导航页搭建</title>
-    <url>/hexo2/2024/07/04/hexo/2024-07-04%E5%AF%BC%E8%88%AA%E9%A1%B5/</url>
-    <content><![CDATA[<h2 id="我的导航页搭建"><a href="#我的导航页搭建" class="headerlink" title="我的导航页搭建"></a>我的导航页搭建</h2><p>图片测试</p>
-<p><img src="/hexo2/2024-07-04%E5%AF%BC%E8%88%AA%E9%A1%B5/back-title-1720100750053.jpg" alt="back-title"></p>
-<p><img src="/hexo2/hexo/back-title.jpg" alt="back-title"></p>
 ]]></content>
       <categories>
         <category>hexo博客</category>
