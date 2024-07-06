@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>2024-07-03hexo博客图片访问问题 | liudongsir's blog</title><meta name="author" content="liudong"><meta name="copyright" content="liudong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="图片访问问题解决博客图片的存储可是采用图床或则直接发布到github 仓库,下面介绍几种发布到github仓库的方式。  仓库存储图片面临发布之后图片访问失败的问题， 下面主要解决博客发布后图片访问路径  一般hexo博客部署发布后根据配置文件&#x3D;&#x3D;_config.xml&#x3D;&#x3D;属性 &#x3D;&#x3D;permalink: :title&#x2F;  #de">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024-07-03hexo博客图片访问问题">
+<meta property="og:url" content="https://liudongsir.github.io/hexo2/posts/27999/index.html">
+<meta property="og:site_name" content="liudongsir&#39;s blog">
+<meta property="og:description" content="图片访问问题解决博客图片的存储可是采用图床或则直接发布到github 仓库,下面介绍几种发布到github仓库的方式。  仓库存储图片面临发布之后图片访问失败的问题， 下面主要解决博客发布后图片访问路径  一般hexo博客部署发布后根据配置文件&#x3D;&#x3D;_config.xml&#x3D;&#x3D;属性 &#x3D;&#x3D;permalink: :title&#x2F;  #de">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.dmoe.cc/random.php">
+<meta property="article:published_time" content="2024-07-03T05:56:25.000Z">
+<meta property="article:modified_time" content="2024-07-06T13:10:17.546Z">
+<meta property="article:author" content="liudong">
+<meta property="article:tag" content="hexo博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.dmoe.cc/random.php"><link rel="shortcut icon" href="/hexo2/img/favicon5.png"><link rel="canonical" href="https://liudongsir.github.io/hexo2/posts/27999/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexo2/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/hexo2/',
+  algolia: undefined,
+  localSearch: {"path":"/hexo2/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2024-07-03hexo博客图片访问问题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-06 21:10:17'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><base target="_blank"><!--自定义css--><!-- todo  李小沐博客的主题--><!--link(rel='stylesheet', href=url_for('/css/coin/custom.css'))--><!--// todo  李小沐博客的主题 end--><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/hexo2/img/loading.gif" data-lazy-src="https://cdn.seovx.com/?mom=302" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexo2/archives/"><div class="headline">文章</div><div class="length-num">29</div></a><a href="/hexo2/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/hexo2/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo2/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo2/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文檔</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/categories/hexo%E5%8D%9A%E5%AE%A2/"><span> 🚀 hexo博客</span></a></li><li><a class="site-page child" href="/hexo2/categories/butterfly/"><span> 📑 butterfly</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo2/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo2/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="https://liudongsir.github.io/hexo/"><i class="fa-fw fas fa-music"></i><span> 我的博客</span></a></div><div class="menus_item"><a class="site-page" href="https://liudongsir.github.io/nav"><i class="fa-fw fas fa-video"></i><span> 我的导航</span></a></div><div class="menus_item"><a class="site-page" href="/hexo2/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://www.dmoe.cc/random.php')"><nav id="nav"><span id="blog-info"><a href="/hexo2/" title="liudongsir's blog"><span class="site-name">liudongsir's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" target="_self"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo2/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo2/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文檔</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/categories/hexo%E5%8D%9A%E5%AE%A2/"><span> 🚀 hexo博客</span></a></li><li><a class="site-page child" href="/hexo2/categories/butterfly/"><span> 📑 butterfly</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo2/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/hexo2/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="https://liudongsir.github.io/hexo/"><i class="fa-fw fas fa-music"></i><span> 我的博客</span></a></div><div class="menus_item"><a class="site-page" href="https://liudongsir.github.io/nav"><i class="fa-fw fas fa-video"></i><span> 我的导航</span></a></div><div class="menus_item"><a class="site-page" href="/hexo2/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2024-07-03hexo博客图片访问问题<a class="post-edit-link" href="https://github.com/liudongsir/hexo2source/tree/master/source/_posts/hexo/2024-07-03hexo博客图片访问问题.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-03T05:56:25.000Z" title="发表于 2024-07-03 13:56:25">2024-07-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-06T13:10:17.546Z" title="更新于 2024-07-06 21:10:17">2024-07-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexo2/categories/hexo%E5%8D%9A%E5%AE%A2/">hexo博客</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="2024-07-03hexo博客图片访问问题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/hexo2/posts/27999/#post-comment"><span id="twikoo-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="图片访问问题解决"><a href="#图片访问问题解决" class="headerlink" title="图片访问问题解决"></a>图片访问问题解决</h2><p>博客图片的存储可是采用图床或则直接发布到github 仓库,下面介绍几种发布到github仓库的方式。</p>
+<blockquote>
+<p>仓库存储图片面临发布之后图片访问失败的问题， 下面主要解决博客发布后图片访问路径</p>
+</blockquote>
+<p>一般hexo博客部署发布后根据配置文件&#x3D;&#x3D;_config.xml&#x3D;&#x3D;属性 &#x3D;&#x3D;permalink: :title&#x2F;  #default :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;&#x3D;&#x3D;</p>
+<p>访问路径应该类似 **<a target="_blank" rel="noopener" href="http://localhost:4000/hexo2/2024/07/04/test/**%E5%8C%85%E5%90%AB%E6%97%A5%E6%9C%9F%E4%BF%A1%E6%81%AF%E3%80%82%E8%80%8C%E5%9B%BE%E7%89%87%E7%9A%84%E8%AE%BF%E9%97%AE%E5%A4%B1%E8%B4%A5%E5%B0%B1%E5%92%8C%E8%BF%99%E4%B8%AA%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%9A%84%E6%97%A5%E6%9C%9F%E8%B7%AF%E5%BE%84%E6%9C%89%E5%85%B3%E7%B3%BB%E3%80%82">http://localhost:4000/hexo2/2024/07/04/test/**包含日期信息。而图片的访问失败就和这个自动生成的日期路径有关系。</a></p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><blockquote>
+<p>安装插件 hexo-asset-image</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/405551874">[Hexo博客搭建]第4章 Hexo图片显示问题</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/cnds123321/article/details/109085776">解决Hexo关于图片的问题</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_43401436/article/details/107191688">hexo博客中插入图片失败——解决思路及个人最终解决办法</a></p>
+<h5 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h5><p>安装插件</p>
+<pre class="language-none"><code class="language-none">npm install https:&#x2F;&#x2F;github.com&#x2F;CodeFalling&#x2F;hexo-asset-image --save</code></pre>
+
+<p>配置文件</p>
+<pre class="language-none"><code class="language-none">_config.yml&#96; 文件中的&#96;post_asset_folder&#96; 选项设为 &#96;true
+目的 可以生成 md文件的同名文件夹</code></pre>
+
+<p>修改 typora 偏好设置 在统同级博客文件下 生成博客同名文件夹存储照片</p>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/images/2024-07-03hexo%E5%8D%9A%E5%AE%A2/image-20240703180647089.png" alt="image-20240703180647089"></p>
+<p>插件作用 在生成静态文件时，可已经缺失的 日期路径进行补充</p>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/images/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/image-20240703180835748.png" alt="image-20240703180835748"></p>
+<h4 id="插件hexo-image-link"><a href="#插件hexo-image-link" class="headerlink" title="插件hexo-image-link"></a>插件hexo-image-link</h4><blockquote>
+<p>原理: 在Hexo启用<code>post_asset_folder: true</code>选项后，将Markdown语法的图片路径转换为asset_img的方式，使图片能够在使用typora编辑和hexo预览发布时都能正常显示。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/cocowool/hexo-image-link">https://github.com/cocowool/hexo-image-link</a></p>
+<p>就如补充中提到的  如果你不需要频繁的更换文件名, 也是可以用这个插件的。</p>
+</blockquote>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><blockquote>
+<p>利用hexo 自带插件  hexo-renderer-marked   <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">https://hexo.io/zh-cn/docs/asset-folders</a></p>
+</blockquote>
+<p>修改配置文件</p>
+<pre class="language-none"><code class="language-none">_config.yml
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true</code></pre>
+
+<p>配置</p>
+<pre class="language-none"><code class="language-none">Front-matter 
+typora-root-url: test   (md文件名同级目录)</code></pre>
+
+
+
+<p>启用后，资源图片将会被自动解析为其对应文章的路径。<br>例如： <code>image.jpg</code> 位置为 <code>/2020/01/02/foo/image.jpg</code> ，这表示它是 <code>/2020/01/02/foo/</code> 文章的一张资源图片， <code>![](image.jpg)</code> 将会被解析为 <code>&lt;img src=&quot;/2020/01/02/foo/image.jpg&quot;&gt;</code> 。</p>
+<blockquote>
+<p>方法2原理和方法1类似 都是在生成静态文件时自动补全缺失的日期路径</p>
+<p>但是 这种方式需要图片路径严格按照 &#x3D;&#x3D;image.jpg&#x3D;&#x3D; 形式;</p>
+<p>不能是这种形式 &#x3D;&#x3D;&#x2F;image.jpg&#x3D;&#x3D;  (typore 自动插入图片即是这种形式)。</p>
+<p>所以没有使用该种方式</p>
+</blockquote>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><p><a target="_blank" rel="noopener" href="https://yinyoupoet.github.io/2019/09/03/hexo%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/">typora + hexo博客中插入图片</a></p>
+<p><a target="_blank" rel="noopener" href="https://rainylog.com/post/hexo-post-image-manage/">Hexo 文章图片管理</a></p>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/images/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/1567505538899-1720084585925.png" alt="1567505538899"></p>
+<p>在typora菜单栏点击 <code>格式-&gt;图像-&gt;设置图片根目录</code>，将<code>hexo/source</code>作为其根目录即可。</p>
+<blockquote>
+<p>这一步就是在文件 Front-matter 中添加属性 &#x3D;&#x3D;typora-root-url: ..&#x3D;&#x3D;</p>
+</blockquote>
+<p><strong>一定要先设置了图片根目录后再插入图片，否则图片路径会不正确喔！</strong></p>
+<blockquote>
+<p>将静态文件放入 hexo  source 文件夹下,免去了日期路径的困扰,</p>
+<p>而且在此路径下也避免了 _post博客文件中静态资源部署需要 先clean  在 generate的繁琐。</p>
+</blockquote>
+<h3 id="方式四"><a href="#方式四" class="headerlink" title="方式四"></a>方式四</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/immaxfang/p/17068846.html">Hexo 修改默认文章路径</a></p>
+<p>既然问题是因为日期路径引起的那么不使用日志路径不就可以了吗.</p>
+<pre class="language-none"><code class="language-none">_config.yml
+permalink: :title&#x2F;  #default :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</code></pre>
+
+<p>修改  typora <code>图片偏好设置</code> 为 <code>复制到指定路径</code>   <code>./$&#123;filename&#125;</code></p>
+<blockquote>
+<p>方法四设置简单,但是静态文件发布后 所有的文件夹都集中在一起, 如果文件名区分的不好,可能会造成post 和 page重名,</p>
+<p>建议文件取名的时候添加日期属性<code>2024-07-04test.md</code>  或则采用方法三。</p>
+</blockquote>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/images/2024-07-03hexo%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98/image-20240704172502202.png" alt="image-20240704172502202"></p>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><ul>
+<li><p>总是有新问题出现, 此种方式只能解决<code>_posts</code>文件夹下的图片链接问题  , 如果在<code>_posts</code>下新建文件夹,就会失效,</p>
+<p>例如: 我在 _posts 下新建的  hexo文件夹 存储hexo相关的博文 就会造成图片失效</p>
+</li>
+<li><p>当然也有解决办法</p>
+</li>
+</ul>
+<pre class="language-none"><code class="language-none">Front-matter 
+typora-root-url: ..   图像根路径设置为&#96;_post&#96;即可</code></pre>
+
+<blockquote>
+<p>但是这样总是临时措施,如果想变回 时间访问路径<code>permalink: :title/  #default :year/:month/:day/:title/</code> 还是会有问题</p>
+<p>所以结论是 方法不太完美.</p>
+</blockquote>
+<h4 id="补充二"><a href="#补充二" class="headerlink" title="补充二"></a>补充二</h4><blockquote>
+<p>如果md 文件名变动了 例如   test.md  变成了  testnote.md , 在  <code>hexo g</code> 生成 文件时, </p>
+<p>public 文件夹中不会生成   test 文件夹的照片,只会有 testnode文件夹下的照片,</p>
+<ul>
+<li>推测hexo根据md文件名来生成文件夹</li>
+</ul>
+</blockquote>
+<h3 id="补充三"><a href="#补充三" class="headerlink" title="补充三"></a>补充三</h3><blockquote>
+<p>最后采用 方案三; </p>
+<p>之前一直在研究方案四, 因为typero设置图片复制时放在md同级目录下,迁移时方便,</p>
+<p>现在老是产生一些图片访问失败的问题  只能采用方案三了.</p>
+</blockquote>
+<h3 id="补充四"><a href="#补充四" class="headerlink" title="补充四"></a>补充四</h3><ul>
+<li>新问题出现了,图片本地能够编辑, 如过在 github仓库编辑md 图片不会显示</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://liudongsir.github.io/hexo2">liudong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://liudongsir.github.io/hexo2/posts/27999/">https://liudongsir.github.io/hexo2/posts/27999/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liudongsir.github.io/hexo2" target="_blank">liudongsir's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/hexo2/tags/hexo%E5%8D%9A%E5%AE%A2/">hexo博客</a></div><div class="post_share"><div class="social-share" data-image="https://www.dmoe.cc/random.php" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/hexo2/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/hexo2/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/hexo2/posts/53336/" title="butterfly主题设置"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://t.alcy.cc/fj/" onerror="onerror=null;src='/hexo2/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">butterfly主题设置</div></div></a></div><div class="next-post pull-right"><a href="/hexo2/posts/31415/" title="hexo博客搭建"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://imgapi.cn/api.php?zd=pc&amp;fl=fengjing&amp;gs=images" onerror="onerror=null;src='/hexo2/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hexo博客搭建</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/hexo2/posts/16107/" title="Hello World"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://www.dmoe.cc/random.php" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-03</div><div class="title">Hello World</div></div></a></div><div><a href="/hexo2/posts/d516ee14/" title="hexo博客汇总"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://imgapi.cn/api.php?zd=pc&fl=fengjing&gs=images" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 3024-07-04</div><div class="title">hexo博客汇总</div></div></a></div><div><a href="/hexo2/posts/53336/" title="butterfly主题设置"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://t.alcy.cc/fj/" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-04</div><div class="title">butterfly主题设置</div></div></a></div><div><a href="/hexo2/posts/31415/" title="hexo博客搭建"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://imgapi.cn/api.php?zd=pc&fl=fengjing&gs=images" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-03</div><div class="title">hexo博客搭建</div></div></a></div><div><a href="/hexo2/posts/7361/" title="常见的博客框架"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://imgapi.cn/api.php?zd=pc&fl=fengjing&gs=images" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-03</div><div class="title">常见的博客框架</div></div></a></div><div><a href="/hexo2/posts/55908/" title="hexo博客搭建(转载)"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://imgapi.cn/api.php?zd=pc&fl=fengjing&gs=images" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-03</div><div class="title">hexo博客搭建(转载)</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Twikoo</span><span id="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E8%AE%BF%E9%97%AE%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-number">1.</span> <span class="toc-text">图片访问问题解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="toc-number">1.1.</span> <span class="toc-text">方法一</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">步骤</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6hexo-image-link"><span class="toc-number">1.1.1.</span> <span class="toc-text">插件hexo-image-link</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="toc-number">1.2.</span> <span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89"><span class="toc-number">1.3.</span> <span class="toc-text">方法三</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E5%9B%9B"><span class="toc-number">1.4.</span> <span class="toc-text">方式四</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-number">1.4.1.</span> <span class="toc-text">补充</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E4%BA%8C"><span class="toc-number">1.4.2.</span> <span class="toc-text">补充二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E4%B8%89"><span class="toc-number">1.5.</span> <span class="toc-text">补充三</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E5%9B%9B"><span class="toc-number">1.6.</span> <span class="toc-text">补充四</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By liudong</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://butterfly.js.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hexo2/js/utils.js?v=4.13.0"></script><script src="/hexo2/js/main.js?v=4.13.0"></script><script src="/hexo2/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://btf-twikoo.vercel.app',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://btf-twikoo.vercel.app',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: 'Ov23liQUy51NzqGTWx8v',
+      clientSecret: 'aa22a9bfc23b5754a634572f6f932f8c2d5598ca',
+      repo: 'hexo2',
+      owner: 'liudongsir',
+      admin: ['liudongsir'],
+      id: '0326322613cd2918eb01faff9796c5e7',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Twikoo' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/hexo2/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
