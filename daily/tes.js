@@ -1,3 +1,11 @@
+
+// 第一次
+
+<div id='blodaily'>
+    <ul id='blonews'>
+    </ul>
+</div>
+
 var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
 httpRequest.open('GET', 'https://v2.alapi.cn/api/zaobao?token=eFiWkgTzAipWiPru&format=json', true);
 httpRequest.send();
@@ -38,3 +46,33 @@ httpRequest.onreadystatechange = function () {
 //         $ul.append($new);
 //     })
 // }
+
+
+// 第二次
+var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
+httpRequest.open('GET', 'https://v2.alapi.cn/api/zaobao?token=eFiWkgTzAipWiPru&format=json', true);
+httpRequest.send();
+httpRequest.onreadystatechange = function () {
+    if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+        var json = httpRequest.responseText;
+        let aa = JSON.parse(json);
+        let data = aa.data;
+        let image = data.head_image;
+
+        let $img = document.getElementById('page-header');
+
+        $img.style.backgroundImage= 'url("'+image+'")'
+
+        let $div = document.getElementById("article-container");
+        let news = data.news;
+        if (news && news.length > 0) {
+            news.forEach((item) => {
+                let $new = document.createElement('h3');
+                $new.innerText = item;
+                $div.appendChild($new);
+            })
+        }
+
+
+    }
+};
