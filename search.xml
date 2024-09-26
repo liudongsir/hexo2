@@ -1092,7 +1092,8 @@ SET GLOBAL innodb_ft_server_stopword_table &#x3D; &#39;test&#x2F;my_stopwords&#3
   <entry>
     <title>springboot生命周期</title>
     <url>/hexo2/posts/c2eaf26a/</url>
-    <content><![CDATA[<h1 id="springboot"><a href="#springboot" class="headerlink" title="springboot"></a><a href="https://blog.csdn.net/chengshangqian/article/details/117391418">springboot</a></h1><p>附件下载：<a href="../../images/2024-08-26springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.xmind">springboot生命周期.xmind</a></p>
+    <content><![CDATA[<h1 id="springboot生命周期"><a href="#springboot生命周期" class="headerlink" title="springboot生命周期"></a>springboot生命周期</h1><p>附件下载：<a href="../../images/2024-08-26springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.xmind">springboot生命周期.xmind</a></p>
+<p><a href="https://blog.csdn.net/chengshangqian/article/details/117391418">https://blog.csdn.net/chengshangqian/article/details/117391418</a></p>
 <h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段"></a>初始化阶段</h3><ul>
 <li><p>构造阶段</p>
 <ul>
@@ -1215,13 +1216,924 @@ SET GLOBAL innodb_ft_server_stopword_table &#x3D; &#39;test&#x2F;my_stopwords&#3
       </tags>
   </entry>
   <entry>
+    <title>spring-cache</title>
+    <url>/hexo2/posts/6378ef32/</url>
+    <content><![CDATA[<h2 id="springcache"><a href="#springcache" class="headerlink" title="springcache"></a>springcache</h2><p><a href="https://blog.csdn.net/hacker_lli/article/details/108632749">springcache 缓存集成对比</a>   介绍了 caffeine &#x2F; encache&#x2F;guava等几种缓存实现 ,并介绍了几种缓存的集成.</p>
+<p><a href="https://springdoc.cn/spring-cache-tutorial/">spring中文网springcache 入门教程</a> 介绍了spring和 springboot的集成方式.</p>
+<p><a href="https://cloud.tencent.com/developer/article/1914228">Spring cache详解</a></p>
+<h3 id="集成"><a href="#集成" class="headerlink" title="集成"></a>集成</h3><h4 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h4><pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!--        该 Starter 包含了 spring-context-support 模块。--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-cache<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+
+    <span class="token comment">&lt;!--        springcache  缓存包,  其中包含了 caffeine 和  encache的集成--></span>
+    <span class="token comment">&lt;!--        &lt;dependency>--></span>
+    <span class="token comment">&lt;!--            &lt;groupId>org.springframework&lt;/groupId>--></span>
+    <span class="token comment">&lt;!--            &lt;artifactId>spring-context-support&lt;/artifactId>--></span>
+    <span class="token comment">&lt;!--            &lt;version>5.1.6.RELEASE&lt;/version>--></span>
+    <span class="token comment">&lt;!--        &lt;/dependency>--></span>
+    <span class="token comment">&lt;!--  除了导入support包，当然还得导入咖啡因的包      --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.github.ben-manes.caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>caffeine<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token comment">&lt;!-- 2019.2最新版本 caffeine是2015年才面市的，发展还是很迅速的--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.7.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+
+<h4 id="开启缓存"><a href="#开启缓存" class="headerlink" title="开启缓存"></a>开启缓存</h4><p>只需在任何配置类中添加 <code>@EnableCaching</code> 注解，即可启用缓存功能：</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableCaching</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CachingConfig</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">CacheManager</span> <span class="token function">cacheManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ConcurrentMapCacheManager</span><span class="token punctuation">(</span><span class="token string">"addresses"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<blockquote>
+<p><strong>注意</strong>：在spring中启用缓存后，必须注册一个 <code>cacheManager</code>，这是最基本的设置。 </p>
+<p>而在使用 Spring Boot 时，只需在 <strong>classpath</strong> 上存在 Starter 依赖，并且与 <code>@EnableCaching</code> 注解一起使用，就会注册相同的 <code>ConcurrentMapCacheManager</code>，因此不需要单独的 cacheManage 声明</p>
+</blockquote>
+<h4 id="配置cacheManage"><a href="#配置cacheManage" class="headerlink" title="配置cacheManage"></a>配置cacheManage</h4><blockquote>
+<p>如果要使用其它的缓存框架，应该怎么做呢？</p>
+<p>如果要使用其它的缓存框架，我们只需要重新定义好<code>CacheManager</code>和<code>CacheResolver</code>这两个Bean就行了。</p>
+<p><strong>事实上，Spring会自动检测我们是否引入了相应的缓存框架，如果我们引入了spring-data-redis，Spring就会自动使用spring-data-redis提供的RedisCacheManager，RedisCache。</strong></p>
+<p><strong>如果我们要使用Caffeine框架。只需要引入Caffeine，Spring Cache就会默认使用CaffeineCacheManager和CaffeineCache。</strong></p>
+</blockquote>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">// https://blog.csdn.net/hacker_lli/article/details/108632749 </span>
+
+<span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>caffeine</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>github<span class="token punctuation">.</span>benmanes<span class="token punctuation">.</span>caffeine<span class="token punctuation">.</span>cache<span class="token punctuation">.</span></span><span class="token class-name">Caffeine</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span></span><span class="token class-name">CacheManager</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Cacheable</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">CachingConfigurerSupport</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">EnableCaching</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>caffeine<span class="token punctuation">.</span></span><span class="token class-name">CaffeineCacheManager</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Service</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span></span><span class="token class-name">TimeUnit</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@EnableCaching</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CacheConfig</span> <span class="token keyword">extends</span> <span class="token class-name">CachingConfigurerSupport</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">CacheManager</span> <span class="token function">cacheManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">CaffeineCacheManager</span> cacheManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CaffeineCacheManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 方案一(常用)：定制化缓存Cache</span>
+        cacheManager<span class="token punctuation">.</span><span class="token function">setCaffeine</span><span class="token punctuation">(</span><span class="token class-name">Caffeine</span><span class="token punctuation">.</span><span class="token function">newBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">expireAfterWrite</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span><span class="token constant">MINUTES</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">initialCapacity</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">maximumSize</span><span class="token punctuation">(</span><span class="token number">10_000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment">// 如果缓存种没有对应的value，通过createExpensiveGraph方法同步加载  buildAsync是异步加载</span>
+        <span class="token comment">//.build(key -> createExpensiveGraph(key))</span>
+        <span class="token punctuation">;</span>
+
+
+        <span class="token comment">// 方案二：传入一个CaffeineSpec定制缓存，它的好处是可以把配置方便写在配置文件里</span>
+        <span class="token comment">//cacheManager.setCaffeineSpec(CaffeineSpec.parse("initialCapacity=50,maximumSize=500,expireAfterWrite=5s"));</span>
+        <span class="token keyword">return</span> cacheManager<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span>
+</code></pre>
+
+
+
+
+
+
+
+<h3 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h3><p>Spring Cache有几个常用注解，分别为<code>@Cacheable、@CachePut、@CacheEvict、@Caching、@CacheConfig</code>。除了最后一个<code>CacheConfig</code>外，其余四个都可以用在类上或者方法级别上，<code>如果用在类上，就是对该类的所有public方法生效</code>，下面分别介绍一下这几个注解。</p>
+<h4 id="cacheable"><a href="#cacheable" class="headerlink" title="cacheable"></a>cacheable</h4><blockquote>
+<p><code>@Cacheble</code>注解表示这个方法有了缓存的功能，方法的返回值会被缓存下来，下一次调用该方法前，会去检查是否缓存中已经有值，<code>如果有就直接返回，不调用方法</code>。如果没有，就调用方法，然后把结果缓存起来。这个注解一般用在<em>查询方法</em>上。</p>
+</blockquote>
+<ul>
+<li><code>value、cacheNames</code>：两个等同的参数（<code>cacheNames</code>为<code>Spring 4</code>新增，作为<code>value</code>的别名），<code>用于指定缓存存储的集合名</code>。由于Spring 4中新增了<code>@CacheConfig</code>，因此在<code>Spring 3</code>中原本必须有的<code>value</code>属性，也成为非必需项了</li>
+<li><code>key</code>：和<code>cacheNames</code>共同组成一个<code>key</code>，非必需，缺省按照函数的所有参数组合作为<code>key</code>值，若自己配置需使用<code>SpEL</code>表达式，比如：<code>@Cacheable(key = &quot;#p0&quot;)</code>：使用函数第一个参数作为缓存的<code>key</code>值，更多关于SpEL表达式的详细内容可参考<a href="https://cloud.tencent.com/developer/tools/blog-entry?target=https://docs.spring.io/spring-framework/docs/current/reference/html/integration.html%23cache&source=article&objectId=1914228">官方文档</a></li>
+<li><code>condition</code>：缓存对象的条件，<code>非必需</code>，也需使用<code>SpEL</code>表达式，只有满足表达式条件的内容才会被缓存，比如：<code>@Cacheable(key = &quot;#p0&quot;, condition = &quot;#p0.length() &lt; 3&quot;)</code>，表示只有当第一个参数的长度小于3的时候才会被缓存，若做此配置上面的<code>AAA</code>用户就不会被缓存，读者可自行实验尝试，<code>**在函数调用前进行判断，因此result这种spel里面进行判断时，永远为null.**</code></li>
+<li><code>unless</code>：另外一个缓存条件参数，<code>非必需</code>，需使用<code>SpEL</code>表达式。它不同于<code>condition</code>参数的地方在于它的判断时机，<code>该条件是在函数被调用之后才做判断的，所以它可以通过对result进行判断</code>。</li>
+<li><code>keyGenerator</code>：用于指定<code>key</code>生成器，非必需。若需要指定一个自定义的<code>key</code>生成器，我们需要去实现<code>org.springframework.cache.interceptor.KeyGenerator</code>接口，并使用该参数来指定。<code>需要注意的是：该参数与key是互斥的</code></li>
+<li><code>cacheManager</code>：用于指定使用哪个缓存管理器，<code>非必需</code>。只有当有多个时才需要使用</li>
+<li><code>cacheResolver</code>：用于指定使用那个缓存解析器，<code>非必需</code>。需通过<code>org.springframework.cache.interceptor.CacheResolver</code>接口来实现自己的缓存解析器，并用该参数指定。</li>
+</ul>
+<h5 id="作用和配置方法"><a href="#作用和配置方法" class="headerlink" title="作用和配置方法"></a>作用和配置方法</h5><p><img src="/hexo2/images/2024-08-28springcache/039bc344d880b15e1c72a28df3e032b8.png" alt="img"></p>
+<p><img src="/hexo2/images/2024-08-28springcache/image-20240828144849676.png" alt="image-20240828144849676"></p>
+<p><a href="https://blog.csdn.net/user2025/article/details/106595257">参考链接</a></p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">/** * 根据ID获取Tasklog * @param id * @return */</span>
+ <span class="token annotation punctuation">@Cacheable</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token constant">CACHE_KEY</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#id"</span><span class="token punctuation">,</span>condition <span class="token operator">=</span> <span class="token string">"#result != null"</span><span class="token punctuation">)</span>
+ <span class="token keyword">public</span> <span class="token class-name">Tasklog</span> <span class="token function">findById</span><span class="token punctuation">(</span><span class="token class-name">String</span> id<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"FINDBYID"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ID:"</span><span class="token operator">+</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">return</span> taskLogMapper<span class="token punctuation">.</span><span class="token function">selectById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">&#125;</span></code></pre>
+
+<h5 id="缓存中spel表达式可取值"><a href="#缓存中spel表达式可取值" class="headerlink" title="缓存中spel表达式可取值"></a>缓存中spel表达式可取值</h5><p><img src="/hexo2/images/2024-08-28springcache/c629948decb7df56e4f5494ef7ed2a2e.png" alt="img"></p>
+<h4 id="CachePut"><a href="#CachePut" class="headerlink" title="@CachePut"></a>@CachePut</h4><blockquote>
+<p><code>@CachePut</code> 的作用 主要针对方法配置，能够根据方法的请求参数对其结果进行缓存，和 <code>@Cacheable</code> 不同的是，它每次都会触发真实方法的调用</p>
+<p>使用 <code>@CachePut</code> 注解，可以更新缓存的内容，而不会影响方法的执行。也就是说，方法始终会被执行并将结果缓存起来</p>
+</blockquote>
+<blockquote>
+<p><code>@Cacheable</code> 和 <code>@CachePut</code> 的区别在于，<code>@Cacheable</code> 会跳过运行方法，而 <code>@CachePut</code> 会实际运行方法，然后将结果放入缓存。</p>
+</blockquote>
+<h5 id="作用和配置方法-1"><a href="#作用和配置方法-1" class="headerlink" title="作用和配置方法"></a>作用和配置方法</h5><p><img src="/hexo2/images/2024-08-28springcache/1463eabba5f1496c94f564adb150aa1a.png" alt="img"></p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">/** * 添加tasklog * @param tasklog * @return */</span>
+<span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token constant">CACHE_KEY</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#tasklog.id"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">Tasklog</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Tasklog</span> tasklog<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"CREATE"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>err<span class="token punctuation">.</span>println <span class="token punctuation">(</span>tasklog<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    taskLogMapper<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>tasklog<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> tasklog<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+
+
+<h4 id="CacheEvict"><a href="#CacheEvict" class="headerlink" title="@CacheEvict"></a>@CacheEvict</h4><p><strong>一般用在更新或者删除的方法上</strong></p>
+<blockquote>
+<p>缓存的数据如果不进行清理，会保留大量陈旧或未使用甚至是过期的数据。</p>
+<p>可以使用 <code>@CacheEvict</code> 注解来表示删除一个、多个或所有的值，以刷新缓存：</p>
+</blockquote>
+<h5 id="作用和配置方法-2"><a href="#作用和配置方法-2" class="headerlink" title="作用和配置方法"></a><strong>作用和配置方法</strong></h5><p><img src="/hexo2/images/2024-08-28springcache/56088fb40ee56ba483e828bde5372267.png" alt="img"></p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">/** * 根据ID删除Tasklog * @param id */</span>
+<span class="token annotation punctuation">@CacheEvict</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token constant">CACHE_KEY</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#id"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span><span class="token class-name">String</span> id<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"DELETE"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ID:"</span><span class="token operator">+</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    taskLogMapper<span class="token punctuation">.</span><span class="token function">deleteById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+
+
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">//使用参数 allEntries 与要清空的缓存结合使用；这将清除缓存 addresses 中的所有条目。</span>
+<span class="token annotation punctuation">@CacheEvict</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"addresses"</span><span class="token punctuation">,</span> allEntries<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getAddress</span><span class="token punctuation">(</span><span class="token class-name">Customer</span> customer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">&#125;</span></code></pre>
+
+
+
+<h4 id="Caching"><a href="#Caching" class="headerlink" title="@Caching"></a>@Caching</h4><blockquote>
+<p><code>Java</code>注解的机制决定了，一个方法上只能有一个相同的注解生效。那有时候可能一个方法会操作多个缓存（这个在删除缓存操作中比较常见，在添加操作中不太常见）。</p>
+</blockquote>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">//@Caching注解就是用来解决这类情况的，大家一看它的源码就明白了</span>
+<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">Caching</span> <span class="token punctuation">&#123;</span>
+	<span class="token class-name">Cacheable</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">cacheable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+	<span class="token class-name">CachePut</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">put</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+	<span class="token class-name">CacheEvict</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">evict</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">//有时候我们可能组合多个Cache注解使用；比如用户新增成功后，我们要添加id–>user；username—>user；email—>user的缓存；此时就需要@Caching组合多个注解标签了</span>
+<span class="token annotation punctuation">@Caching</span><span class="token punctuation">(</span>put <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+<span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#user.id"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#user.username"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#user.email"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token class-name">User</span> user<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+
+
+<h4 id="CacheConfig"><a href="#CacheConfig" class="headerlink" title="@CacheConfig"></a>@CacheConfig</h4><p>前面提到的四个注解，都是<code>Spring Cache</code>常用的注解。每个注解都有很多可以配置的属性。</p>
+<p>但这几个注解通常都是作用在方法上的，而有些配置可能又是一个类通用的，这种情况就可以使用<code>@CacheConfig</code>了，它是一个类级别的注解，可以在类级别上配置<code>cacheNames、keyGenerator、cacheManager、cacheResolver</code>等。</p>
+<p>例如:</p>
+<p>所有的<code>@Cacheable（）</code>里面都有一个<code>value＝“xxx”</code>的属性，这显然如果方法多了，写起来也是挺累的，如果可以一次性声明完 那就省事了， 所以，有了<code>@CacheConfig</code>这个配置，<code>@CacheConfig is a class-level annotation that allows to share the cache names</code>，如果你在你的方法写别的名字，那么依然以方法的名字为准。</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">/** * 测试服务层 */</span>
+<span class="token annotation punctuation">@Service</span>
+<span class="token annotation punctuation">@CacheConfig</span><span class="token punctuation">(</span>cacheNames<span class="token operator">=</span> <span class="token string">"taskLog"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TaskLogService</span> <span class="token punctuation">&#123;</span>
+ 
+    <span class="token annotation punctuation">@Autowired</span>  <span class="token keyword">private</span> <span class="token class-name">TaskLogMapper</span> taskLogMapper<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>  <span class="token keyword">private</span> <span class="token class-name"><span class="token namespace">net<span class="token punctuation">.</span>sf<span class="token punctuation">.</span>ehcache<span class="token punctuation">.</span></span>CacheManager</span> cacheManager<span class="token punctuation">;</span>
+ 
+    <span class="token comment">/** * 缓存的key */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> <span class="token constant">CACHE_KEY</span>   <span class="token operator">=</span> <span class="token string">"taskLog"</span><span class="token punctuation">;</span>
+ 
+    <span class="token comment">/** * 添加tasklog * @param tasklog * @return */</span>
+    <span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token string">"#tasklog.id"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Tasklog</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Tasklog</span> tasklog<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"CREATE"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>err<span class="token punctuation">.</span>println <span class="token punctuation">(</span>tasklog<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        taskLogMapper<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>tasklog<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> tasklog<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+ 
+    <span class="token comment">/** * 根据ID获取Tasklog * @param id * @return */</span>
+    <span class="token annotation punctuation">@Cacheable</span><span class="token punctuation">(</span>key <span class="token operator">=</span> <span class="token string">"#id"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">Tasklog</span> <span class="token function">findById</span><span class="token punctuation">(</span><span class="token class-name">String</span> id<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"FINDBYID"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"ID:"</span><span class="token operator">+</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> taskLogMapper<span class="token punctuation">.</span><span class="token function">selectById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+
+
+<h4 id="自定义缓存注解"><a href="#自定义缓存注解" class="headerlink" title="自定义缓存注解"></a>自定义缓存注解</h4><p>比如之前的那个<code>@Caching</code>组合，会让方法上的注解显得整个代码比较乱，此时可以使用自定义注解把这些注解组合到一个注解中，如</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Caching</span><span class="token punctuation">(</span>put <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#user.id"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#user.username"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#user.email"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span><span class="token constant">METHOD</span><span class="token punctuation">,</span> <span class="token class-name">ElementType</span><span class="token punctuation">.</span><span class="token constant">TYPE</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">.</span><span class="token constant">RUNTIME</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Inherited</span>
+<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">UserSaveCache</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@UserSaveCache</span>
+<span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token class-name">User</span> user<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span></code></pre>
+
+
+
+<h3 id="基于-XML-的声明式缓存"><a href="#基于-XML-的声明式缓存" class="headerlink" title="基于 XML 的声明式缓存"></a>基于 XML 的声明式缓存</h3><p>如果无法访问应用的源码，或者想从外部注入缓存行为，也可以使用基于 XML 的声明式缓存。</p>
+<p><a href="https://springdoc.cn/spring-cache-tutorial/">spring中文网</a></p>
+<pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token comment">&lt;!-- 希望缓存的服务 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>customerDataService<span class="token punctuation">"</span></span> 
+  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>com.your.app.namespace.service.CustomerDataService<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cacheManager<span class="token punctuation">"</span></span> 
+  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>org.springframework.cache.support.SimpleCacheManager<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>caches<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>set</span><span class="token punctuation">></span></span> 
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> 
+              <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean<span class="token punctuation">"</span></span> 
+              <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>directory<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bean</span> 
+              <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean<span class="token punctuation">"</span></span> 
+              <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>addresses<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>set</span><span class="token punctuation">></span></span> 
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>bean</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 定义缓存行为 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">cache:</span>advice</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cachingBehavior<span class="token punctuation">"</span></span> <span class="token attr-name">cache-manager</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cacheManager<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">cache:</span>caching</span> <span class="token attr-name">cache</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>addresses<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">cache:</span>cacheable</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>getAddress<span class="token punctuation">"</span></span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#customer.name<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">cache:</span>caching</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">cache:</span>advice</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- 将该行为应用于 CustomerDataService 接口的所有实现 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">aop:</span>config</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">aop:</span>advisor</span> <span class="token attr-name">advice-ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cachingBehavior<span class="token punctuation">"</span></span>
+      <span class="token attr-name">pointcut</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>execution(* com.your.app.namespace.service.CustomerDataService.*(..))<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token namespace">aop:</span>config</span><span class="token punctuation">></span></span></code></pre>
+
+
+
+<h3 id="使用缓存带来的问题"><a href="#使用缓存带来的问题" class="headerlink" title="使用缓存带来的问题"></a>使用缓存带来的问题</h3><h4 id="双写不一致"><a href="#双写不一致" class="headerlink" title="双写不一致"></a>双写不一致</h4><p>使用缓存会带来许多问题，尤其是高并发下，包括缓存穿透、缓存击穿、缓存雪崩、双写不一致等问题。</p>
+<p>其中主要聊一下双写不一致的问题，这是一个比较常见的问题，其中一个常用的解决方案是，<code>更新的时候，先删除缓存，再更新数据库。</code>所以<code>Spring Cache的@CacheEvict会有一个beforeInvocation的配置。</code></p>
+<p>但使用缓存通常会存在缓存中的数据和数据库中不一致的问题，尤其是调用第三方接口，你不会知道它什么时候更新了数据。但使用缓存的业务场景很多时候并不需求数据的强一致，比如首页的热点文章，我们可以让缓存一分钟失效，这样就算一分钟内，不是最新的热点排行也没关系。</p>
+<hr>
+<h4 id="占用额外的内存"><a href="#占用额外的内存" class="headerlink" title="占用额外的内存"></a>占用额外的内存</h4><p>这个是无可避免的。因为总要有一个地方去放缓存。不管是ConcurrentHashMap也好，Redis也好，Caffeine也好，总归是会占用额外的内存资源去放缓存的。但缓存的思想正是用空间去换时间，有时候占用这点额外的空间对于时间上的优化来说，是非常值得的。</p>
+<p><strong>这里需要注意的是，SpringCache默认使用的是ConcurrentHashMap，它不会自动回收key，所以如果使用默认的这个缓存，程序就会越来越大，并且得不到回收。最终可能导致OOM。</strong></p>
+<h2 id="springcache-redis"><a href="#springcache-redis" class="headerlink" title="springcache +redis"></a>springcache +redis</h2><h3 id="maven-依赖"><a href="#maven-依赖" class="headerlink" title="maven 依赖"></a>maven 依赖</h3><pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusions</span><span class="token punctuation">></span></span>
+             <span class="token comment">&lt;!--排除lettuce客户端（默认使用lettuce客户端）--></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclusion</span><span class="token punctuation">></span></span>
+                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lettuce-core<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>io.lettuce<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusion</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclusions</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>redis.clients<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>jedis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.7.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">config</span><span class="token punctuation">:</span>
+    <span class="token key atrule">activate</span><span class="token punctuation">:</span>
+      <span class="token key atrule">on-profile</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> redisdev
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> REDIS   <span class="token comment">#设置缓存组件类型</span>
+    <span class="token key atrule">time-to-live</span><span class="token punctuation">:</span> <span class="token number">3600000</span>   <span class="token comment">#设置缓存过期时间</span>
+    <span class="token key atrule">cache-names</span><span class="token punctuation">:</span> redisUser
+    <span class="token comment">#指定默认前缀，如果此处我们指定了前缀则使用我们指定的前缀，推荐此处不指定前缀</span>
+    <span class="token comment">#spring.cache.redis.key-prefix=CACHE_</span>
+    <span class="token comment">#是否开始前缀，建议开启</span>
+    <span class="token key atrule">use-key-prefix</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">cache-null-values</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment">#是否缓存空值，防止缓存穿透</span>
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">database</span><span class="token punctuation">:</span> <span class="token number">1</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> 127.0.0.1
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">6379</span>
+    password<span class="token punctuation">:</span></code></pre>
+
+
+
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>redis</span>集成<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Value</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>connection<span class="token punctuation">.</span></span><span class="token class-name">RedisStandaloneConfiguration</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>connection<span class="token punctuation">.</span>jedis<span class="token punctuation">.</span></span><span class="token class-name">JedisConnectionFactory</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">redis<span class="token punctuation">.</span>clients<span class="token punctuation">.</span>jedis<span class="token punctuation">.</span></span><span class="token class-name">JedisPoolConfig</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * @author: noob
+ * @description :
+ * @Date : 13:38 2024/8/28
+ */</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JedisConfig</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"$&#123;spring.redis.host&#125;"</span><span class="token punctuation">)</span>
+    <span class="token class-name">String</span> redisHost<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"$&#123;spring.redis.password&#125;"</span><span class="token punctuation">)</span>
+    <span class="token class-name">String</span> password<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"$&#123;spring.redis.port&#125;"</span><span class="token punctuation">)</span>
+    <span class="token keyword">int</span> port<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"$&#123;spring.redis.database&#125;"</span><span class="token punctuation">)</span>
+    <span class="token keyword">int</span> database<span class="token punctuation">;</span>
+
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">RedisStandaloneConfiguration</span> <span class="token function">standaloneConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">RedisStandaloneConfiguration</span> configuration <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RedisStandaloneConfiguration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        configuration<span class="token punctuation">.</span><span class="token function">setHostName</span><span class="token punctuation">(</span>redisHost<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        configuration<span class="token punctuation">.</span><span class="token function">setPort</span><span class="token punctuation">(</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        configuration<span class="token punctuation">.</span><span class="token function">setDatabase</span><span class="token punctuation">(</span>database<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> configuration<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">JedisPoolConfig</span> <span class="token function">poolConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">JedisPoolConfig</span> poolConfig <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisPoolConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        poolConfig<span class="token punctuation">.</span><span class="token function">setMinIdle</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        poolConfig<span class="token punctuation">.</span><span class="token function">setMaxIdle</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        poolConfig<span class="token punctuation">.</span><span class="token function">setMaxTotal</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        poolConfig<span class="token punctuation">.</span><span class="token function">setMaxWaitMillis</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        poolConfig<span class="token punctuation">.</span><span class="token function">setTestOnBorrow</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        poolConfig<span class="token punctuation">.</span><span class="token function">setTestOnReturn</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        poolConfig<span class="token punctuation">.</span><span class="token function">setTestWhileIdle</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> poolConfig<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">JedisConnectionFactory</span> <span class="token function">connectionFactory</span><span class="token punctuation">(</span><span class="token class-name">RedisStandaloneConfiguration</span> standaloneConfig<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">JedisConnectionFactory</span> factory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisConnectionFactory</span><span class="token punctuation">(</span>standaloneConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 添加redis连接池</span>
+        factory<span class="token punctuation">.</span><span class="token function">setPoolConfig</span><span class="token punctuation">(</span><span class="token function">poolConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        factory<span class="token punctuation">.</span><span class="token function">setUsePool</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> factory<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+<span class="token comment">//  jedis  一种简单的配置方式</span>
+<span class="token comment">//         public JedisPoolConfig jedisPoolConfig() &#123;</span>
+<span class="token comment">//         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();</span>
+<span class="token comment">//         return jedisPoolConfig;</span>
+<span class="token comment">//     &#125;</span>
+<span class="token comment">//</span>
+<span class="token comment">//     @Bean</span>
+<span class="token comment">//     JedisConnectionFactory jedisConnectionFactory() &#123;</span>
+<span class="token comment">//         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();</span>
+<span class="token comment">//         jedisConnectionFactory.setPoolConfig(jedisPoolConfig());</span>
+<span class="token comment">//         jedisConnectionFactory.setHostName(redisHost);</span>
+<span class="token comment">//         jedisConnectionFactory.setPassword(password);</span>
+<span class="token comment">//         jedisConnectionFactory.setPort(port);</span>
+<span class="token comment">//         jedisConnectionFactory.setDatabase(database);</span>
+<span class="token comment">//         return jedisConnectionFactory;</span>
+<span class="token comment">//     &#125;</span>
+
+
+<span class="token punctuation">&#125;</span>
+</code></pre>
+
+
+
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>redis</span>集成<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span></span><span class="token class-name">CacheManager</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">CachingConfigurerSupport</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">EnableCaching</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>interceptor<span class="token punctuation">.</span></span><span class="token class-name">CacheErrorHandler</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>interceptor<span class="token punctuation">.</span></span><span class="token class-name">CacheResolver</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>interceptor<span class="token punctuation">.</span></span><span class="token class-name">KeyGenerator</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>interceptor<span class="token punctuation">.</span></span><span class="token class-name">SimpleCacheErrorHandler</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>interceptor<span class="token punctuation">.</span></span><span class="token class-name">SimpleCacheResolver</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>interceptor<span class="token punctuation">.</span></span><span class="token class-name">SimpleKeyGenerator</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>cache<span class="token punctuation">.</span></span><span class="token class-name">RedisCacheConfiguration</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>cache<span class="token punctuation">.</span></span><span class="token class-name">RedisCacheManager</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>connection<span class="token punctuation">.</span></span><span class="token class-name">RedisConnectionFactory</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>serializer<span class="token punctuation">.</span></span><span class="token class-name">GenericJackson2JsonRedisSerializer</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>serializer<span class="token punctuation">.</span></span><span class="token class-name">RedisSerializationContext</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">javax<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Resource</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token keyword">static</span> <span class="token import static"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>redis<span class="token punctuation">.</span>cache<span class="token punctuation">.</span></span><span class="token class-name">RedisCacheConfiguration</span><span class="token punctuation">.</span><span class="token static">defaultCacheConfig</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * @author: noob
+ * @description :  https://blog.csdn.net/echizao1839/article/details/102660649
+ * &lt;p>
+ * 正常继承 support接口进行继承
+ * @Date : 14:09 2024/8/28
+ */</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableCaching</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisCacheConfig</span> <span class="token keyword">extends</span> <span class="token class-name">CachingConfigurerSupport</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token comment">/**
+     * 自定义缓存的redis的KeyGenerator【key生成策略】
+     * 注意: 该方法只是声明了key的生成策略,需在@Cacheable注解中通过keyGenerator属性指定具体的key生成策略
+     * 可以根据业务情况，配置多个生成策略
+     * 如: @Cacheable(value = "key", keyGenerator = "cacheKeyGenerator")
+     */</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">KeyGenerator</span> <span class="token function">keyGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">/**
+         * target: 类
+         * method: 方法
+         * params: 方法参数
+         */</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>target<span class="token punctuation">,</span> method<span class="token punctuation">,</span> params<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//获取代理对象的最终目标对象</span>
+            <span class="token class-name">StringBuilder</span> sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>target<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getSimpleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">":"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>method<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">":"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">//调用SimpleKey的key生成器</span>
+            <span class="token class-name">Object</span> key <span class="token operator">=</span> <span class="token class-name">SimpleKeyGenerator</span><span class="token punctuation">.</span><span class="token function">generateKey</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+    <span class="token comment">/**
+     * 自定义生成redis-key
+     */</span>
+    <span class="token comment">// @Override</span>
+    <span class="token comment">// public KeyGenerator keyGenerator() &#123;</span>
+    <span class="token comment">//     return (o, method, objects) -> &#123;</span>
+    <span class="token comment">//         StringBuilder sb = new StringBuilder();</span>
+    <span class="token comment">//         sb.append(o.getClass().getName()).append(".");</span>
+    <span class="token comment">//         sb.append(method.getName()).append(".");</span>
+    <span class="token comment">//         for (Object obj : objects) &#123;</span>
+    <span class="token comment">//             sb.append(obj.toString());</span>
+    <span class="token comment">//         &#125;</span>
+    <span class="token comment">//         return sb.toString();</span>
+    <span class="token comment">//     &#125;;</span>
+    <span class="token comment">// &#125;</span>
+
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">CacheResolver</span> <span class="token function">cacheResolver</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">SimpleCacheResolver</span><span class="token punctuation">(</span><span class="token function">cacheManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">CacheErrorHandler</span> <span class="token function">errorHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 用于捕获从Cache中进行CRUD时的异常的回调处理器。</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">SimpleCacheErrorHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token keyword">private</span> <span class="token class-name">RedisConnectionFactory</span> factory<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">CacheManager</span> <span class="token function">cacheManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">RedisCacheConfiguration</span> cacheConfiguration <span class="token operator">=</span>
+                <span class="token function">defaultCacheConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">disableCachingNullValues</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">serializeValuesWith</span><span class="token punctuation">(</span><span class="token class-name">RedisSerializationContext<span class="token punctuation">.</span>SerializationPair</span><span class="token punctuation">.</span><span class="token function">fromSerializer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">GenericJackson2JsonRedisSerializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">RedisCacheManager</span><span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span>factory<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">cacheDefaults</span><span class="token punctuation">(</span>cacheConfiguration<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+<span class="token punctuation">&#125;</span>
+</code></pre>
+
+
+
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>redis</span>集成<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">CacheConfig</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">CacheEvict</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">CachePut</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Cacheable</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Service</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">ArrayList</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span></span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">RedisService</span>  <span class="token punctuation">&#123;</span>
+
+
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">;</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">del</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> id<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> id<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>redis</span>集成<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">CacheConfig</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">CacheEvict</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">CachePut</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Cacheable</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Service</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">ArrayList</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Iterator</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span></span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Service</span>
+<span class="token annotation punctuation">@CacheConfig</span><span class="token punctuation">(</span>cacheNames <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span>keyGenerator <span class="token operator">=</span> <span class="token string">"keyGenerator"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">RedisService</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token annotation punctuation">@Cacheable</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"'list'"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=========list"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">User</span> user1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"老大"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">User</span> user2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user2<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user2<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"老二"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> users <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        users<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>user1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        users<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>user2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> users<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@CacheEvict</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"user"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"'list'"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">del</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> id<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"************************************+id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> users <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Iterator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> iterator <span class="token operator">=</span> users<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">User</span> user <span class="token operator">=</span> iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                iterator<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@CachePut</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"demo"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#result==null"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">User</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> id<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===============dddd================"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">User</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">"测试"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> user<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>redis</span>集成<span class="token punctuation">;</span>
+
+
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cache<span class="token punctuation">.</span></span>注解使用<span class="token punctuation">.</span>CacheService<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Autowired</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span></span><span class="token class-name">Cache</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>cache<span class="token punctuation">.</span></span><span class="token class-name">CacheManager</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RequestMapping</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RestController</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">javax<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Resource</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * https://blog.csdn.net/lingerlan510/article/details/121906813  集成redisTemplate
+ * redis 注解集成
+ * @author: noob
+ * @description :
+ * @Date : 9:05 2024/8/28
+ */</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/redis"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestRedisController</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token annotation punctuation">@Resource</span>
+    <span class="token keyword">private</span> <span class="token class-name">RedisService</span> redisService<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> <span class="token class-name">CacheManager</span> cacheManager<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/get"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Object</span> obj <span class="token operator">=</span> redisService<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----------验证缓存是否生效----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Cache</span> cache <span class="token operator">=</span> cacheManager<span class="token punctuation">.</span><span class="token function">getCache</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Cache</span> cache2 <span class="token operator">=</span> cacheManager<span class="token punctuation">.</span><span class="token function">getCache</span><span class="token punctuation">(</span><span class="token string">"redisUser"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cache<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cache2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cache2<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">package</span> <span class="token namespace">org<span class="token punctuation">.</span>example<span class="token punctuation">.</span>cache<span class="token punctuation">.</span>redis</span>集成<span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * @author: noob
+ * @description :
+ * @Date : 11:16 2024/8/28
+ */</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> id<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+
+
+    <span class="token keyword">public</span> <span class="token class-name">Integer</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> id<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+</code></pre>
+
+
+
+<h2 id="springcache-caffenie"><a href="#springcache-caffenie" class="headerlink" title="springcache +caffenie"></a>springcache +caffenie</h2><p>如前文所示</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记:"></a>后记:</h3><p><a href="https://blog.csdn.net/qq_40925189/article/details/109580439">redisTemplate、jedis、lettuce、redission的对比</a></p>
+<p>2.SpringCache的使用注意事项<br>@CacheEvict注解中的allEntries &#x3D; true属性会将当前片区中的所有缓存数据全部清除，请谨慎使用<br>@CacheEvict注解适用用于失效模式，也即更新完数据库数据后删除缓存数据<br>@CachePut注解用于适用于双写模式，更新完数据库后写入到缓存中<br>SpringCache不是只能和Redis中间件进行整和，和其他缓存中间件也可以整合实现缓存管理<br>Redis的作用也不仅仅是用作缓存，也可以用于功能实现，实现分布式锁，注意区分redis分布式锁和SpringCache<br>配置文件中spring.cache.redis.key-prefix的配置一般不进行设置<br>配置文件中spring.cache.redis.cache-null-values&#x3D;true一般需要设置(null值缓存)，可以有效的防止缓存穿透<br>…<br>3.SpringCache的不足<br>SpringCache只对读模式下的缓存失效进行了处理，对于写模式下的缓存失效没有相应的处理，需要我们自己采取其他方式来处理。<br>缓存中常见的失效场景及解决方案：</p>
+<p>缓存穿透：查询一个null数据 解决方案：缓存空数据<br>缓存击穿：大量并发同时查询一个刚好过期的数据，解决方案：加锁<br>缓存雪崩：大量的key同时过期，解决方案：所有key都添加上随机的过期时间<br>读模式下的缓存失效处理方案：</p>
+<p>缓存穿透：cache-null-values: true，允许写入空值<br>缓存击穿：@Cacheable(sync &#x3D; true)，加锁<br>缓存雪崩：time-to-live:xxx，设置不同的过期时间<br>提示：<br>1、对于常规数据（读多写少，及时性、一致性要求不高的数据）完全可以使用 Spring Cache<br>2、对于特殊数据（比如要求高一致性）则需要特殊处理<br> 原文链接：<a href="https://blog.csdn.net/lingerlan510/article/details/121906813">https://blog.csdn.net/lingerlan510/article/details/121906813</a></p>
+]]></content>
+      <categories>
+        <category>springboot</category>
+      </categories>
+      <tags>
+        <tag>cache</tag>
+        <tag>缓存</tag>
+        <tag>Demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis缓存一致性</title>
+    <url>/hexo2/posts/ced97f4/</url>
+    <content><![CDATA[<h2 id="hexo-主题测试"><a href="#hexo-主题测试" class="headerlink" title="hexo 主题测试"></a>hexo 主题测试</h2><h2 id="redis缓存一致性"><a href="#redis缓存一致性" class="headerlink" title="redis缓存一致性"></a>redis缓存一致性</h2><hr>
+<p><a href="https://zhuanlan.zhihu.com/p/490902522">如何保证数据库和缓存双写一致性？</a></p>
+<p>redis 缓存一致性有几种方案</p>
+<p>先写缓存–&gt;写数据库   如果 写数据库时故障, 则导致缓存中脏数据;</p>
+<p>写数据库–&gt; 写缓存; 高并发场景下会产生多个线程对同一缓存的并写问题, 也会产生脏数据;</p>
+<p>删除缓存–&gt;写数据库;  如果在删除缓存后  有其他数据查询了为修改的数据库内容 也会导致缓存脏数据;</p>
+<p>​	删除缓存–&gt;写数据库–&gt;[延时后再次删除缓存]  方案是可以的,但是延时多久就需要具体设置了,</p>
+<p>写数据库–&gt;删除缓存’ 这种方案可能会产生小概率的脏数据,  但是删除会保证数据的最总一致性;</p>
+<h3 id="缓存删除失败怎么办"><a href="#缓存删除失败怎么办" class="headerlink" title="缓存删除失败怎么办"></a>缓存删除失败怎么办</h3><p>上面双删 或则先写数据库再删缓存, 都会面临一个问题就是删除缓存失败了怎么办:</p>
+<p>重试机制;</p>
+<p>重试次数后记性人工处理;</p>
+<p>异步重试:</p>
+<p>线程;线程池, mq队列, 定时任务, 或则监听mysql的binlog(canal中间件);</p>
+<p>​		 数据一致性问题，没有100%的方案，都是预期方案+自动化赋值方案+人工兜底方案</p>
+<p>​		本质上是分布式一致性问题，一个写操作包含了两个操作写数据库和写缓存。试想如果它们在一个事务里问题就很简单，假设是读已提交的级别。事务会保证原子性，也会防止脏读，即在事务提交前，读的还是老数据。<br>但如果是不在一个事务里，为了高并发我们无法使用分布式锁等方法实现强一致性，所以为了防止删除失败，选择了重试、mq、binlog方法等常用的最终一致性的方法。<br>这里除了删除失败会导致一致性问题外，还有个写缓存的并发也会导致不一致的问题。写操作会写缓存；读操作发现缓存没有，也会去写缓存。读已提交的隔离级别同样可以防止脏写的问题。这里写数据库后修改不直接写缓存改成删除缓存，延时双删，都是为了解决并发导致的不一致问题。始终没有在读的时候更新缓存这里没有加锁应该是考虑高并发性能的问题。</p>
+<p><img src="/hexo2/images/hello-world/background.jpg" alt="background"></p>
+<p>附件下载：<a href="../../images/2024-08-26springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.xmind">springboot生命周期.xmind</a></p>
+<p>post链接增加</p>
+<a href="/hexo2/posts/d516ee14/" title="hexo博客汇总">你好，世界</a>
+<p>123</p>
+/hexo2/posts/d516ee14/
+
+
+
+<p><em>斜体</em></p>
+<p>&#x3D;&#x3D;重点显示&#x3D;&#x3D;</p>
+<p><del>删除线</del></p>
+<p><u>下划线</u></p>
+<p><strong>加粗</strong></p>
+<!--注释预研-->
+
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+任务列表</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+你好</p>
+</li>
+</ul>
+<p>[]:</p>
+<hr>
+<blockquote>
+<p>注解</p>
+<p>注解内容</p>
+</blockquote>
+<p>This is my website, click the button <a class="btn-beautify " href="https://butterfly.js.org/" 
+  title="Butterfly"><span>Butterfly</span></a></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">价格</th>
+<th align="center">数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>计算机</td>
+<td align="right">$1600</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td>手机</td>
+<td align="right">$12</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td>管线</td>
+<td align="right">$1</td>
+<td align="center">234</td>
+</tr>
+</tbody></table>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo server</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo generate</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo deploy</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库事务</title>
+    <url>/hexo2/posts/587418e1/</url>
+    <content><![CDATA[<h2 id="数据库事务"><a href="#数据库事务" class="headerlink" title="数据库事务"></a>数据库事务</h2><p>之前写过<a href="https://blog.csdn.net/tomatoFIREegg/article/details/105219386">数据库并发机制和事务的隔离级别</a> <a href="https://blog.csdn.net/tomatoFIREegg/article/details/105223175">事务隔离级别在数据库的具体实现原理</a>记录过数据的特性和隔离级别等,但是当时保留了一个问题,就是丢失更新,</p>
+<p>如果两个线程先读取, 经过计算后, 对数据进行的并发修改, 如何避免后发线程对先发线程的覆盖;</p>
+<p><a href="https://www.cnblogs.com/mengxinJ/p/14053269.html">MySQL中的事务原理和锁机制</a></p>
+<h3 id="避免丢失更新"><a href="#避免丢失更新" class="headerlink" title="避免丢失更新"></a><a href="https://zhuanlan.zhihu.com/p/69380112">避免丢失更新</a></h3><h4 id="原子写"><a href="#原子写" class="headerlink" title="原子写:"></a>原子写:</h4><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">UPDATE</span> counter <span class="token keyword">SET</span> <span class="token keyword">value</span> <span class="token operator">=</span> <span class="token keyword">value</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token keyword">WHERE</span> id <span class="token operator">=</span> <span class="token string">'whatever'</span><span class="token punctuation">;</span></code></pre>
+
+<h4 id="for-update显式锁定："><a href="#for-update显式锁定：" class="headerlink" title="for update显式锁定："></a>for update显式锁定：</h4><pre class="language-mysql" data-language="mysql"><code class="language-mysql">BEGIN TRANSACTION;
+# for update就是为这行数据加了锁，提交或回滚后释放
+SELECT * FROM users WHERE id &#x3D; &#39;Eddie&#39; FOR UPDATE;
+# 拿到数据后，应用程序做校验，然后...
+UPDATE users SET money &#x3D; &#39;99999999&#39; WHERE id &#x3D; &#39;Eddie&#39;;
+COMMIT;</code></pre>
+
+<h4 id="比较并设置（CAS-Compare-And-Set）："><a href="#比较并设置（CAS-Compare-And-Set）：" class="headerlink" title="比较并设置（CAS, Compare And Set）："></a>比较并设置（CAS, Compare And Set）：</h4><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">UPDATE</span> wiki_pages <span class="token keyword">SET</span> content <span class="token operator">=</span> <span class="token string">'新内容'</span> <span class="token keyword">WHERE</span> id <span class="token operator">=</span> <span class="token string">'007'</span> <span class="token operator">AND</span> content <span class="token operator">=</span> <span class="token string">'旧内容'</span><span class="token punctuation">;</span></code></pre>
+
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h4><p>在订单库存场景中可以使用一下语句, 结合了原子写和 cas两种方式</p>
+<pre class="language-none"><code class="language-none">update storeT set count &#x3D; count-1 where sku_id &#x3D; 1 and count &gt; 1 
+#校验库存数量大于扣减商品数量</code></pre>
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="补充"><a href="#补充" class="headerlink" title="补充:"></a>补充:</h4><h5 id="快照读-和-当前读"><a href="#快照读-和-当前读" class="headerlink" title="快照读 和 当前读"></a>快照读 和 当前读</h5><p>根据数据库的类型和 隔离级别设置 快照读和当前读的实现方式有区别;</p>
+<p>select 语句属于快照读;</p>
+<p> u  d  i   select..lock in share mode  select for update语句 属于当前读 , 不会读取快照中的过期数据;</p>
+<p>在<code>读提交</code>隔离级别下，read view 是在每个SQL语句开始执行的时候创建的，在这个隔离级别下，事务在每次查询开始时都会生成一个独立的ReadView, 所以会产生不可重复读.</p>
+<p>可重复读，在第一次读取数据时生成一个ReadView，对于使用<code>REPEATABLE READ</code>隔离级别的事务来说，只会在第一次执行查询语句时生成一个<code>ReadView</code>，之后的查询就不会重复生成了，所以一个事务的查询结果每次都是一样的。当然就会存在数据过期的情况。</p>
+<h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h5 id="想了解下spring的事务控制中-如何和读写锁产生关系的。"><a href="#想了解下spring的事务控制中-如何和读写锁产生关系的。" class="headerlink" title="想了解下spring的事务控制中 如何和读写锁产生关系的。"></a>想了解下spring的事务控制中 如何和读写锁产生关系的。</h5><p>自己的理解  ,   <strong>事务和锁没关系</strong>，  事务的隔离级别是通过不同锁或则mvcc  日志等配合实现的，</p>
+<p>在同一service方法的事务中 ,读取数据只会拿到读锁(隔离级别有关), 只有修改数据时 才会拿到写锁 ,  </p>
+<p><a href="https://www.cnblogs.com/mengxinJ/p/14053269.html#_label1">不同隔离级别下加锁情况</a></p>
+<h5 id="数据库四大特性的实现"><a href="#数据库四大特性的实现" class="headerlink" title="数据库四大特性的实现"></a><a href="https://cloud.tencent.com/developer/article/1877099">数据库四大特性的实现</a></h5><p><img src="/hexo2/images/2024-09-24%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1/image-20240924111822118.png" alt="image-20240924111822118"></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h4><ul>
+<li>数据库的并发问题通过设置隔离级别, 隔离级别通过 锁机制 mvcc  实现;</li>
+<li>mysql的默认隔离级别是rr  通过锁和mvcc 实现, 可以预防 脏读, 不可重复读  间隙锁防止幻读;</li>
+<li>默认的锁级别 行锁, 可以通过设置修改,</li>
+<li>where条件中使用索引 加行锁, 不适用索引的 加表锁.</li>
+<li>意向锁 是数据库处理的不需要手动加</li>
+<li>对于 u  d  i innodb会自动给设计数据集添加排它锁.</li>
+<li>对于select语句默认不加锁.,可以手动加 for update  , select..lock in share mode 等;</li>
+<li>myisam 不支持事务 只支持表锁</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库事务</category>
+      </categories>
+      <tags>
+        <tag>数据库事务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pdf相关</title>
+    <url>/hexo2/posts/6489c7d8/</url>
+    <content><![CDATA[<h1 id="pdf相关"><a href="#pdf相关" class="headerlink" title="pdf相关"></a>pdf相关</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​		pdf 为标准便携文档,在常用场景中,使用它的读取或者打印, 而pdf的产生一般使用其他格式文本的转换,例如使用office的word转换为pdf。</p>
+<p>​		不过对pdf的编辑操作就不是那么方便了，尤其是pdf格式众多，文件内容多种多样可能包含扫描件图片等，特别是对内容加密的pdf 直接复制其内容都是乱码。</p>
+<hr>
+<p>本文记录一些在工作中对pdf开发用到的场景和解决方案。</p>
+<p><a href="https://zxyle.github.io/PDF-Explained/">PDF 解析翻译</a></p>
+<p><a href="https://www.cnblogs.com/basterdaidai/p/6204518.html"><a href="https://www.cnblogs.com/basterdaidai/p/6204518.html">强大的pdf文件操作小工具——PDFtk的小白用法</a></a></p>
+<p>测试下常用元素都能支持吗?</p>
+<p>–<em>config</em>–</p>
+<p>图片测试:</p>
+<p>附件下载：<a href="../../images/2024-08-26springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.xmind">springboot生命周期.xmind</a></p>
+<p>post链接增加</p>
+<a href="/hexo2/posts/d516ee14/" title="hexo博客汇总">你好，世界</a>
+<p>123</p>
+/hexo2/posts/d516ee14/
+
+
+
+<p><em>斜体</em></p>
+<p>&#x3D;&#x3D;重点显示&#x3D;&#x3D;</p>
+<p><del>删除线</del></p>
+<p><u>下划线</u></p>
+<p><strong>加粗</strong></p>
+<!--注释预研-->
+
+<ul>
+<li><p><input disabled="" type="checkbox"> 
+任务列表</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+你好</p>
+</li>
+</ul>
+<p>[]:</p>
+<hr>
+<blockquote>
+<p>注解</p>
+<p>注解内容</p>
+</blockquote>
+<p>This is my website, click the button <a class="btn-beautify " href="https://butterfly.js.org/" 
+  title="Butterfly"><span>Butterfly</span></a></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th align="right">价格</th>
+<th align="center">数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>计算机</td>
+<td align="right">$1600</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td>手机</td>
+<td align="right">$12</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td>管线</td>
+<td align="right">$1</td>
+<td align="center">234</td>
+</tr>
+</tbody></table>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo server</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo generate</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="language-bash" data-language="bash"><code class="language-bash">$ hexo deploy</code></pre>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>文件编程</category>
+      </categories>
+      <tags>
+        <tag>pdf</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/hexo2/posts/16107/</url>
     <content><![CDATA[<h2 id="hexo-主题测试"><a href="#hexo-主题测试" class="headerlink" title="hexo 主题测试"></a>hexo 主题测试</h2><p>分割线测试</p>
 <hr>
 <p>测试下常用元素都能支持吗?</p>
 <p>–<em>config</em>–</p>
-<p>附件下载<br>附件下载：<a href="../../images/2024-08-26springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.xmind">springboot生命周期.xmind</a></p>
+<p>图片测试:</p>
+<p><img src="/hexo2/images/hello-world/background.jpg" alt="background"></p>
+<p>附件下载：<a href="../../images/2024-08-26springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/springboot%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.xmind">springboot生命周期.xmind</a></p>
 <p>post链接增加</p>
 <a href="/hexo2/posts/d516ee14/" title="hexo博客汇总">你好，世界</a>
 <p>123</p>
@@ -1292,8 +2204,10 @@ SET GLOBAL innodb_ft_server_stopword_table &#x3D; &#39;test&#x2F;my_stopwords&#3
 ]]></content>
       <categories>
         <category>hexo博客</category>
+        <category>Demo</category>
       </categories>
       <tags>
+        <tag>Demo</tag>
         <tag>hexo博客</tag>
       </tags>
   </entry>
@@ -4770,7 +5684,7 @@ at Promise.settlePromiseFromHandler (F:\hexo\nodemodules\bluebird\js\release\pro
 <p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/73515338-e6874d80-442f-11ea-9d07-725d37002985.png"></p>
 <blockquote>
 <p>cheerio版本錯誤，請安裝0.22.0版本</p>
-<p>npm install <a href="mailto:&#99;&#x68;&#101;&#101;&#114;&#x69;&#x6f;&#64;&#x30;&#x2e;&#50;&#x32;&#46;&#48;">&#99;&#x68;&#101;&#101;&#114;&#x69;&#x6f;&#64;&#x30;&#x2e;&#50;&#x32;&#46;&#48;</a> –save</p>
+<p>npm install <a href="mailto:&#x63;&#104;&#101;&#x65;&#114;&#x69;&#111;&#x40;&#x30;&#x2e;&#x32;&#x32;&#x2e;&#x30;">&#x63;&#104;&#101;&#x65;&#114;&#x69;&#111;&#x40;&#x30;&#x2e;&#x32;&#x32;&#x2e;&#x30;</a> –save</p>
 </blockquote>
 <h3 id="搜索欄在底部"><a href="#搜索欄在底部" class="headerlink" title="搜索欄在底部"></a>搜索欄在底部</h3><p>hexo deploy後搜索欄在頁面底部</p>
 <blockquote>
