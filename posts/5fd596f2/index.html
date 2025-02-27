@@ -1,0 +1,415 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>position属性 | liudongsir's blog</title><meta name="author" content="liudong"><meta name="copyright" content="liudong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="css布局之position">
+<meta property="og:type" content="article">
+<meta property="og:title" content="position属性">
+<meta property="og:url" content="https://liudongsir.github.io/hexo2/posts/5fd596f2/index.html">
+<meta property="og:site_name" content="liudongsir&#39;s blog">
+<meta property="og:description" content="css布局之position">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://imgapi.cn/api.php?zd=pc&fl=fengjing&gs=images">
+<meta property="article:published_time" content="2025-02-25T10:46:11.122Z">
+<meta property="article:modified_time" content="2025-02-25T10:48:25.030Z">
+<meta property="article:author" content="liudong">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="页面布局">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgapi.cn/api.php?zd=pc&fl=fengjing&gs=images"><link rel="shortcut icon" href="/hexo2/img/favicon5.png"><link rel="canonical" href="https://liudongsir.github.io/hexo2/posts/5fd596f2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexo2/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/hexo2/',
+  algolia: undefined,
+  localSearch: {"path":"/hexo2/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'position属性',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-02-25 18:48:25'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!--自定义css--><!-- todo  李小沐博客的主题--><!--link(rel='stylesheet', href=url_for('/css/coin/custom.css'))--><!--// todo  李小沐博客的主题 end--><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/hexo2/img/loading.gif" data-lazy-src="https://cdn.seovx.com/?mom=302" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexo2/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/hexo2/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/hexo2/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-home"></i><span> 主页</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/archives/" target="_self"><i class="fa-fw fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/hexo2/tags/" target="_self"><i class="fa-fw fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/hexo2/categories/" target="_self"><i class="fa-fw fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/categories/hexo%E5%8D%9A%E5%AE%A2/" target="_blank"><i class="fa-fw fas"></i><span> 🚀 hexo博客</span></a></li><li><a class="site-page child" href="/hexo2/categories/butterfly/" target="_blank"><i class="fa-fw fas"></i><span> 📑 butterfly</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-laptop-code"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://liudongsir.github.io/hexo/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 我的博客</span></a></li><li><a class="site-page child" href="https://liudongsir.github.io/nav" target="_blank"><i class="fa-fw fa-fw fas fa-video"></i><span> 网站导航</span></a></li><li><a class="site-page child" href="/hexo2/daily/" target="_blank"><i class="fa-fw ✨"></i><span> 每日新闻</span></a></li><li><a class="site-page child" href="/hexo2/link/" target="_blank"><i class="fa-fw fa-fw fas fa-link"></i><span> 网站收藏</span></a></li><li><a class="site-page child" href="/hexo2/about/" target="_blank"><i class="fa-fw fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo2/comments/" target="_self"><i class="fa-fw fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://music.fe32.top/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 音乐</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/hexo2/" title="liudongsir's blog"><span class="site-name">liudongsir's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" target="_self"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-home"></i><span> 主页</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/archives/" target="_self"><i class="fa-fw fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/hexo2/tags/" target="_self"><i class="fa-fw fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/hexo2/categories/" target="_self"><i class="fa-fw fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/categories/hexo%E5%8D%9A%E5%AE%A2/" target="_blank"><i class="fa-fw fas"></i><span> 🚀 hexo博客</span></a></li><li><a class="site-page child" href="/hexo2/categories/butterfly/" target="_blank"><i class="fa-fw fas"></i><span> 📑 butterfly</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-laptop-code"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://liudongsir.github.io/hexo/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 我的博客</span></a></li><li><a class="site-page child" href="https://liudongsir.github.io/nav" target="_blank"><i class="fa-fw fa-fw fas fa-video"></i><span> 网站导航</span></a></li><li><a class="site-page child" href="/hexo2/daily/" target="_blank"><i class="fa-fw ✨"></i><span> 每日新闻</span></a></li><li><a class="site-page child" href="/hexo2/link/" target="_blank"><i class="fa-fw fa-fw fas fa-link"></i><span> 网站收藏</span></a></li><li><a class="site-page child" href="/hexo2/about/" target="_blank"><i class="fa-fw fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo2/comments/" target="_self"><i class="fa-fw fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://music.fe32.top/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 音乐</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">position属性<a class="post-edit-link" href="https://github.com/liudongsir/hexo2source/tree/master/source/_posts/css/2025-02-25position.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-25T10:46:11.122Z" title="发表于 2025-02-25 18:46:11">2025-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-25T10:48:25.030Z" title="更新于 2025-02-25 18:48:25">2025-02-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexo2/categories/css/">css</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">854</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="position属性"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p> 一篇代码</p>
+<pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>css 之 position 定位<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bigbox<span class="token punctuation">"</span></span> <span class="token attr-name">bg-coolGray</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> box
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cl1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>1static<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cl2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>2static float<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cl3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>3relative<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cl4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4absolute<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cl5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>5fixed<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cl6<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>sticky6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cl7<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>sticky7<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">body</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100vw<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200vh<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+
+  <span class="token selector">div</span> <span class="token punctuation">&#123;</span>
+    //<span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token selector">.bigbox</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid greenyellow <span class="token important">!important</span><span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 200vh<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token selector">.box</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> static<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    //<span class="token property">top</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid red <span class="token important">!important</span><span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  // margin-top 会撑大父级容器的尺寸了top 只会进行位移 不会改变父级元素的尺寸<span class="token punctuation">;</span>
+
+
+  <span class="token selector">.cl1</span> <span class="token punctuation">&#123;</span>
+    //<span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> static<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token selector">.cl2</span> <span class="token punctuation">&#123;</span>
+    // <span class="token property">由此观之</span><span class="token punctuation">:</span> float 和  top  right位移无关
+    //<span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> static<span class="token punctuation">;</span>
+    <span class="token property">float</span><span class="token punctuation">:</span> right<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 80px<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token selector">.cl3</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    // relative  top left 位移是相对于父级容器来变动
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token selector">.cl4</span> <span class="token punctuation">&#123;</span>
+    // absolute 在元素之内的<span class="token punctuation">;</span>
+    //<span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    //<span class="token property">right</span><span class="token punctuation">:</span>200px //该属性不生效 需要设置定宽才能生效
+    //<span class="token property">flot</span><span class="token punctuation">:</span>right<span class="token punctuation">;</span>
+    //<span class="token property">margin</span><span class="token punctuation">:</span>300px<span class="token punctuation">;</span>
+    //   absolute 是相对于最近一个不是static 定位的元素位移的. // 观察bigbox 定位可知
+    // absolute 如果没有设置 top 等位移 会跟在正常流之后 但是不占用正常流的空间<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token selector">.cl5</span> <span class="token punctuation">&#123;</span>
+    // fixed 在元素之外相对于视窗定位
+    //<span class="token property">background-color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span> <span class="token property">left</span> <span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>  // 如果不进行定位则是相对于父级之内  否则 fixed 在元素之外相对于视窗定位进行位移
+    // basolute fixed 都不会占用父级空间<span class="token punctuation">;</span>即不会影响父级的宽度<span class="token punctuation">;</span>
+    // 同时 如果不进行位移定位的话
+  <span class="token punctuation">&#125;</span>
+
+
+
+
+  <span class="token selector">.cl6</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span>red solid 1px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span>goldenrod<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> sticky<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 0px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 10000<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token selector">.cl7</span> <span class="token punctuation">&#123;</span>
+    //<span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> sticky<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+
+  <span class="token punctuation">&#125;</span>
+
+
+  // <span class="token property">综上所属</span><span class="token punctuation">:</span>
+  //   元素的position 定位和便宜量配合使用会表现出不同的结果<span class="token punctuation">;</span>
+  // 首先是正常文档流  static  relative<span class="token punctuation">;</span>
+  // static 元素不会偏移 即 <span class="token property">top</span><span class="token punctuation">:</span>10px 无效<span class="token punctuation">;</span>
+  // relative 元素会偏移 <span class="token property">top</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+  // 然后是相对定位  absolute fixed<span class="token punctuation">;</span>
+  //如果没有设置偏移
+  // absolute 和 fixed 都不会占用父级空间<span class="token punctuation">;</span> 但是absolute 会默认出现在正常文档流的位置<span class="token punctuation">;</span> 和后续的内容堆叠<span class="token punctuation">;</span>
+  // fixed 则出现在window的中间位置<span class="token punctuation">;</span>
+  // 如果设置了偏移量 absolute 是相对于最近的非static父级进行定位<span class="token punctuation">;</span> fixed 是相对于视窗进行定位<span class="token punctuation">;</span>
+  // 然后是粘性定位 sticky<span class="token punctuation">;</span>
+  // 粘性定位是属于 父级元素的<span class="token punctuation">;</span> 但是设置偏移量后 会相对于window进行固定<span class="token punctuation">,</span> 直至父级窗口消失  或则说 直至移动到父级边界<span class="token punctuation">;</span>
+
+  // todo float 和 relative 的位移是相对于原来位置的偏移<span class="token punctuation">;</span>   absolute和 fixed 则是距离边界的距离<span class="token punctuation">;</span>
+
+
+  <span class="token comment">/*  // sticky 定位 表现出一种类似 relative   fixed的定位状态( 这种fixed 不是相对于窗口而是相对于父级容器)
+  // 当未设置偏移量 top 时 sticky 元素定位表现和 relative 相同;
+  // 当 设置便宜量时; top 10px 当元素距离窗口 顶部距离小于10px时 会固定在顶部;
+  // 而父级元素继续滚动  sticky 的元素位移到父级容器的顶部时 又会和父级元素一起消失在窗口;*/</span>
+
+  //float 和  top  right位移无关
+  
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://liudongsir.github.io/hexo2">liudong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://liudongsir.github.io/hexo2/posts/5fd596f2/">https://liudongsir.github.io/hexo2/posts/5fd596f2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liudongsir.github.io/hexo2" target="_blank">liudongsir's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/hexo2/tags/css/">css</a><a class="post-meta__tags" href="/hexo2/tags/%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80/">页面布局</a></div><div class="post_share"><div class="social-share" data-image="https://imgapi.cn/api.php?zd=pc&amp;fl=fengjing&amp;gs=images" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/hexo2/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/hexo2/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/hexo2/posts/d4daa4cd/" title="引入icon的几种方式"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://t.alcy.cc/fj/" onerror="onerror=null;src='/hexo2/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">引入icon的几种方式</div></div></a></div><div class="next-post pull-right"><a href="/hexo2/posts/ced97f4/" title="redis缓存一致性"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://imgapi.cn/api.php?zd=pc&amp;fl=fengjing&amp;gs=images" onerror="onerror=null;src='/hexo2/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">redis缓存一致性</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Giscus</span><span id="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/hexo2/img/loading.gif" data-lazy-src="https://cdn.seovx.com/?mom=302" onerror="this.onerror=null;this.src='/hexo2/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">liudong</div><div class="author-info__description">what description</div></div><div class="card-info-data site-data is-center"><a href="/hexo2/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/hexo2/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/hexo2/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/liudongsir"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>页面布局</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo2/posts/5fd596f2/" title="position属性">position属性</a><time datetime="2025-02-25T10:46:11.122Z" title="发表于 2025-02-25 18:46:11">2025-02-25</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo2/posts/d4daa4cd/" title="引入icon的几种方式">引入icon的几种方式</a><time datetime="2025-02-27T03:23:10.000Z" title="发表于 2025-02-27 11:23:10">2025-02-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo2/posts/5fd596f2/" title="position属性">position属性</a><time datetime="2025-02-25T10:46:11.122Z" title="发表于 2025-02-25 18:46:11">2025-02-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo2/posts/ced97f4/" title="redis缓存一致性">redis缓存一致性</a><time datetime="2024-09-24T07:06:12.000Z" title="发表于 2024-09-24 15:06:12">2024-09-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo2/posts/587418e1/" title="数据库事务">数据库事务</a><time datetime="2024-09-24T02:20:50.000Z" title="发表于 2024-09-24 10:20:50">2024-09-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo2/posts/6489c7d8/" title="pdf相关">pdf相关</a><time datetime="2024-09-09T01:43:09.000Z" title="发表于 2024-09-09 09:43:09">2024-09-09</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By liudong</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://butterfly.js.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hexo2/js/utils.js?v=4.13.0"></script><script src="/hexo2/js/main.js?v=4.13.0"></script><script src="/hexo2/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'liudongsir/hexo2',
+      'data-repo-id': 'R_kgDOMRULPg',
+      'data-category-id': 'DIC_kwDOMRULPs4CgtiW',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },null)
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: 'Ov23liQUy51NzqGTWx8v',
+      clientSecret: 'aa22a9bfc23b5754a634572f6f932f8c2d5598ca',
+      repo: 'hexo2',
+      owner: 'liudongsir',
+      admin: ['liudongsir'],
+      id: '92fa961ea9c917a4e5c047ecab46e3e0',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Giscus' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/hexo2/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
