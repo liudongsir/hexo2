@@ -1,0 +1,421 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Web 全景图转换及免费工具使用指南 | liudongsir's blog</title><meta name="author" content="liudong"><meta name="copyright" content="liudong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Web 全景图转换及免费工具使用指南结合你做网页端全景漫游（仿百度全景）的需求，我把全景文件的获取方式（免费&#x2F;自制&#x2F;商用） + 全景图处理方法（格式转换、优化、拼接，零门槛） 讲得清清楚楚，所有工具都是免费&#x2F;轻量化，直接适配你之前用的 Pannellum 播放器。 核心前提：网页全景必须用【等矩形全景图（Equirectangular）】，比例严格 2:1（宽:高），">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web 全景图转换及免费工具使用指南">
+<meta property="og:url" content="https://liudongsir.github.io/hexo2/posts/ea66c157/index.html">
+<meta property="og:site_name" content="liudongsir&#39;s blog">
+<meta property="og:description" content="Web 全景图转换及免费工具使用指南结合你做网页端全景漫游（仿百度全景）的需求，我把全景文件的获取方式（免费&#x2F;自制&#x2F;商用） + 全景图处理方法（格式转换、优化、拼接，零门槛） 讲得清清楚楚，所有工具都是免费&#x2F;轻量化，直接适配你之前用的 Pannellum 播放器。 核心前提：网页全景必须用【等矩形全景图（Equirectangular）】，比例严格 2:1（宽:高），">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://t.alcy.cc/fj/">
+<meta property="article:published_time" content="2026-03-31T02:57:27.000Z">
+<meta property="article:modified_time" content="2026-03-31T03:08:38.152Z">
+<meta property="article:author" content="liudong">
+<meta property="article:tag" content="pano全景">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://t.alcy.cc/fj/"><link rel="shortcut icon" href="/hexo2/img/favicon5.png"><link rel="canonical" href="https://liudongsir.github.io/hexo2/posts/ea66c157/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexo2/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/hexo2/',
+  algolia: undefined,
+  localSearch: {"path":"/hexo2/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Web 全景图转换及免费工具使用指南',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-03-31 11:08:38'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!--自定义css--><!-- todo  李小沐博客的主题--><!--link(rel='stylesheet', href=url_for('/css/coin/custom.css'))--><!--// todo  李小沐博客的主题 end--><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/hexo2/img/loading.gif" data-lazy-src="https://cdn.seovx.com/?mom=302" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexo2/archives/"><div class="headline">文章</div><div class="length-num">92</div></a><a href="/hexo2/tags/"><div class="headline">标签</div><div class="length-num">47</div></a><a href="/hexo2/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-home"></i><span> 主页</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/archives/" target="_self"><i class="fa-fw fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/hexo2/tags/" target="_self"><i class="fa-fw fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/hexo2/categories/" target="_self"><i class="fa-fw fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/categories/hexo%E5%8D%9A%E5%AE%A2/" target="_blank"><i class="fa-fw fas"></i><span> 🚀 hexo博客</span></a></li><li><a class="site-page child" href="/hexo2/categories/butterfly/" target="_blank"><i class="fa-fw fas"></i><span> 📑 butterfly</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-laptop-code"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://liudongsir.github.io/hexo/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 我的博客</span></a></li><li><a class="site-page child" href="https://liudongsir.github.io/nav" target="_blank"><i class="fa-fw fa-fw fas fa-video"></i><span> 网站导航</span></a></li><li><a class="site-page child" href="/hexo2/daily/" target="_blank"><i class="fa-fw ✨"></i><span> 每日新闻</span></a></li><li><a class="site-page child" href="/hexo2/link/" target="_blank"><i class="fa-fw fa-fw fas fa-link"></i><span> 网站收藏</span></a></li><li><a class="site-page child" href="/hexo2/about/" target="_blank"><i class="fa-fw fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo2/comments/" target="_self"><i class="fa-fw fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://music.fe32.top/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 音乐</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/hexo2/" title="liudongsir's blog"><span class="site-name">liudongsir's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" target="_self"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-home"></i><span> 主页</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/archives/" target="_self"><i class="fa-fw fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/hexo2/tags/" target="_self"><i class="fa-fw fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/hexo2/categories/" target="_self"><i class="fa-fw fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/categories/hexo%E5%8D%9A%E5%AE%A2/" target="_blank"><i class="fa-fw fas"></i><span> 🚀 hexo博客</span></a></li><li><a class="site-page child" href="/hexo2/categories/butterfly/" target="_blank"><i class="fa-fw fas"></i><span> 📑 butterfly</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-laptop-code"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://liudongsir.github.io/hexo/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 我的博客</span></a></li><li><a class="site-page child" href="https://liudongsir.github.io/nav" target="_blank"><i class="fa-fw fa-fw fas fa-video"></i><span> 网站导航</span></a></li><li><a class="site-page child" href="/hexo2/daily/" target="_blank"><i class="fa-fw ✨"></i><span> 每日新闻</span></a></li><li><a class="site-page child" href="/hexo2/link/" target="_blank"><i class="fa-fw fa-fw fas fa-link"></i><span> 网站收藏</span></a></li><li><a class="site-page child" href="/hexo2/about/" target="_blank"><i class="fa-fw fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo2/comments/" target="_self"><i class="fa-fw fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://music.fe32.top/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 音乐</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Web 全景图转换及免费工具使用指南<a class="post-edit-link" href="https://github.com/liudongsir/hexo2source/tree/master/source/_posts/全景学习/1Web 全景图转换及免费工具使用指南.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-03-31T02:57:27.000Z" title="发表于 2026-03-31 10:57:27">2026-03-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-03-31T03:08:38.152Z" title="更新于 2026-03-31 11:08:38">2026-03-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexo2/categories/pano%E5%85%A8%E6%99%AF/">pano全景</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Web 全景图转换及免费工具使用指南"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="Web-全景图转换及免费工具使用指南"><a href="#Web-全景图转换及免费工具使用指南" class="headerlink" title="Web 全景图转换及免费工具使用指南"></a>Web 全景图转换及免费工具使用指南</h1><p>结合你做<strong>网页端全景漫游（仿百度全景）的需求，我把全景文件的获取方式（免费&#x2F;自制&#x2F;商用）</strong> + <strong>全景图处理方法（格式转换、优化、拼接，零门槛）</strong> 讲得清清楚楚，所有工具都是免费&#x2F;轻量化，直接适配你之前用的 Pannellum 播放器。</p>
+<p>核心前提：网页全景<strong>必须用【等矩形全景图（Equirectangular）】</strong>，比例严格 <strong>2:1</strong>（宽:高），这是百度&#x2F;谷歌&#x2F;Pannellum 通用标准！</p>
+<hr>
+<h1 id="一、全景文件获取（3种方案，按需选）"><a href="#一、全景文件获取（3种方案，按需选）" class="headerlink" title="一、全景文件获取（3种方案，按需选）"></a>一、全景文件获取（3种方案，按需选）</h1><h2 id="方案1：免费可商用全景图（新手首选，零成本、无版权）"><a href="#方案1：免费可商用全景图（新手首选，零成本、无版权）" class="headerlink" title="方案1：免费可商用全景图（新手首选，零成本、无版权）"></a>方案1：免费可商用全景图（新手首选，零成本、无版权）</h2><p>直接下载现成的<strong>标准等矩形全景图</strong>，复制到项目里就能用，无需处理：</p>
+<ol>
+<li><strong>Pannellum 官方示例库</strong></li>
+</ol>
+<p>地址：<a target="_blank" rel="noopener" href="https://pannellum.org/images/">https://pannellum.org/images/</a></p>
+<p>直接拿图，完全免费，适配网页。</p>
+<ol>
+<li><strong>Pixabay（无版权高清）</strong></li>
+</ol>
+<p>搜索关键词：<code>360 panorama equirectangular</code></p>
+<p>地址：<a target="_blank" rel="noopener" href="https://pixabay.com/">https://pixabay.com/</a></p>
+<ol>
+<li><strong>Unsplash</strong></li>
+</ol>
+<p>搜索：<code>equirectangular panorama</code></p>
+<ol>
+<li><strong>全景素材网</strong></li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.sketchuptexture.com/">https://www.sketchuptexture.com/</a>（建筑&#x2F;室内全景）</p>
+<p>✅ 优点：直接用、不用处理、免费商用</p>
+<p>✅ 格式：默认就是 2:1 等矩形，完美适配你的代码</p>
+<hr>
+<h2 id="方案2：自制全景图（专属场景，自己拍）"><a href="#方案2：自制全景图（专属场景，自己拍）" class="headerlink" title="方案2：自制全景图（专属场景，自己拍）"></a>方案2：自制全景图（专属场景，自己拍）</h2><p>适合需要<strong>楼盘、景区、店铺、室内</strong>专属全景的场景，分2种设备：</p>
+<h3 id="①-手机拍摄（零成本）"><a href="#①-手机拍摄（零成本）" class="headerlink" title="① 手机拍摄（零成本）"></a>① 手机拍摄（零成本）</h3><ol>
+<li><p>打开手机相机 → 切换到<strong>全景模式</strong></p>
+</li>
+<li><p><strong>水平缓慢旋转360°</strong>（保持手机水平，不要上下晃）</p>
+</li>
+<li><p>拍完后，手机会自动生成全景图（后期需要转换格式，看下方处理教程）</p>
+</li>
+</ol>
+<h3 id="②-全景相机（傻瓜式，推荐）"><a href="#②-全景相机（傻瓜式，推荐）" class="headerlink" title="② 全景相机（傻瓜式，推荐）"></a>② 全景相机（傻瓜式，推荐）</h3><p>入门级：<strong>Insta360 Go&#x2F;ACE、GoPro Max</strong></p>
+<ul>
+<li><p>开机直接拍360°全景</p>
+</li>
+<li><p>相机自带软件<strong>一键导出标准等矩形全景图</strong></p>
+</li>
+<li><p>导出后直接用于网页，无需二次处理</p>
+</li>
+</ul>
+<hr>
+<h2 id="方案3：付费商用全景图（专业高清）"><a href="#方案3：付费商用全景图（专业高清）" class="headerlink" title="方案3：付费商用全景图（专业高清）"></a>方案3：付费商用全景图（专业高清）</h2><p>用于商业项目（景区、地产、展厅）：</p>
+<ol>
+<li><p>全景商用图库：<a target="_blank" rel="noopener" href="https://www.360cities.net/">https://www.360cities.net/</a></p>
+</li>
+<li><p>本地全景拍摄服务商（上门拍摄+后期处理）</p>
+</li>
+</ol>
+<hr>
+<h1 id="二、全景文件处理（核心：转成2-1等矩形-优化）"><a href="#二、全景文件处理（核心：转成2-1等矩形-优化）" class="headerlink" title="二、全景文件处理（核心：转成2:1等矩形+优化）"></a>二、全景文件处理（核心：转成2:1等矩形+优化）</h1><p>90%的新手问题：<strong>拍的全景图用不了、变形、加载慢</strong>，只需要做4步处理：</p>
+<h2 id="必备工具（全免费，无安装-在线即可）"><a href="#必备工具（全免费，无安装-在线即可）" class="headerlink" title="必备工具（全免费，无安装&#x2F;在线即可）"></a>必备工具（全免费，无安装&#x2F;在线即可）</h2><table>
+<thead>
+<tr>
+<th>用途</th>
+<th>在线工具（零门槛）</th>
+<th>桌面软件（专业）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>格式转换</td>
+<td>360 Converter</td>
+<td>Insta360 Studio</td>
+</tr>
+<tr>
+<td>图片压缩</td>
+<td>TinyPNG</td>
+<td>Photoshop</td>
+</tr>
+<tr>
+<td>全景拼接</td>
+<td>Canvas Pano</td>
+<td>PTGui &#x2F; Autopano</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="具体处理步骤（照着做就行）"><a href="#具体处理步骤（照着做就行）" class="headerlink" title="具体处理步骤（照着做就行）"></a>具体处理步骤（照着做就行）</h2><h3 id="步骤1：强制转成【2-1等矩形格式】（最关键！）"><a href="#步骤1：强制转成【2-1等矩形格式】（最关键！）" class="headerlink" title="步骤1：强制转成【2:1等矩形格式】（最关键！）"></a>步骤1：强制转成【2:1等矩形格式】（最关键！）</h3><p>非标准全景图（手机拍的、相机原片）必须转换，否则网页会变形：</p>
+<ol>
+<li><p>打开在线工具：<a target="_blank" rel="noopener" href="https://360converter.com/">https://360converter.com/</a></p>
+</li>
+<li><p>上传你的全景图片</p>
+</li>
+<li><p>选择输出格式：<strong>Equirectangular（等矩形）</strong></p>
+</li>
+<li><p>设置比例：<strong>2:1</strong></p>
+</li>
+<li><p>下载导出，直接适配你的网页代码</p>
+</li>
+</ol>
+<h3 id="步骤2：尺寸优化（网页加载速度）"><a href="#步骤2：尺寸优化（网页加载速度）" class="headerlink" title="步骤2：尺寸优化（网页加载速度）"></a>步骤2：尺寸优化（网页加载速度）</h3><p>推荐尺寸（兼顾清晰度+加载速度）：</p>
+<ul>
+<li><p>普通场景：<strong>4096×2048 px</strong></p>
+</li>
+<li><p>高清场景：<strong>8192×4096 px</strong></p>
+</li>
+</ul>
+<p>固定规则：<strong>宽度&#x3D;高度×2</strong></p>
+<h3 id="步骤3：无损压缩（减小文件大小）"><a href="#步骤3：无损压缩（减小文件大小）" class="headerlink" title="步骤3：无损压缩（减小文件大小）"></a>步骤3：无损压缩（减小文件大小）</h3><p>网页图片不能太大（否则加载卡顿）：</p>
+<ol>
+<li><p>打开：<a target="_blank" rel="noopener" href="https://tinypng.com/">https://tinypng.com/</a></p>
+</li>
+<li><p>拖拽全景图上传</p>
+</li>
+<li><p>自动无损压缩（体积缩小50%+，画质不变）</p>
+</li>
+<li><p>下载使用</p>
+</li>
+</ol>
+<h3 id="步骤4：热点坐标校准（配合你的漫游代码）"><a href="#步骤4：热点坐标校准（配合你的漫游代码）" class="headerlink" title="步骤4：热点坐标校准（配合你的漫游代码）"></a>步骤4：热点坐标校准（配合你的漫游代码）</h3><p>给全景图加跳转热点时，需要获取 <code>pitch</code>（垂直）&#x2F;<code>yaw</code>（水平）坐标：</p>
+<ol>
+<li><p>打开 Pannellum 调试工具：<a target="_blank" rel="noopener" href="https://pannellum.org/">https://pannellum.org/</a></p>
+</li>
+<li><p>上传你的全景图</p>
+</li>
+<li><p>鼠标指向需要加热点的位置，直接复制坐标</p>
+</li>
+<li><p>粘贴到代码的 <code>hotSpots</code> 里即可</p>
+</li>
+</ol>
+<hr>
+<h1 id="三、避坑指南（新手必看）"><a href="#三、避坑指南（新手必看）" class="headerlink" title="三、避坑指南（新手必看）"></a>三、避坑指南（新手必看）</h1><ol>
+<li><p><strong>比例错误</strong>：必须 2:1，否则画面拉伸&#x2F;变形</p>
+</li>
+<li><p><strong>版权风险</strong>：商用项目禁止用百度&#x2F;谷歌的全景图（侵权）</p>
+</li>
+<li><p><strong>文件过大</strong>：全景图不要超过 20MB（网页加载卡死）</p>
+</li>
+<li><p><strong>格式错误</strong>：只支持 JPG&#x2F;PNG&#x2F;WebP，不要用 RAW 原片</p>
+</li>
+</ol>
+<hr>
+<h1 id="四、快速上手流程（最简版）"><a href="#四、快速上手流程（最简版）" class="headerlink" title="四、快速上手流程（最简版）"></a>四、快速上手流程（最简版）</h1><ol>
+<li><p>去 <strong>Pixabay</strong> 下载一张免费等矩形全景图</p>
+</li>
+<li><p>用 <strong>TinyPNG</strong> 压缩一下</p>
+</li>
+<li><p>替换你之前代码里的 <code>panorama</code> 图片地址</p>
+</li>
+<li><p>直接运行网页 → 完美实现全景漫游</p>
+</li>
+</ol>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li><p><strong>新手直接用免费现成全景图</strong>，不用拍摄、不用处理，开箱即用</p>
+</li>
+<li><p>自制全景只需要<strong>转换为2:1等矩形格式</strong>，就能适配网页</p>
+</li>
+<li><p>所有处理工具全免费，在线就能完成，无需专业技能</p>
+</li>
+</ol>
+<p>你需要我帮你<strong>找适配你项目的免费全景图</strong>，或者<strong>教你把手机拍的图转换成标准格式</strong>吗？</p>
+<blockquote>
+<p>（注：文档部分内容可能由 AI 生成）</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://liudongsir.github.io/hexo2">liudong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://liudongsir.github.io/hexo2/posts/ea66c157/">https://liudongsir.github.io/hexo2/posts/ea66c157/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liudongsir.github.io/hexo2" target="_blank">liudongsir's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/hexo2/tags/pano%E5%85%A8%E6%99%AF/">pano全景</a></div><div class="post_share"><div class="social-share" data-image="https://t.alcy.cc/fj/" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/hexo2/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/hexo2/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/hexo2/posts/7f3210ba/" title="全景漫游技术扫盲指南"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://www.dmoe.cc/random.php" onerror="onerror=null;src='/hexo2/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">全景漫游技术扫盲指南</div></div></a></div><div class="next-post pull-right"><a href="/hexo2/posts/2447e571/" title="springboot启动全流程"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://www.dmoe.cc/random.php" onerror="onerror=null;src='/hexo2/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">springboot启动全流程</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/hexo2/posts/7f3210ba/" title="全景漫游技术扫盲指南"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://www.dmoe.cc/random.php" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-31</div><div class="title">全景漫游技术扫盲指南</div></div></a></div><div><a href="/hexo2/posts/31efb3e5/" title="大疆智图：从三维模型切 360°全景详细步骤"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://www.dmoe.cc/random.php" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-31</div><div class="title">大疆智图：从三维模型切 360°全景详细步骤</div></div></a></div><div><a href="/hexo2/posts/a6ed4ae5/" title="全景总结mind"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://t.alcy.cc/fj/" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-31</div><div class="title">全景总结mind</div></div></a></div><div><a href="/hexo2/posts/b8425a6c/" title="全景技术选型对比分析"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://www.dmoe.cc/random.php" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-03-31</div><div class="title">全景技术选型对比分析</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Giscus</span><span id="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-%E5%85%A8%E6%99%AF%E5%9B%BE%E8%BD%AC%E6%8D%A2%E5%8F%8A%E5%85%8D%E8%B4%B9%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">Web 全景图转换及免费工具使用指南</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%85%A8%E6%99%AF%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%EF%BC%883%E7%A7%8D%E6%96%B9%E6%A1%88%EF%BC%8C%E6%8C%89%E9%9C%80%E9%80%89%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">一、全景文件获取（3种方案，按需选）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%881%EF%BC%9A%E5%85%8D%E8%B4%B9%E5%8F%AF%E5%95%86%E7%94%A8%E5%85%A8%E6%99%AF%E5%9B%BE%EF%BC%88%E6%96%B0%E6%89%8B%E9%A6%96%E9%80%89%EF%BC%8C%E9%9B%B6%E6%88%90%E6%9C%AC%E3%80%81%E6%97%A0%E7%89%88%E6%9D%83%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">方案1：免费可商用全景图（新手首选，零成本、无版权）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%882%EF%BC%9A%E8%87%AA%E5%88%B6%E5%85%A8%E6%99%AF%E5%9B%BE%EF%BC%88%E4%B8%93%E5%B1%9E%E5%9C%BA%E6%99%AF%EF%BC%8C%E8%87%AA%E5%B7%B1%E6%8B%8D%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">方案2：自制全景图（专属场景，自己拍）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-%E6%89%8B%E6%9C%BA%E6%8B%8D%E6%91%84%EF%BC%88%E9%9B%B6%E6%88%90%E6%9C%AC%EF%BC%89"><span class="toc-number">2.2.1.</span> <span class="toc-text">① 手机拍摄（零成本）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-%E5%85%A8%E6%99%AF%E7%9B%B8%E6%9C%BA%EF%BC%88%E5%82%BB%E7%93%9C%E5%BC%8F%EF%BC%8C%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-number">2.2.2.</span> <span class="toc-text">② 全景相机（傻瓜式，推荐）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%883%EF%BC%9A%E4%BB%98%E8%B4%B9%E5%95%86%E7%94%A8%E5%85%A8%E6%99%AF%E5%9B%BE%EF%BC%88%E4%B8%93%E4%B8%9A%E9%AB%98%E6%B8%85%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">方案3：付费商用全景图（专业高清）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%85%A8%E6%99%AF%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%EF%BC%88%E6%A0%B8%E5%BF%83%EF%BC%9A%E8%BD%AC%E6%88%902-1%E7%AD%89%E7%9F%A9%E5%BD%A2-%E4%BC%98%E5%8C%96%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">二、全景文件处理（核心：转成2:1等矩形+优化）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7%EF%BC%88%E5%85%A8%E5%85%8D%E8%B4%B9%EF%BC%8C%E6%97%A0%E5%AE%89%E8%A3%85-%E5%9C%A8%E7%BA%BF%E5%8D%B3%E5%8F%AF%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">必备工具（全免费，无安装&#x2F;在线即可）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%A4%84%E7%90%86%E6%AD%A5%E9%AA%A4%EF%BC%88%E7%85%A7%E7%9D%80%E5%81%9A%E5%B0%B1%E8%A1%8C%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">具体处理步骤（照着做就行）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A41%EF%BC%9A%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%88%90%E3%80%902-1%E7%AD%89%E7%9F%A9%E5%BD%A2%E6%A0%BC%E5%BC%8F%E3%80%91%EF%BC%88%E6%9C%80%E5%85%B3%E9%94%AE%EF%BC%81%EF%BC%89"><span class="toc-number">3.2.1.</span> <span class="toc-text">步骤1：强制转成【2:1等矩形格式】（最关键！）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A%E5%B0%BA%E5%AF%B8%E4%BC%98%E5%8C%96%EF%BC%88%E7%BD%91%E9%A1%B5%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6%EF%BC%89"><span class="toc-number">3.2.2.</span> <span class="toc-text">步骤2：尺寸优化（网页加载速度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9A%E6%97%A0%E6%8D%9F%E5%8E%8B%E7%BC%A9%EF%BC%88%E5%87%8F%E5%B0%8F%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%EF%BC%89"><span class="toc-number">3.2.3.</span> <span class="toc-text">步骤3：无损压缩（减小文件大小）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A44%EF%BC%9A%E7%83%AD%E7%82%B9%E5%9D%90%E6%A0%87%E6%A0%A1%E5%87%86%EF%BC%88%E9%85%8D%E5%90%88%E4%BD%A0%E7%9A%84%E6%BC%AB%E6%B8%B8%E4%BB%A3%E7%A0%81%EF%BC%89"><span class="toc-number">3.2.4.</span> <span class="toc-text">步骤4：热点坐标校准（配合你的漫游代码）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97%EF%BC%88%E6%96%B0%E6%89%8B%E5%BF%85%E7%9C%8B%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">三、避坑指南（新手必看）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E6%B5%81%E7%A8%8B%EF%BC%88%E6%9C%80%E7%AE%80%E7%89%88%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">四、快速上手流程（最简版）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.0.1.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By liudong</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://butterfly.js.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hexo2/js/utils.js?v=4.13.0"></script><script src="/hexo2/js/main.js?v=4.13.0"></script><script src="/hexo2/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'liudongsir/hexo2',
+      'data-repo-id': 'R_kgDOMRULPg',
+      'data-category-id': 'DIC_kwDOMRULPs4CgtiW',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },null)
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: 'Ov23liQUy51NzqGTWx8v',
+      clientSecret: 'aa22a9bfc23b5754a634572f6f932f8c2d5598ca',
+      repo: 'hexo2',
+      owner: 'liudongsir',
+      admin: ['liudongsir'],
+      id: 'e77ffa690684646050a14db6d2a754f5',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Giscus' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/hexo2/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

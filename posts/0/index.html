@@ -1,0 +1,712 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>liudongsir's blog | liudongsir's blog</title><meta name="author" content="liudong"><meta name="copyright" content="liudong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="@ResponseBody是如何起作用的前言　　最近参与的项目中，接口中返回的日期格式不对，发现项目中配置了fastjson作为spring的数据转换器，于是使用了fastjson的字段格式化转换注解 发现不起作用。这让我很疑惑，然后在fastjson的相关代码中打断点发现请求并没有进入，最后在springmvc的流程源码中发现最后调用的是jackson也就是springmvc的默认转换器，fas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="liudongsir&#39;s blog">
+<meta property="og:url" content="https://liudongsir.github.io/hexo2/posts/0/index.html">
+<meta property="og:site_name" content="liudongsir&#39;s blog">
+<meta property="og:description" content="@ResponseBody是如何起作用的前言　　最近参与的项目中，接口中返回的日期格式不对，发现项目中配置了fastjson作为spring的数据转换器，于是使用了fastjson的字段格式化转换注解 发现不起作用。这让我很疑惑，然后在fastjson的相关代码中打断点发现请求并没有进入，最后在springmvc的流程源码中发现最后调用的是jackson也就是springmvc的默认转换器，fas">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://t.alcy.cc/fj/">
+<meta property="article:published_time" content="2025-03-13T03:07:00.655Z">
+<meta property="article:modified_time" content="2025-07-31T00:38:01.287Z">
+<meta property="article:author" content="liudong">
+<meta property="article:tag" content="hexo,butterfly,liudongsir,liudong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://t.alcy.cc/fj/"><link rel="shortcut icon" href="/hexo2/img/favicon5.png"><link rel="canonical" href="https://liudongsir.github.io/hexo2/posts/0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexo2/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/hexo2/',
+  algolia: undefined,
+  localSearch: {"path":"/hexo2/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":400},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'liudongsir\'s blog',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-07-31 08:38:01'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!--自定义css--><!-- todo  李小沐博客的主题--><!--link(rel='stylesheet', href=url_for('/css/coin/custom.css'))--><!--// todo  李小沐博客的主题 end--><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/hexo2/img/loading.gif" data-lazy-src="https://cdn.seovx.com/?mom=302" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexo2/archives/"><div class="headline">文章</div><div class="length-num">92</div></a><a href="/hexo2/tags/"><div class="headline">标签</div><div class="length-num">47</div></a><a href="/hexo2/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-home"></i><span> 主页</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/archives/" target="_self"><i class="fa-fw fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/hexo2/tags/" target="_self"><i class="fa-fw fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/hexo2/categories/" target="_self"><i class="fa-fw fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/categories/hexo%E5%8D%9A%E5%AE%A2/" target="_blank"><i class="fa-fw fas"></i><span> 🚀 hexo博客</span></a></li><li><a class="site-page child" href="/hexo2/categories/butterfly/" target="_blank"><i class="fa-fw fas"></i><span> 📑 butterfly</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-laptop-code"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://liudongsir.github.io/hexo/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 我的博客</span></a></li><li><a class="site-page child" href="https://liudongsir.github.io/nav" target="_blank"><i class="fa-fw fa-fw fas fa-video"></i><span> 网站导航</span></a></li><li><a class="site-page child" href="/hexo2/daily/" target="_blank"><i class="fa-fw ✨"></i><span> 每日新闻</span></a></li><li><a class="site-page child" href="/hexo2/link/" target="_blank"><i class="fa-fw fa-fw fas fa-link"></i><span> 网站收藏</span></a></li><li><a class="site-page child" href="/hexo2/about/" target="_blank"><i class="fa-fw fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo2/comments/" target="_self"><i class="fa-fw fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://music.fe32.top/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 音乐</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/hexo2/" title="liudongsir's blog"><span class="site-name">liudongsir's blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" target="_self"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-home"></i><span> 主页</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/archives/" target="_self"><i class="fa-fw fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/hexo2/tags/" target="_self"><i class="fa-fw fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/hexo2/categories/" target="_self"><i class="fa-fw fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo2/categories/hexo%E5%8D%9A%E5%AE%A2/" target="_blank"><i class="fa-fw fas"></i><span> 🚀 hexo博客</span></a></li><li><a class="site-page child" href="/hexo2/categories/butterfly/" target="_blank"><i class="fa-fw fas"></i><span> 📑 butterfly</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-laptop-code"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://liudongsir.github.io/hexo/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 我的博客</span></a></li><li><a class="site-page child" href="https://liudongsir.github.io/nav" target="_blank"><i class="fa-fw fa-fw fas fa-video"></i><span> 网站导航</span></a></li><li><a class="site-page child" href="/hexo2/daily/" target="_blank"><i class="fa-fw ✨"></i><span> 每日新闻</span></a></li><li><a class="site-page child" href="/hexo2/link/" target="_blank"><i class="fa-fw fa-fw fas fa-link"></i><span> 网站收藏</span></a></li><li><a class="site-page child" href="/hexo2/about/" target="_blank"><i class="fa-fw fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo2/comments/" target="_self"><i class="fa-fw fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="https://music.fe32.top/" target="_blank"><i class="fa-fw fa-fw fas fa-music"></i><span> 音乐</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">无题<a class="post-edit-link" href="https://github.com/liudongsir/hexo2source/tree/master/source/_posts/之前博客/2020-11-21@ResponseBody是如何起作用的.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-13T03:07:00.655Z" title="发表于 2025-03-13 11:07:00">2025-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-31T00:38:01.287Z" title="更新于 2025-07-31 08:38:01">2025-07-31</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>16分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="ResponseBody是如何起作用的"><a href="#ResponseBody是如何起作用的" class="headerlink" title="@ResponseBody是如何起作用的"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hetutu-5238/p/12067977.html">@ResponseBody是如何起作用的</a></h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　最近参与的项目中，接口中返回的日期格式不对，发现项目中配置了fastjson作为spring的数据转换器，于是使用了fastjson的字段格式化转换注解 发现不起作用。这让我很疑惑，然后在fastjson的相关代码中打断点发现请求并没有进入，最后在springmvc的流程源码中发现最后调用的是jackson也就是springmvc的默认转换器，fastjson没起作用。由于在使用了@ResponseBody后才会将数据直接序列化化进响应体中，而不是渲染视图，才有可能用到fastjson转换器，所以跟了下springmvc的执行源码，最终发现了原因。</p>
+<p>　　我们在使用springmvc框架时，很多时候接口不是想解析视图，而只是想把结果写回到响应体中，例如很多时候我们只期望接口返回json或者xml格式的数据。springmvc提供了一个注解**@ResponseBody<strong>。我们将其加在方法上则可以让这个方法的返回结果经过特殊转换后直接写入到响应体中。当然也可以在controller的类上直接定义</strong>@RestController** 。表明整个controller的方法都是将返回结果写入到响应体中。@RestController内部其实也是就是@ResponseBody@Controller的合体</p>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219133759950-295155445.png" alt="img"></p>
+<p>　　这样我们就能返回指定格式的信息，例如在创建springboot的工程中，我们在创建controller中写入如下方法，则可以直接返回json结果</p>
+<pre class="language-none"><code class="language-none">@GetMapping(value &#x3D; &quot;&#x2F;tet&quot;,produces&#x3D;&#123;&quot;application&#x2F;json&quot;&#125; )
+@ResponseBody
+ public UserInfo get() &#123;
+     UserInfo a &#x3D; new UserInfo(&quot;你好&quot;,&quot;word&quot;);
+     return a;
+ &#125;</code></pre>
+
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219134041877-1246881303.png" alt="img"></p>
+<p> 　或者我们将其改为xml，由于springboot默认没有引入xml转换器，所以我们需要加入一个包</p>
+<pre class="language-none"><code class="language-none">   &lt;dependency&gt;
+         &lt;groupId&gt;com.fasterxml.jackson.dataformat&lt;&#x2F;groupId&gt;
+         &lt;artifactId&gt;jackson-dataformat-xml&lt;&#x2F;artifactId&gt;
+     &lt;&#x2F;dependency&gt;
+@GetMapping(value &#x3D; &quot;&#x2F;tet&quot;,produces&#x3D;&#123;&quot;application&#x2F;xml&quot;&#125; )
+@ResponseBody
+ public UserInfo get() &#123;
+     UserInfo a &#x3D; new UserInfo(&quot;你好&quot;,&quot;word&quot;);
+     return a;
+ &#125;</code></pre>
+
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219134306634-856106057.png" alt="img"></p>
+<p> 　那这个注解是如何起效果的呢，我们可以根据springmvc的流程看</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>　　首先我们知道springmvc的原理是使用一个DispatchServlet来拦截servlet容器(例如jetty)所有的请求，然后根据请求的信息找到合适的处理器进行处理。我们可以看下DispatchServlet.doDispatch方法</p>
+<p><a href="javascript:void(0);"><img src= "/hexo2/img/loading.gif" data-lazy-src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<pre class="language-none"><code class="language-none">protected void doDispatch(HttpServletRequest request, HttpServletResponse response) throws Exception &#123;
+    HttpServletRequest processedRequest &#x3D; request;
+    HandlerExecutionChain mappedHandler &#x3D; null;
+    boolean multipartRequestParsed &#x3D; false;
+
+    WebAsyncManager asyncManager &#x3D; WebAsyncUtils.getAsyncManager(request);
+
+    try &#123;
+        ModelAndView mv &#x3D; null;
+        Exception dispatchException &#x3D; null;
+
+        try &#123;
+            &#x2F;&#x2F;判断是不是multipart格式的数据  例如上传文件
+            processedRequest &#x3D; checkMultipart(request);
+            multipartRequestParsed &#x3D; (processedRequest !&#x3D; request);
+
+            &#x2F;&#x2F;1. 通过请求解析找到对应的HandlerExecutionChain
+            &#x2F;&#x2F;里面包含了一个符合条件的Handler  和所有符合条件的HandlerInterceptor  即springmvc的拦截器
+            mappedHandler &#x3D; getHandler(processedRequest);
+            if (mappedHandler &#x3D;&#x3D; null) &#123;
+                noHandlerFound(processedRequest, response);
+                return;
+            &#125;
+
+            &#x2F;&#x2F;2. 获取到该handler对应的适配器   即适配器模式
+            HandlerAdapter ha &#x3D; getHandlerAdapter(mappedHandler.getHandler());
+
+            &#x2F;&#x2F; 这儿如果get方法即防止重复调用
+            String method &#x3D; request.getMethod();
+            boolean isGet &#x3D; &quot;GET&quot;.equals(method);
+            if (isGet || &quot;HEAD&quot;.equals(method)) &#123;
+                long lastModified &#x3D; ha.getLastModified(request, mappedHandler.getHandler());
+                if (logger.isDebugEnabled()) &#123;
+                    logger.debug(&quot;Last-Modified value for [&quot; + getRequestUri(request) + &quot;] is: &quot; + lastModified);
+                &#125;
+                if (new ServletWebRequest(request, response).checkNotModified(lastModified) &amp;&amp; isGet) &#123;
+                    return;
+                &#125;
+            &#125;
+            &#x2F;&#x2F;执行拦截器中的preHandle方法
+            if (!mappedHandler.applyPreHandle(processedRequest, response)) &#123;
+                return;
+            &#125;
+            
+            &#x2F;&#x2F; 3. 根绝处理器适配器执行方法并返回视图  我们由于不解析视图 所以这儿返回为null
+            mv &#x3D; ha.handle(processedRequest, response, mappedHandler.getHandler());
+
+            if (asyncManager.isConcurrentHandlingStarted()) &#123;
+                return;
+            &#125;
+            &#x2F;&#x2F;如果mv不为null  但是没有找到合适的视图 就选择一个默认的视图
+            applyDefaultViewName(processedRequest, mv);
+            &#x2F;&#x2F;执行拦截器的postHandle方法
+            mappedHandler.applyPostHandle(processedRequest, response, mv);
+        &#125;
+        catch (Exception ex) &#123;
+            dispatchException &#x3D; ex;
+        &#125;
+        catch (Throwable err) &#123;
+            &#x2F;&#x2F; As of 4.3, we&#39;re processing Errors thrown from handler methods as well,
+            &#x2F;&#x2F; making them available for @ExceptionHandler methods and other scenarios.
+            dispatchException &#x3D; new NestedServletException(&quot;Handler dispatch failed&quot;, err);
+        &#125;
+        &#x2F;&#x2F;4.将数据写入视图   并且里面会执行拦截器的afterCompletion方法
+        processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);
+    &#125;
+    .......
+&#125;</code></pre>
+
+
+
+<p>　　　　这个方法即大概说明了springmvc执行流程，中间也穿插了一些拦截器使用。我们由于是返回格式化数据，当然后面的视图数据渲染步骤也就用不上了。所以将数据写入响应体中肯定是在方法执行的步骤中就发生了。我们看下ha.handle(processedRequest, response, mappedHandler.getHandler()); 也就是方法执行的逻辑。这儿由于我们调用的是自己写的controller层的接口，所以处理器适配器的类型为RequestMappingHandlerAdapter ，我们可以看下其继承体系</p>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219142726370-263424201.png" alt="img"></p>
+<p> 　可以看下其继承了AbstractHandlerMethodAdapter ，我们调用的handle方法会先调用抽象类中的handle方法，但这个抽象类并没有什么处理，直接交给子类处理了</p>
+<pre class="language-none"><code class="language-none">@Override
+@Nullable
+public final ModelAndView handle(HttpServletRequest request, HttpServletResponse response, Object handler)
+        throws Exception &#123;
+
+    return handleInternal(request, response, (HandlerMethod) handler);
+&#125;</code></pre>
+
+
+
+<p>　　所以最终我们还是来看下RequestMappingHandlerAdapter 的handleInternal方法。</p>
+<pre class="language-none"><code class="language-none">@Override
+    protected ModelAndView handleInternal(HttpServletRequest request,
+            HttpServletResponse response, HandlerMethod handlerMethod) throws Exception &#123;
+
+        ModelAndView mav;
+        &#x2F;&#x2F;核实下方法是否执行
+        checkRequest(request);
+
+        &#x2F;&#x2F; 如果有同步锁则执行这儿
+        if (this.synchronizeOnSession) &#123;
+            HttpSession session &#x3D; request.getSession(false);
+            if (session !&#x3D; null) &#123;
+                Object mutex &#x3D; WebUtils.getSessionMutex(session);
+                synchronized (mutex) &#123;
+                    mav &#x3D; invokeHandlerMethod(request, response, handlerMethod);
+                &#125;
+            &#125;
+            else &#123;
+                &#x2F;&#x2F; No HttpSession available -&gt; no mutex necessary
+                mav &#x3D; invokeHandlerMethod(request, response, handlerMethod);
+            &#125;
+        &#125;
+        &#x2F;&#x2F;否则调用这儿
+        else &#123;
+            &#x2F;&#x2F; No synchronization on session demanded at all...
+            mav &#x3D; invokeHandlerMethod(request, response, handlerMethod);
+        &#125;
+        ...................
+        return mav;
+    &#125;</code></pre>
+
+
+
+<p>　　　　这儿我们接着看普通处理 即invokeHandlerMethod方法</p>
+<pre class="language-none"><code class="language-none">@Nullable
+    protected ModelAndView invokeHandlerMethod(HttpServletRequest request,
+            HttpServletResponse response, HandlerMethod handlerMethod) throws Exception &#123;
+
+        ServletWebRequest webRequest &#x3D; new ServletWebRequest(request, response);
+            &#x2F;&#x2F;这儿做了一堆的处理            ...............
+　　　　　　　　ServletInvocableHandlerMethod invocableMethod &#x3D; createInvocableHandlerMethod(handlerMethod);            &#x2F;&#x2F;这儿将结果处理器设置到了ServletInvocableHandlerMethod 中
+            if (this.returnValueHandlers !&#x3D; null) &#123;                 invocableMethod.setHandlerMethodReturnValueHandlers(this.returnValueHandlers);            &#125;
+            ..............
+
+            invocableMethod.invokeAndHandle(webRequest, mavContainer);
+            if (asyncManager.isConcurrentHandlingStarted()) &#123;
+                return null;
+            &#125;
+
+            return getModelAndView(mavContainer, modelFactory, webRequest);
+        &#125;
+        finally &#123;
+            webRequest.requestCompleted();
+        &#125;
+    &#125;</code></pre>
+
+
+
+<p>　　依旧是一大堆的处理，这儿就注意下webRequest中封装了有HttpServletResponse 后面使用webRequest写入数据会用到。还有ServletInvocableHandlerMethod 中设置了RequestMappingHandlerAdapter</p>
+<p>中带有的HandlerMethodReturnValueHandlerComposite，即返回结果处理器，我们后面则是使用这个来处理返回结果。</p>
+<p>　　我们接着看invocableMethod.invokeAndHandle(webRequest, mavContainer);</p>
+<pre class="language-none"><code class="language-none">public void invokeAndHandle(ServletWebRequest webRequest, ModelAndViewContainer mavContainer,
+            Object... providedArgs) throws Exception &#123;
+        &#x2F;&#x2F;获取到方法返回结果
+        Object returnValue &#x3D; invokeForRequest(webRequest, mavContainer, providedArgs);
+        setResponseStatus(webRequest);
+        &#x2F;&#x2F;判断结果是否为nul
+        if (returnValue &#x3D;&#x3D; null) &#123;
+            if (isRequestNotModified(webRequest) || getResponseStatus() !&#x3D; null || mavContainer.isRequestHandled()) &#123;
+                mavContainer.setRequestHandled(true);
+                return;
+            &#125;
+        &#125;
+        &#x2F;&#x2F;判断是否有ResponseStatusReason
+        else if (StringUtils.hasText(getResponseStatusReason())) &#123;
+            mavContainer.setRequestHandled(true);
+            return;
+        &#125;
+
+        mavContainer.setRequestHandled(false);
+        Assert.state(this.returnValueHandlers !&#x3D; null, &quot;No return value handlers&quot;);
+        try &#123;
+            &#x2F;&#x2F;处理返回结果
+            this.returnValueHandlers.handleReturnValue(
+                    returnValue, getReturnValueType(returnValue), mavContainer, webRequest);
+        &#125;
+        catch (Exception ex) &#123;
+            if (logger.isTraceEnabled()) &#123;
+                logger.trace(getReturnValueHandlingErrorMessage(&quot;Error handling return value&quot;, returnValue), ex);
+            &#125;
+            throw ex;
+        &#125;
+    &#125;</code></pre>
+
+
+
+<p>　　终于，我们在这个方法的第一步获取到了方法执行的结果，本文不主要讲springmvc方法调用的过程，所以这儿不讲，有兴趣探究方法执行的同学可以继续往下看。这儿获取到了结果，那我们接下来要做的无非就是两件事</p>
+<p>　　1.判断这个方法的处理类型 例如解析视图，还是返回结果直接写入方法体？</p>
+<p>　　2.调用对应的数据处理器处理数据</p>
+<p>　　　我们可以看到在方法的最后有对结果进行处理，我们可以看下这儿是如何进行判断的。</p>
+<pre class="language-none"><code class="language-none">@Override
+public void handleReturnValue(@Nullable Object returnValue, MethodParameter returnType,
+        ModelAndViewContainer mavContainer, NativeWebRequest webRequest) throws Exception &#123;
+    &#x2F;&#x2F;通过返回值和 调用的方法信息找到对应的结果处理器
+    HandlerMethodReturnValueHandler handler &#x3D; selectHandler(returnValue, returnType);
+    if (handler &#x3D;&#x3D; null) &#123;
+        throw new IllegalArgumentException(&quot;Unknown return value type: &quot; + returnType.getParameterType().getName());
+    &#125;
+    &#x2F;&#x2F;结果处理器处理结果
+    handler.handleReturnValue(returnValue, returnType, mavContainer, webRequest);
+&#125;</code></pre>
+
+
+
+<p>　　这儿就是两个我们上面的说的逻辑，找到对应的结果处理器。然后处理对应的结果。</p>
+<p>我们先看下系统是如何判断并且找到我们需要的写入返回结果的处理器呢？</p>
+<h3 id="为方法结果选择结果处理器"><a href="#为方法结果选择结果处理器" class="headerlink" title="为方法结果选择结果处理器"></a>为方法结果选择结果处理器</h3><p>　　</p>
+<pre class="language-none"><code class="language-none">@Nullable
+private HandlerMethodReturnValueHandler selectHandler(@Nullable Object value, MethodParameter returnType) &#123;
+    &#x2F;&#x2F;是否同步
+    boolean isAsyncValue &#x3D; isAsyncReturnValue(value, returnType);
+    
+    &#x2F;&#x2F;迭代springmvc所有支持的结果处理器   
+    for (HandlerMethodReturnValueHandler handler : this.returnValueHandlers) &#123;
+        &#x2F;&#x2F;如果结果期望同步，但是处理器不是同步结果处理器类型的  直接跳过
+        if (isAsyncValue &amp;&amp; !(handler instanceof AsyncHandlerMethodReturnValueHandler)) &#123;
+            continue;
+        &#125;
+        &#x2F;&#x2F;判断如何符合结果处理器的类型  会直接返回
+        if (handler.supportsReturnType(returnType)) &#123;
+            return handler;
+        &#125;
+    &#125;
+    return null;
+&#125;</code></pre>
+
+
+
+<p>　　这儿我们可以看到，系统是直接循环所有自带的结果处理器，将符合的返回。 这儿需要注意了，如果有多个满足条件，这儿找到第一个符合的就会直接返回，所以顺序很重。我们看下系统的结果处理器有哪些</p>
+<p>　　<img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219151956969-323106760.png" alt="img"></p>
+<p> 　系统则是根据这个顺序来进行循环的。系统会调用每个处理器的supportsReturnType的方法来判断是否支持。我们可以先看下第一个ModelAndViewMethodReturnValueHandler的supportsReturnType方法</p>
+<pre class="language-none"><code class="language-none">@Override
+public boolean supportsReturnType(MethodParameter returnType) &#123;
+    return ModelAndView.class.isAssignableFrom(returnType.getParameterType());
+&#125;</code></pre>
+
+<p>　　很明显我们没有返回ModelAndView，所以这个不满足，所以一直循环到第11个 也就是<strong>RequestResponseBodyMethodProcessor</strong>的时候 我们看下其判断逻辑</p>
+<pre class="language-none"><code class="language-none">@Override
+public boolean supportsReturnType(MethodParameter returnType) &#123;
+    return (AnnotatedElementUtils.hasAnnotation(returnType.getContainingClass(), ResponseBody.class) ||
+            returnType.hasMethodAnnotation(ResponseBody.class));
+&#125;</code></pre>
+
+<p>　　这儿是不是看到了比较熟悉判断，当本次调用这个方法的类上有ResponseBody注解或者方法上有ResponseBody 注解则返回true。这儿就符合了我们一开始的声明逻辑了。说明这个就是我们要的结果处理器了。</p>
+<p>　　到现在结果处理器就已经获取到了:**RequestResponseBodyMethodProcessor ,**那么接下来就是使用这个处理器来处理结果了，我们也可以看下处理的逻辑</p>
+<h3 id="结果处理器-RequestResponseBodyMethodProcessor-处理方法返回结果"><a href="#结果处理器-RequestResponseBodyMethodProcessor-处理方法返回结果" class="headerlink" title="结果处理器:RequestResponseBodyMethodProcessor 处理方法返回结果"></a>结果处理器:<strong>RequestResponseBodyMethodProcessor</strong> 处理方法返回结果</h3><p>　　根据上面的分析，我们获取到结果处理器后，下一步执行的就是如下逻辑，我们可以看下其中的业务逻辑</p>
+<pre class="language-none"><code class="language-none">handler.handleReturnValue(returnValue, returnType, mavContainer, webRequest);</code></pre>
+
+<p>　　我们继续看调用的父类的writeWithMessageConverters方法。也就是核心的写入方法</p>
+<pre class="language-none"><code class="language-none">protected &lt;T&gt; void writeWithMessageConverters(@Nullable T value, MethodParameter returnType,
+            ServletServerHttpRequest inputMessage, ServletServerHttpResponse outputMessage)
+            throws IOException, HttpMediaTypeNotAcceptableException, HttpMessageNotWritableException &#123;
+
+        Object outputValue;
+        Class&lt;?&gt; valueType;
+        Type declaredType;
+        
+        &#x2F;&#x2F;如果返回的结果是String  特殊处理下
+        if (value instanceof CharSequence) &#123;
+            outputValue &#x3D; value.toString();
+            valueType &#x3D; String.class;
+            declaredType &#x3D; String.class;
+        &#125;
+        &#x2F;&#x2F;获取原本的信息
+        else &#123;
+            &#x2F;&#x2F;返回值
+            outputValue &#x3D; value;
+            &#x2F;&#x2F;返回值类型
+            valueType &#x3D; getReturnValueType(outputValue, returnType);
+            &#x2F;&#x2F;返回值声明的类型
+            declaredType &#x3D; getGenericType(returnType);
+        &#125;
+        &#x2F;&#x2F;如果是流类型的  例如InutStream 特殊处理
+        if (isResourceType(value, returnType)) &#123;
+            ........
+        &#125;
+
+
+        List&lt;MediaType&gt; mediaTypesToUse;
+        &#x2F;&#x2F;这儿查看Response中是否有手动设置ContentType
+        MediaType contentType &#x3D; outputMessage.getHeaders().getContentType();
+        if (contentType !&#x3D; null &amp;&amp; contentType.isConcrete()) &#123;
+            mediaTypesToUse &#x3D; Collections.singletonList(contentType);
+        &#125;
+        else &#123;
+            &#x2F;&#x2F;获取请求
+            HttpServletRequest request &#x3D; inputMessage.getServletRequest();
+            &#x2F;&#x2F;获得请求接收的MediaType  一般为*&#x2F;*  即接收所有
+            List&lt;MediaType&gt; requestedMediaTypes &#x3D; getAcceptableMediaTypes(request);
+            &#x2F;&#x2F;获取本方法的相应产出的MediaType   如果我们没有手动设置  那么会默认支持所有的
+            List&lt;MediaType&gt; producibleMediaTypes &#x3D; getProducibleMediaTypes(request, valueType, declaredType);
+            
+            if (outputValue !&#x3D; null &amp;&amp; producibleMediaTypes.isEmpty()) &#123;
+                throw new HttpMessageNotWritableException(
+                        &quot;No converter found for return value of type: &quot; + valueType);
+            &#125;
+            mediaTypesToUse &#x3D; new ArrayList&lt;&gt;();
+            &#x2F;&#x2F;找到请求接收和我们提供的匹配的MediaType  下面则会抛异常
+            for (MediaType requestedType : requestedMediaTypes) &#123;
+                for (MediaType producibleType : producibleMediaTypes) &#123;
+                    if (requestedType.isCompatibleWith(producibleType)) &#123;
+                        mediaTypesToUse.add(getMostSpecificMediaType(requestedType, producibleType));
+                    &#125;
+                &#125;
+            &#125;
+            if (mediaTypesToUse.isEmpty()) &#123;
+                if (outputValue !&#x3D; null) &#123;
+                    throw new HttpMediaTypeNotAcceptableException(producibleMediaTypes);
+                &#125;
+                return;
+            &#125;
+            &#x2F;&#x2F;给所有匹配的进行特殊规则排序  
+            &#x2F;&#x2F;例如我们的produce中设置了两个&#123;&quot;application&#x2F;json&quot;,&quot;application&#x2F;xml&quot;&#125;
+            MediaType.sortBySpecificityAndQuality(mediaTypesToUse);
+        &#125;
+        &#x2F;&#x2F;根据一定规则挑选一个  
+        MediaType selectedMediaType &#x3D; null;
+        for (MediaType mediaType : mediaTypesToUse) &#123;
+            if (mediaType.isConcrete()) &#123;
+                selectedMediaType &#x3D; mediaType;
+                break;
+            &#125;
+            else if (mediaType.equals(MediaType.ALL) || mediaType.equals(MEDIA_TYPE_APPLICATION)) &#123;
+                selectedMediaType &#x3D; MediaType.APPLICATION_OCTET_STREAM;
+                break;
+            &#125;
+        &#125;
+        &#x2F;&#x2F;如果选出来的不为null   就要根据MediaType  来挑选HttpMessageConverter对结果进行序列化并写入了
+        if (selectedMediaType !&#x3D; null) &#123;
+            selectedMediaType &#x3D; selectedMediaType.removeQualityValue();
+            &#x2F;&#x2F;对系统的所有消息转换器进行迭代
+            for (HttpMessageConverter&lt;?&gt; converter : this.messageConverters) &#123;
+                
+                &#x2F;&#x2F;首选要挑选出符合GenericHttpMessageConverter的子类的转换器
+                GenericHttpMessageConverter genericConverter &#x3D; (converter instanceof GenericHttpMessageConverter ?
+                        (GenericHttpMessageConverter&lt;?&gt;) converter : null);
+                &#x2F;&#x2F;其次要判断这个转换器要能转换当前数据  例如json转换器肯定不能转换xml数据        
+                if (genericConverter !&#x3D; null ?
+                        ((GenericHttpMessageConverter) converter).canWrite(declaredType, valueType, selectedMediaType) :
+                        converter.canWrite(valueType, selectedMediaType)) &#123;
+                            
+                    &#x2F;&#x2F;写入前在对结果做一次调整        
+                    outputValue &#x3D; getAdvice().beforeBodyWrite(outputValue, returnType, selectedMediaType,
+                            (Class&lt;? extends HttpMessageConverter&lt;?&gt;&gt;) converter.getClass(),
+                            inputMessage, outputMessage);
+                    &#x2F;&#x2F;如果不为null  则开始写入        
+                    if (outputValue !&#x3D; null) &#123;
+                        addContentDispositionHeader(inputMessage, outputMessage);
+                        &#x2F;&#x2F;转换器不为null  则调用转换器 将结果写入outputMessage
+                        if (genericConverter !&#x3D; null) &#123;
+                            genericConverter.write(outputValue, declaredType, selectedMediaType, outputMessage);
+                        &#125;
+                        else &#123;
+                            ((HttpMessageConverter) converter).write(outputValue, selectedMediaType, outputMessage);
+                        &#125;
+                        if (logger.isDebugEnabled()) &#123;
+                            logger.debug(&quot;Written [&quot; + outputValue + &quot;] as \&quot;&quot; + selectedMediaType +
+                                    &quot;\&quot; using [&quot; + converter + &quot;]&quot;);
+                        &#125;
+                    &#125;
+                    return;
+                &#125;
+            &#125;
+        &#125;
+
+        if (outputValue !&#x3D; null) &#123;
+            throw new HttpMediaTypeNotAcceptableException(this.allSupportedMediaTypes);
+        &#125;
+    &#125;</code></pre>
+
+<p>　　　　可以看出这个方法就是核心的写入逻辑，先对结果是否是字符串做了下判断，然后对结果是否是资源类型做了下判断。然后分别找到请求接收的MediaType 和我们提供的MediaType ，找到二者的交集，然后按特殊顺序排序，找到最优的那个MediaType ，遍历系统的消息转换器，如果消息转换器是HttpMessage消息转换器类型，且可以转换当前消息，那么就调用消息转换器将结果写入outputMessage也就是我们的响应体中</p>
+<p>　　 这儿的消息转换器即HttpMessageConverter即用来序列化数据的工具有些同学可能并不陌生，。因为现在很多项目都会将springmvc默认的json转换器 jackson换为fastjson来追求更快的序列化速度，而springmvc一般自带的如下</p>
+<p>　　注意最后圈红的需要额外引入我们一开始的包才能使用</p>
+<p>　　<img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219160149570-329616676.png" alt="img"></p>
+<p> 　我们设置produces &#x3D; {“application&#x2F;json”}时很明显上面的筛选下只有MappingJackson2HttpMessageConverter符合</p>
+<p>　　设置produces &#x3D; {“application&#x2F;xml”} 很明显就只有MappingJackson2XmlHttpMessageConverter 符合</p>
+<h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>　　到此 我们就知道了@ResponseBody的作用以及spring对这个注解的处理逻辑了，主要核心步骤如下</p>
+<p>　　　　1.DispatchServlet的对请求进行处理，并根据请求找到合适的处理器适配器RequestMappingHandlerAdapter并调用处理方法</p>
+<p>　　　　2.处理器适配器根据处理器中的方法特征创建ServletInvocableHandlerMethod 方法处理对象，里面包含了有返回结果处理对象HandlerMethodReturnValueHandlerComposite</p>
+<p>　　　　3.方法处理对象中执行方法并获得返回值</p>
+<p>　　　　4.结果处理对象根据方法特征循环所有结果处理器找到满足条件的结果处理器即RequestResponseBodyMethodProcessor(如果方法上有@ResponseBody注解)，调用结果处理器处理结果</p>
+<p>　　　　5.结果处理器中根据请求接收的MediaType和我们提供的MediaType进行匹配，并找到最合适的那个MediaType</p>
+<p>　　　　6.根据MediaType遍历所有的HttpMessageConverter找到能处理当前的MediaType的转换器</p>
+<p>　　　　7.转换器将结果写入output即响应体中</p>
+<h2 id="一开始的问题"><a href="#一开始的问题" class="headerlink" title="一开始的问题"></a>一开始的问题</h2><p>　　模拟下项目的环境 引入fastjson包 </p>
+<pre class="language-none"><code class="language-none">&lt;!-- https:&#x2F;&#x2F;mvnrepository.com&#x2F;artifact&#x2F;com.alibaba&#x2F;fastjson --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;&#x2F;groupId&gt;
+    &lt;artifactId&gt;fastjson&lt;&#x2F;artifactId&gt;
+    &lt;version&gt;1.2.62&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;</code></pre>
+
+<p>　　替换转换器的教程大致如下 省略了一些其他步骤</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MessageConfig</span> <span class="token keyword">implements</span> <span class="token class-name">WebMvcConfigurer</span> <span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">extendMessageConverters</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">HttpMessageConverter</span><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">></span><span class="token punctuation">></span></span> converters<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">FastJsonHttpMessageConverter</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FastJsonHttpMessageConverter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        f<span class="token punctuation">.</span><span class="token function">setSupportedMediaTypes</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token class-name">MediaType</span><span class="token punctuation">.</span><span class="token constant">APPLICATION_JSON</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        converters<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>　　相信看到这儿就理解了，我们在这儿添加会最后才添加到消息转换器列表中，所以根据上面的查询规则，默认的json转换器在fastjson前面，由于默认json转换器也是完全符合转换要求的，所以系统当然就直接拿到默认转换器转换了。</p>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219162655944-921422322.png" alt="img"></p>
+<p>　　通过这个图可以知道我们定义的并未有效，那么如何处理呢？ 其实有两种方法，</p>
+<p>　　　　　　<strong>第一种</strong>则是采用bean定义的方式，spring会默认扫描到这个处理器加入结果处理器中，且优先级最高</p>
+<p>　　</p>
+<p><a href="javascript:void(0);"><img src= "/hexo2/img/loading.gif" data-lazy-src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<pre class="language-none"><code class="language-none">@Bean
+ public FastJsonHttpMessageConverter init()&#123;
+     FastJsonHttpMessageConverter f &#x3D; new FastJsonHttpMessageConverter();
+     f.setSupportedMediaTypes(Arrays.asList(MediaType.APPLICATION_JSON_UTF8));
+     return f;
+
+ &#125;</code></pre>
+
+<p><a href="javascript:void(0);"><img src= "/hexo2/img/loading.gif" data-lazy-src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<p>　　　　我们再看处理器顺序  即得到了我们想要的fastjson序列化</p>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219163033038-543252629.png" alt="img"></p>
+<p> 　　　<strong>第二种</strong>则依旧采用实现WebMvcConfigurer的方式，我们在添加的时候移除掉默认的json处理器即可</p>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219163340680-1849420503.png" alt="img"></p>
+<p> 然后处理器的顺序  使用了fastjson</p>
+<p><img src= "/hexo2/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/1201110/201912/1201110-20191219163432901-144797850.png" alt="img"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://liudongsir.github.io/hexo2">liudong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://liudongsir.github.io/hexo2/posts/0/">https://liudongsir.github.io/hexo2/posts/0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liudongsir.github.io/hexo2" target="_blank">liudongsir's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://t.alcy.cc/fj/" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/hexo2/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/hexo2/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "/hexo2/img/loading.gif" data-lazy-src="/hexo2/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/hexo2/posts/1b183351/" title="feign"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://imgapi.cn/api.php?zd=pc&amp;fl=fengjing&amp;gs=images" onerror="onerror=null;src='/hexo2/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">feign</div></div></a></div><div class="next-post pull-right"><a href="/hexo2/posts/87ce0685/" title="2025-03-04vue插槽"><img class="cover" src= "/hexo2/img/loading.gif" data-lazy-src="https://t.alcy.cc/fj/" onerror="onerror=null;src='/hexo2/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2025-03-04vue插槽</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Giscus</span><span id="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ResponseBody%E6%98%AF%E5%A6%82%E4%BD%95%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">@ResponseBody是如何起作用的</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-number">1.2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E6%96%B9%E6%B3%95%E7%BB%93%E6%9E%9C%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%9C%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">为方法结果选择结果处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%A4%84%E7%90%86%E5%99%A8-RequestResponseBodyMethodProcessor-%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C"><span class="toc-number">1.2.2.</span> <span class="toc-text">结果处理器:RequestResponseBodyMethodProcessor 处理方法返回结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">完结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%BC%80%E5%A7%8B%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">一开始的问题</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By liudong</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://butterfly.js.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hexo2/js/utils.js?v=4.13.0"></script><script src="/hexo2/js/main.js?v=4.13.0"></script><script src="/hexo2/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(()=>{
+  const getGiscusTheme = theme => {
+    return theme === 'dark' ? 'dark' : 'light'
+  }
+
+  const loadGiscus = () => {
+    const config = Object.assign({
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'liudongsir/hexo2',
+      'data-repo-id': 'R_kgDOMRULPg',
+      'data-category-id': 'DIC_kwDOMRULPs4CgtiW',
+      'data-mapping': 'pathname',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true
+    },null)
+
+    const ele = document.createElement('script')
+    for (let key in config) {
+      ele.setAttribute(key, config[key])
+    }
+    document.getElementById('giscus-wrap').appendChild(ele)
+  }
+
+  const changeGiscusTheme = theme => {
+    const sendMessage = message => {
+      const iframe = document.querySelector('iframe.giscus-frame')
+      if (!iframe) return
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app')
+    }
+
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(theme)
+      }
+    });
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment= loadGiscus
+  }
+})()</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: 'Ov23liQUy51NzqGTWx8v',
+      clientSecret: 'aa22a9bfc23b5754a634572f6f932f8c2d5598ca',
+      repo: 'hexo2',
+      owner: 'liudongsir',
+      admin: ['liudongsir'],
+      id: 'd87f978902381209fca109b2d3ed70cd',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Giscus' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/hexo2/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
